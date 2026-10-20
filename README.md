@@ -1,6 +1,6 @@
 # Quadrath Base Content
 
-The open, machine-readable foundation for **Quadrath**, a tabletop roleplaying game by Forsidia. This package is intended to be the maintained source for the public game rules and starter content. The archived Obsidian vault is not a build dependency and is intentionally left unchanged.
+The open, machine-readable foundation for **Quadrath**, a tabletop roleplaying game by Forsidia. This package is intended to be the maintained source for the public game rules and starter content, and forms part of the free content for the upcoming Quadrath VTT.
 
 ## What is here
 
@@ -42,7 +42,7 @@ Quadrath characters use modifiers rather than full ability-score values. The bas
 
 ## Scope and versioning
 
-This is the public base layer. The future Forsidia VTT may add paid or private content, but should be able to identify compatible base releases using `content/manifest.json` and each document's `id` and `version`.
+This is the public base layer and free content foundation for the upcoming Forsidia VTT. The VTT may add paid or private content, but should be able to identify compatible base releases using `content/manifest.json` and each document's `id` and `version`.
 
 The current rules intentionally mark unresolved details as explicit extension points instead of silently inventing a larger ruleset. Additions should preserve stable ids and increment the relevant document version.
 
