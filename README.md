@@ -1,6 +1,6 @@
 # Quadrath Base Content
 
-The open, machine-readable foundation for **Quadrath**, a tabletop roleplaying game by Forsidia. This package is intended to be the maintained source for the public game rules and starter content, and forms part of the free content for the upcoming Quadrath VTT.
+The open, machine-readable foundation for **Quadrath**, a tabletop roleplaying game by Forsidia. Learn more on the [Forsidia Quadrath project page](https://forsidia.in/projects/quadrath-ttrpg). This package is intended to be the maintained source for the public game rules and starter content, and forms part of the free content for the upcoming Quadrath VTT.
 
 ## What is here
 
