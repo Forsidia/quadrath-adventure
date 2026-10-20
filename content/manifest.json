@@ -1,0 +1,20 @@
+{
+  "id": "quadrath-base",
+  "title": "Quadrath Base Content",
+  "publisher": "Forsidia",
+  "version": "0.1.0",
+  "status": "draft-public-foundation",
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "schema_version": "0.1.0",
+  "description": "The open rules, character model, starter characters, magic reference, and setting foundation for Quadrath.",
+  "documents": [
+    {"path": "rules/core.json", "type": "rules"},
+    {"path": "rules/character.json", "type": "rules"},
+    {"path": "characters/merchant.json", "type": "character"},
+    {"path": "characters/teacher.json", "type": "character"},
+    {"path": "characters/farmer.json", "type": "character"},
+    {"path": "magic/magic-system.json", "type": "magic"},
+    {"path": "lore/four-kingdoms.json", "type": "lore"}
+  ]
+}

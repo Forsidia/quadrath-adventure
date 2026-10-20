@@ -1,0 +1,29 @@
+{
+  "id": "rules.core",
+  "type": "rules",
+  "version": "0.1.0",
+  "title": "Core Rules",
+  "summary": "The smallest playable resolution layer for Quadrath.",
+  "resolution": {
+    "die": "d6",
+    "check": "Roll 1d6 and add the relevant modifier. Meet or exceed the task difficulty to succeed.",
+    "difficulty_guidance": {"routine": 3, "challenging": 4, "hard": 5, "extreme": 6},
+    "contested": "Each side rolls 1d6 plus the relevant modifier; the higher total wins. Reroll ties if the table needs a decisive result."
+  },
+  "character_progression": {
+    "level_range": [1, 20],
+    "tiers": [
+      {"id": "novice", "levels": [1, 5], "description": "Starting adventurers learning the basics."},
+      {"id": "adept", "levels": [6, 10], "description": "Skilled practitioners beginning to make a name for themselves."},
+      {"id": "master", "levels": [11, 15], "description": "Renowned heroes capable of remarkable feats."},
+      {"id": "legendary", "levels": [16, 20], "description": "Living legends whose deeds shape Quadrath."}
+    ]
+  },
+  "combat": {
+    "initiative": "Each participant rolls 1d6 plus dexterity; highest acts first.",
+    "attack": "Roll 1d6 plus the modifier that best represents the attack. Meet or exceed the target's AC to hit.",
+    "damage": "The attack, weapon, spell, or effect defines its damage. The base package does not prescribe a universal damage table yet.",
+    "hp": "At 0 HP, a character is incapacitated until the table's recovery rules or an effect restores them. Detailed recovery is an extension point."
+  },
+  "extension_points": ["damage_and_condition catalog", "equipment catalog", "recovery and death rules", "class, role, or talent progression", "game-master guidance"]
+}

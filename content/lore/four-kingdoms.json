@@ -1,0 +1,15 @@
+{
+  "id": "lore.four-kingdoms",
+  "type": "lore",
+  "version": "0.1.0",
+  "title": "The Four Kingdoms of Quadrath",
+  "summary": "A compact setting foundation for the four-sided land.",
+  "kingdoms": [
+    {"id": "north", "name": "North Kingdom", "theme": "ice, mountains, survival, and warrior culture", "ruler_title": "Legendary Barbarian"},
+    {"id": "south", "name": "South Kingdom", "theme": "desert, oases, arcane relics, and forbidden pacts", "ruler_title": "Legendary Warlock"},
+    {"id": "west", "name": "West Kingdom", "theme": "plains, forests, exploration, and the wild", "ruler_title": "Legendary Ranger"},
+    {"id": "east", "name": "East Kingdom", "theme": "golden fields, cities, justice, and sacred lore", "ruler_title": "Legendary Paladin"}
+  ],
+  "related_places": ["Bondry Mountains", "Dragon Kingdom", "Light Square", "Dark Square", "Port Westward", "Earn Island"],
+  "design_note": "Names, detailed histories, factions, and adventures can be added as separate documents without changing this stable kingdom vocabulary."
+}

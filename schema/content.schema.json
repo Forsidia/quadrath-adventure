@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://forsidia.org/schemas/quadrath-content-0.1.0.json",
+  "title": "Quadrath Content Document",
+  "type": "object",
+  "required": ["id", "type", "version", "title"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$"},
+    "type": {"type": "string", "enum": ["rules", "character", "magic", "lore"]},
+    "version": {"type": "string"},
+    "title": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": true
+}

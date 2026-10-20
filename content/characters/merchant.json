@@ -1,0 +1,15 @@
+{
+  "id": "character.sample.merchant",
+  "type": "character",
+  "version": "0.1.0",
+  "title": "The Merchant",
+  "role": "merchant",
+  "status": "sample-character",
+  "description": "A practical trader who knows routes, prices, and how to keep a negotiation moving.",
+  "level": 1,
+  "tier": "novice",
+  "sheet": {"hp": 8, "ac": 10, "modifiers": {"intelligence": 2, "constitution": 0, "dexterity": 1, "persuasion": 2, "charisma": 1}},
+  "traits": ["Market sense", "Route memory", "Measured bargaining"],
+  "equipment": ["Ledger", "Traveling scale", "Trade goods", "Practical clothing"],
+  "hooks": ["A shipment has vanished between kingdoms.", "A rival merchant is selling goods no one remembers importing."]
+}

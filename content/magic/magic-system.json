@@ -1,0 +1,27 @@
+{
+  "id": "magic.system",
+  "type": "magic",
+  "version": "0.1.0",
+  "title": "Magic System Reference",
+  "summary": "Open reference data for Quadrath's elemental and spell structures.",
+  "elements": [
+    {"id": "fire", "description": "Searing flames that burn and destroy."},
+    {"id": "ice", "description": "Freezing cold that slows and shatters."},
+    {"id": "lightning", "description": "Crackling energy that strikes with speed and power."},
+    {"id": "truelight", "description": "Radiant energy with healing properties and special potency against undead and certain monstrous foes."},
+    {"id": "truedark", "description": "Shadowy, corrosive energy tied to secrecy and decay."}
+  ],
+  "structures": [
+    {"id": "touch", "description": "Magic channeled through physical contact."},
+    {"id": "strike", "description": "One or more precise projectile attacks."},
+    {"id": "storm", "description": "An area effect tempest of the chosen element."},
+    {"id": "beam", "description": "A sustained stream of energy requiring focus."},
+    {"id": "shield", "description": "A barrier that deflects or absorbs attacks."}
+  ],
+  "special_types": [
+    {"id": "draconic", "description": "Dragon-soul energy that amplifies a spell; usually requires a pact or ritual tied to the Dragon Kingdom."},
+    {"id": "apex", "description": "Legendary magic that can alter battlefields or defy natural laws."}
+  ],
+  "pure_special_examples": ["turn-undead", "dispel-magic", "mana-drain", "health-drain", "banish-creature", "summon", "dominate-creature", "resurrection", "arcane-gate", "hold-monster", "true-sight", "mass-suggestion", "planar-binding"],
+  "design_note": "This document is a reference vocabulary. Precise spell costs, damage, cooldowns, and casting procedures belong in future spell entries or a game-master expansion."
+}

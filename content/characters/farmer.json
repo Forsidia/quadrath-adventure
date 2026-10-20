@@ -1,0 +1,15 @@
+{
+  "id": "character.sample.farmer",
+  "type": "character",
+  "version": "0.1.0",
+  "title": "The Farmer",
+  "role": "farmer",
+  "status": "sample-character",
+  "description": "A grounded survivor who understands weather, land, tools, and the cost of a bad season.",
+  "level": 1,
+  "tier": "novice",
+  "sheet": {"hp": 10, "ac": 11, "modifiers": {"intelligence": 0, "constitution": 2, "dexterity": 1, "persuasion": 0, "charisma": 1}},
+  "traits": ["Weather sense", "Field endurance", "Practical repair"],
+  "equipment": ["Hand tool", "Seed pouch", "Weathered cloak", "Rations"],
+  "hooks": ["The crops are growing in a perfect ring around an old stone.", "Something is taking livestock without leaving tracks."]
+}
