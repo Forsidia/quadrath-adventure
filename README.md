@@ -38,7 +38,7 @@ Quadrath characters use modifiers rather than full ability-score values. The bas
 - `modifiers.persuasion`
 - `modifiers.charisma`
 
-`intelligence` is the canonical spelling. A future importer may accept the historical typo `intelligemce`, but new content should use the canonical key.
+`intelligence` is the canonical spelling used throughout the content model.
 
 ## Scope and versioning
 

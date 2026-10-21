@@ -13,5 +13,5 @@
     {"id": "persuasion", "kind": "modifier", "value_type": "integer", "required": true, "description": "Convincing, negotiating, and leading through words."},
     {"id": "charisma", "kind": "modifier", "value_type": "integer", "required": true, "description": "Presence, confidence, and force of personality."}
   ],
-  "notes": ["Modifiers are the recorded values; base content does not require hidden ability scores.", "Character-specific bonuses may be represented as effects or traits rather than changing the sheet fields.", "The canonical key is intelligence. The spelling intelligemce is not used in new content."]
+  "notes": ["Modifiers are the recorded values; base content does not require hidden ability scores.", "Character-specific bonuses may be represented as effects or traits rather than changing the sheet fields.", "The canonical key is intelligence."]
 }

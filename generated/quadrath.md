@@ -80,7 +80,7 @@ _Document id: `rules.character` · type: `rules`_
 - **Value Type:** integer
 - **Required:** True
 - **Description:** Presence, confidence, and force of personality.
-- **Notes:** Modifiers are the recorded values; base content does not require hidden ability scores., Character-specific bonuses may be represented as effects or traits rather than changing the sheet fields., The canonical key is intelligence. The spelling intelligemce is not used in new content.
+- **Notes:** Modifiers are the recorded values; base content does not require hidden ability scores., Character-specific bonuses may be represented as effects or traits rather than changing the sheet fields., The canonical key is intelligence.
 The stable player-sheet fields used by Quadrath base content.
 
 ## The Merchant
