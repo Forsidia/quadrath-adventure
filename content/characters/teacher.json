@@ -8,8 +8,60 @@
   "description": "A patient instructor whose lessons turn confusion into a plan of action.",
   "level": 1,
   "tier": "novice",
-  "sheet": {"hp": 7, "ac": 10, "modifiers": {"intelligence": 2, "constitution": 0, "dexterity": 0, "persuasion": 1, "charisma": 2}},
-  "traits": ["Clear explanation", "Patient listener", "Improvised lesson"],
-  "equipment": ["Lesson book", "Chalk", "Annotated map", "Walking staff"],
-  "hooks": ["A student has copied a dangerous symbol into their notebook.", "The local school is built over a sealed ruin."]
+  "sheet": {
+    "hp": 7,
+    "ac": 10,
+    "modifiers": {
+      "intelligence": 2,
+      "constitution": 0,
+      "dexterity": 0,
+      "persuasion": 1,
+      "charisma": 2
+    }
+  },
+  "actions": [
+    {
+      "id": "teacher-staff",
+      "name": "Walking Staff",
+      "action_type": "action",
+      "attack_bonus": 0,
+      "damage": {
+        "roll": "1d6",
+        "type": "bludgeoning"
+      },
+      "resolution": {
+        "kind": "attack",
+        "roll": "2d6 + 0",
+        "against": "ac"
+      }
+    },
+    {
+      "id": "teacher-instruct",
+      "name": "Instruct",
+      "action_type": "action",
+      "roll": "2d6 + intelligence",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "Give one ally a clear plan; the DM may grant +1 to the next relevant check."
+    }
+  ],
+  "traits": [
+    "Clear explanation",
+    "Patient listener",
+    "Improvised lesson"
+  ],
+  "equipment": [
+    "Lesson book",
+    "Chalk",
+    "Annotated map",
+    "Walking staff"
+  ],
+  "hooks": [
+    "A student has copied a dangerous symbol into their notebook.",
+    "The local school is built over a sealed ruin."
+  ],
+  "backstory": "A travelling instructor collects local histories and teaches practical literacy along the road. The ongoing Teacher’s Quest has no recorded events yet; the teacher’s reasons for visiting Okla Deli remain open.",
+  "backstory_status": "draft; no completed session events recorded"
 }

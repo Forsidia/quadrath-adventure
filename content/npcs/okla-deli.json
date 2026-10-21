@@ -1,0 +1,325 @@
+{
+  "id": "npcs.okla-deli",
+  "type": "npc-catalog",
+  "version": "0.1.0",
+  "title": "Okla Deli NPCs and Stat Blocks",
+  "stat_block_rules": "HP and AC are fixed. Bonuses are added directly to 2d6 rolls. An action always declares its roll and damage or non-damage result.",
+  "npcs": [
+    {
+      "id": "npc.town-guard",
+      "name": "Town Guard",
+      "hp": 16,
+      "ac": 8,
+      "bonuses": {
+        "intelligence": 0,
+        "constitution": 1,
+        "dexterity": 0,
+        "persuasion": 0,
+        "charisma": 0
+      },
+      "actions": [
+        {
+          "id": "attack-spear",
+          "name": "Spear",
+          "action_type": "action",
+          "attack_bonus": 1,
+          "damage": {
+            "roll": "1d6",
+            "type": "piercing"
+          },
+          "resolution": {
+            "kind": "attack",
+            "roll": "2d6 + 1",
+            "against": "ac"
+          },
+          "weapon_ref": "weapon.spear",
+          "equipment_attack_adjustment": 0
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Hold the Line",
+          "action_type": "passive",
+          "damage": {
+            "roll": "0",
+            "type": "none"
+          },
+          "effect": "+1 AC while adjacent to another shield-bearing guard."
+        }
+      ],
+      "speed": {
+        "value": 30,
+        "unit": "ft"
+      },
+      "backstory": "A local recruit assigned to gate duty and patrols. During the merchant’s visit, two guards demanded 2 GP at the gate; one was seriously injured. Later reinforcements suffered five deaths. Surviving guards remember the incident as a warning against letting a routine dispute turn into a battle."
+    },
+    {
+      "id": "npc.guard-sergeant",
+      "name": "Halven, Guard Sergeant",
+      "hp": 32,
+      "ac": 9,
+      "bonuses": {
+        "intelligence": 1,
+        "constitution": 2,
+        "dexterity": 0,
+        "persuasion": 0,
+        "charisma": 0
+      },
+      "actions": [
+        {
+          "id": "attack-sword",
+          "name": "Sword",
+          "action_type": "action",
+          "attack_bonus": 2,
+          "damage": {
+            "roll": "2d6",
+            "type": "slashing"
+          },
+          "repeat": 2,
+          "resolution": {
+            "kind": "attack",
+            "roll": "2d6 + 2",
+            "against": "ac"
+          },
+          "weapon_ref": "weapon.sword",
+          "equipment_attack_adjustment": 0
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Command",
+          "action_type": "once-per-fight",
+          "damage": {
+            "roll": "0",
+            "type": "none"
+          },
+          "effect": "Nearby guards gain +1 to hit for one round."
+        }
+      ],
+      "speed": {
+        "value": 30,
+        "unit": "ft"
+      },
+      "backstory": "Halven rose through the watch by keeping patrols disciplined. During the merchant’s visit, he led reinforcements, offered surrender with 100 GP bail, and killed the merchant after refusal. Injured and below half HP, he was taken for treatment and later praised by the Captain."
+    },
+    {
+      "id": "npc.edric",
+      "name": "Edric, Okla Deli Mage",
+      "hp": 38,
+      "ac": 7,
+      "warded_ac": 9,
+      "bonuses": {
+        "intelligence": 4,
+        "constitution": 1,
+        "dexterity": 0,
+        "persuasion": 0,
+        "charisma": 0
+      },
+      "actions": [
+        {
+          "name": "Fire Strike",
+          "action_type": "action",
+          "spell_ref": "spell.fire-strike"
+        },
+        {
+          "name": "Lightning Beam",
+          "action_type": "action",
+          "spell_ref": "spell.lightning-beam"
+        },
+        {
+          "name": "Shield",
+          "action_type": "action",
+          "spell_ref": "spell.shield"
+        },
+        {
+          "name": "Heal",
+          "action_type": "action",
+          "spell_ref": "spell.heal"
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Ward",
+          "action_type": "action",
+          "damage": {
+            "roll": "0",
+            "type": "none"
+          },
+          "effect": "Increase AC to 9 for 3 rounds."
+        }
+      ],
+      "personality": "Patient, curious, and absent-minded; wants the scroll preserved.",
+      "speed": {
+        "value": 30,
+        "unit": "ft"
+      },
+      "backstory": "Edric, Okla Deli’s patient and absent-minded mage, seeks to preserve old knowledge in the town library. He posted a request for a volunteer escort to retrieve a forgotten scroll. The merchant noticed the request but ignored it; the expedition remains an adventure opportunity rather than a completed session event."
+    },
+    {
+      "id": "npc.guard-captain",
+      "name": "Guard Captain, Half-Elf Barbarian",
+      "hp": 60,
+      "ac": 12,
+      "bonuses": {
+        "intelligence": 2,
+        "constitution": 3,
+        "dexterity": 0,
+        "persuasion": 0,
+        "charisma": 0
+      },
+      "actions": [
+        {
+          "id": "attack-bursting-fist",
+          "name": "Bursting Fist",
+          "action_type": "action",
+          "attack_bonus": 3,
+          "damage": {
+            "roll": "3d6",
+            "type": [
+              "piercing",
+              "bludgeoning"
+            ]
+          },
+          "resolution": {
+            "kind": "attack",
+            "roll": "2d6 + 3",
+            "against": "ac"
+          },
+          "weapon_ref": "weapon.bursting-fist",
+          "equipment_attack_adjustment": 0
+        },
+        {
+          "id": "attack-anti-magic-sword",
+          "name": "Anti-Magic Sword",
+          "action_type": "action",
+          "attack_bonus": 4,
+          "damage": {
+            "roll": "4d6",
+            "type": "slashing"
+          },
+          "effect": "Negates magical attacks and effects on the target.",
+          "resolution": {
+            "kind": "attack",
+            "roll": "2d6 + 4",
+            "against": "ac"
+          },
+          "weapon_ref": "weapon.anti-magic-sword",
+          "equipment_attack_adjustment": 0
+        },
+        {
+          "id": "attack-kick-of-fury",
+          "name": "Kick of Fury",
+          "action_type": "action",
+          "attack_bonus": 4,
+          "damage": {
+            "roll": "3d6",
+            "type": "bludgeoning"
+          },
+          "resolution": {
+            "kind": "attack",
+            "roll": "2d6 + 4",
+            "against": "ac"
+          },
+          "weapon_ref": "weapon.kick-of-fury",
+          "equipment_attack_adjustment": 0
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Enchanted Armor",
+          "action_type": "passive",
+          "damage": {
+            "roll": "0",
+            "type": "none"
+          },
+          "effect": "Resistance to piercing and slashing damage."
+        }
+      ],
+      "notes": [
+        "AC and non-attack bonuses are intentionally left DM-set beyond the listed values."
+      ],
+      "speed": {
+        "value": 30,
+        "unit": "ft"
+      },
+      "backstory": "A half-elf barbarian whose enchanted armor and anti-magic sword make the Captain the watch’s final response to dangerous threats. Arriving after the merchant’s battle, the Captain praised the sergeant and said the mayor might reward him. The Captain did not participate in the recorded fight."
+    },
+    {
+      "id": "npc.mayor",
+      "name": "Mayor Liora Venn",
+      "hp": 12,
+      "ac": 7,
+      "bonuses": {
+        "intelligence": 1,
+        "constitution": 1,
+        "dexterity": 0,
+        "persuasion": 0,
+        "charisma": 0
+      },
+      "actions": [
+        {
+          "id": "attack-improvised",
+          "name": "Improvised Weapon",
+          "action_type": "action",
+          "attack_bonus": 0,
+          "damage": {
+            "roll": "1d6",
+            "type": "bludgeoning"
+          },
+          "resolution": {
+            "kind": "attack",
+            "roll": "2d6 + 0",
+            "against": "ac"
+          },
+          "weapon_ref": "weapon.improvised",
+          "equipment_attack_adjustment": 0
+        }
+      ],
+      "speed": {
+        "value": 30,
+        "unit": "ft"
+      },
+      "backstory": "A former market administrator, Liora Venn became mayor by promising dependable roads and a prosperous town. The merchant’s deadly visit now tests her ability to support the watch while reassuring traders. The Captain suggested a reward for the sergeant, but the played session records no decision by the mayor.",
+      "backstory_status": "draft addition",
+      "mechanics_status": "draft"
+    },
+    {
+      "id": "npc.horsecart-owner",
+      "name": "Tomas Reed, Horsecart Owner",
+      "hp": 18,
+      "ac": 8,
+      "bonuses": {
+        "intelligence": 1,
+        "constitution": 1,
+        "dexterity": 0,
+        "persuasion": 0,
+        "charisma": 0
+      },
+      "actions": [
+        {
+          "name": "Sword",
+          "action_type": "action",
+          "attack_bonus": 2,
+          "resolution": {
+            "kind": "attack",
+            "roll": "2d6 + 2",
+            "against": "ac"
+          },
+          "damage": {
+            "roll": "2d6",
+            "type": "slashing"
+          },
+          "weapon_ref": "weapon.sword",
+          "equipment_attack_adjustment": 0
+        }
+      ],
+      "speed": {
+        "value": 30,
+        "unit": "ft"
+      },
+      "backstory": "Tomas earns a living moving passengers and goods between the town gate, farms, and market. He carries a watch-pattern sword and claims a retiring guard gave it to him after he helped recover a stranded patrol cart. A missing armory mark has led others to suspect theft; the truth remains open for play. No encounter with Tomas has yet been recorded in the played session.",
+      "backstory_status": "draft addition",
+      "mechanics_status": "draft"
+    }
+  ]
+}

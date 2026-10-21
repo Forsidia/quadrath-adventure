@@ -1,62 +1,90 @@
 # Quadrath Base Content
 
-The open, machine-readable foundation for **Quadrath**, a tabletop roleplaying game by Forsidia. Learn more on the [Forsidia Quadrath project page](https://forsidia.in/projects/quadrath-ttrpg). This package is intended to be the maintained source for the public game rules and starter content, and forms part of the free content for the upcoming Quadrath VTT.
+The open foundation for **Quadrath**, a tabletop roleplaying game by Forsidia. This repository contains the maintained rules and structured game data, the session handbook, and a portable database bundle for applications.
 
-## What is here
+[Quadrath product page](https://forsidia.in/products/quadrath-ttrpg) · [Forsidia](https://forsidia.in)
 
-- `content/manifest.json` — package metadata and content index.
-- `content/rules/` — core rules and the player-character model.
-- `content/characters/` — ready-to-use sample characters.
-- `content/magic/` and `content/lore/` — open setting and magic references.
-- `content/source/` — lossless structured imports of the complete source collection, including sessions, factions, stories, and the DM guide.
-- `schema/` — JSON Schema for content validation.
-- `scripts/quadrath.py` — dependency-free CLI for validation and Markdown generation.
-- `generated/quadrath.md` — generated reading copy; edit the JSON, then regenerate this file.
+## Work with the content
 
-## Quick start
-
-From this directory:
+Requires Python 3.10 or newer, with no third-party Python packages.
 
 ```sh
 python3 scripts/quadrath.py validate
 python3 scripts/quadrath.py render
+python3 scripts/bundle.py
+```
+
+The first command validates the data, D6 expressions, references, and equipped weapon bonuses. The second generates the session-ready handbook at `generated/quadrath.md`. The third exports `generated/quadrath-base.bundle.json`, containing the current content and an up-to-date handbook.
+
+The browser app lives in a separate repository. This repository has no React app, Node.js dependency, or deployment step.
+
+## Content layout
+
+| Directory | Contents |
+| --- | --- |
+| `content/rules/` | Core 2d6 rules and character model |
+| `content/characters/` | Merchant, teacher, and farmer player characters |
+| `content/magic/spells/` | Spell mechanics, damage, healing, and effects |
+| `content/equipment/` | Weapons, enchanted items, and equipment |
+| `content/npcs/` | Town NPCs and supporting cast |
+| `content/traps/` | Detection, disabling, saves, and consequences |
+| `content/adventures/` | Locations, quests, and encounter tables |
+| `content/sessions/` | Recorded play and continuity |
+| `content/factions/` and `content/lore/` | Factions, places, history, and stories |
+| `schema/` | Machine-readable format definitions |
+| `scripts/` | Validation, handbook rendering, and bundle export |
+| `generated/` | Handbook and distributable base bundle |
+
+`content/manifest.json` is the maintained content index. Edit the JSON, then regenerate the handbook and bundle. Full narrative text is retained in `reference_sections` within the relevant topic documents; the handbook uses a concise presentation for sessions.
+
+## Export an application database
+
+```sh
+python3 scripts/bundle.py
+python3 scripts/bundle.py --output /path/to/quadrath-base.bundle.json
+```
+
+The JSON bundle is designed to load as one database request in JavaScript applications. It includes:
+
+- A versioned `quadrath-content-bundle` format, pack ID, and content version.
+- The manifest and every registered document as `{ path, data }`.
+- A generated handbook and content license notice.
+- Attribution and a SHA-256 checksum of the canonical manifest, documents, and resources.
+
+Exports are deterministic: unchanged content yields the same bundle and checksum. Consumers should check the format version, document index, and checksum before replacing their existing database. The checksum detects changed content; it does not authenticate the publisher.
+
+```js
+const bundle = await fetch('/bundles/quadrath-base.bundle.json').then(r => r.json());
+const documents = bundle.documents;
+const spells = documents.find(entry => entry.data.id === 'spells.catalog').data.spells;
+```
+
+Publish the regenerated bundle alongside a content release so consuming applications can download that exact release or refresh from the repository's current branch. This package exports only open base content. Application-specific and paid packs belong in their respective application repositories.
+
+## Add and maintain records
+
+Create a JSON document in the appropriate directory and register its path and type in the manifest. For a new player character:
+
+```sh
 python3 scripts/quadrath.py add-character content/characters/my-character.json
 ```
 
-`add-character` validates a character and adds it to the manifest. It does not overwrite an existing id. New content can be added by creating a JSON file in the appropriate content directory and registering it in `content/manifest.json`.
+Keep stable IDs and update document versions as the game evolves. The fixed player sheet contains HP, AC, and modifiers for intelligence, constitution, dexterity, persuasion, and charisma; there are no underlying ability scores.
 
-To import or refresh a complete Markdown source collection:
+Healing is separate from damage. Spellcasting actions refer to `spell_ref`. Weapons have a numeric default `attack_bonus`, with `enchantment.attack_bonus` on the weapon and `equipment_attack_adjustment` on the equipped character action. The resolved action bonus is checked against those components.
+
+New mechanics assigned where notes lacked values carry draft labels and need balance review.
+
+## Checks
 
 ```sh
-python3 scripts/import_source.py /path/to/source-notes
-python3 scripts/quadrath.py validate
-python3 scripts/quadrath.py render
+python3 -m unittest discover -s scripts -p 'test_*.py'
 ```
 
-The data model deliberately keeps rules and presentation separate. Software can consume the JSON directly, while the renderer produces a human-readable Markdown reference for publishing or review.
-
-## Character model
-
-Quadrath characters use modifiers rather than full ability-score values. The base player sheet therefore has exactly these fields:
-
-- `hp`
-- `ac`
-- `modifiers.intelligence`
-- `modifiers.constitution`
-- `modifiers.dexterity`
-- `modifiers.persuasion`
-- `modifiers.charisma`
-
-`intelligence` is the canonical spelling used throughout the content model.
-
-## Scope and versioning
-
-This is the public base layer and free content foundation for the upcoming Forsidia VTT. The VTT may add paid or private content, but should be able to identify compatible base releases using `content/manifest.json` and each document's `id` and `version`.
-
-The current rules intentionally mark unresolved details as explicit extension points instead of silently inventing a larger ruleset. Additions should preserve stable ids and increment the relevant document version.
+Tests cover content validation, equipped weapon totals, and deterministic bundle generation.
 
 ## License
 
-Game content in `content/`, `schema/`, and `generated/` is released under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) as described in `CONTENT_LICENSE.md`.
+Game content in `content/`, `schema/`, and `generated/` is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); see [CONTENT_LICENSE.md](CONTENT_LICENSE.md). The Python tooling uses the [MIT License](LICENSE).
 
-The CLI is software and is released under the MIT License in `LICENSE`.
+This content forms part of the free foundation for the upcoming Quadrath VTT.

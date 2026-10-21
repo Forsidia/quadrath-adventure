@@ -1,0 +1,335 @@
+{
+  "id": "equipment.catalog",
+  "type": "equipment-catalog",
+  "version": "0.1.0",
+  "title": "Equipment and Weapons",
+  "attack_rule": "Roll 2d6 + weapon default attack_bonus + enchantment attack_bonus + character equipment adjustment vs AC. Character action attack_bonus is the resolved total.",
+  "weapons": [
+    {
+      "id": "weapon.dagger",
+      "name": "Dagger",
+      "attack_bonus": 1,
+      "damage": {
+        "roll": "1d6",
+        "type": "piercing"
+      },
+      "range": "melee",
+      "action_type": "action",
+      "resolution": {
+        "kind": "attack",
+        "roll": "2d6 + 1",
+        "against": "ac"
+      }
+    },
+    {
+      "id": "weapon.crossbow",
+      "name": "Crossbow",
+      "attack_bonus": 1,
+      "damage": {
+        "roll": "1d6",
+        "type": "piercing"
+      },
+      "range": "ranged",
+      "action_type": "action",
+      "resolution": {
+        "kind": "attack",
+        "roll": "2d6 + 1",
+        "against": "ac"
+      }
+    },
+    {
+      "id": "weapon.sword",
+      "name": "Sword",
+      "attack_bonus": 2,
+      "damage": {
+        "roll": "2d6",
+        "type": "slashing"
+      },
+      "range": "melee",
+      "action_type": "action",
+      "resolution": {
+        "kind": "attack",
+        "roll": "2d6 + 2",
+        "against": "ac"
+      }
+    },
+    {
+      "id": "weapon.blade",
+      "name": "Blade",
+      "attack_bonus": 3,
+      "damage": {
+        "roll": "2d6",
+        "type": "slashing"
+      },
+      "range": "melee",
+      "action_type": "action",
+      "resolution": {
+        "kind": "attack",
+        "roll": "2d6 + 3",
+        "against": "ac"
+      }
+    },
+    {
+      "id": "weapon.scimitar",
+      "name": "Scimitar",
+      "attack_bonus": 1,
+      "damage": {
+        "roll": "1d6",
+        "type": "slashing"
+      },
+      "range": "melee",
+      "action_type": "action",
+      "resolution": {
+        "kind": "attack",
+        "roll": "2d6 + 1",
+        "against": "ac"
+      }
+    },
+    {
+      "id": "weapon.spear",
+      "name": "Spear",
+      "attack_bonus": 1,
+      "damage": {
+        "roll": "1d6",
+        "type": "piercing"
+      },
+      "range": "melee",
+      "action_type": "action",
+      "resolution": {
+        "kind": "attack",
+        "roll": "2d6 + 1",
+        "against": "ac"
+      }
+    },
+    {
+      "id": "weapon.bow",
+      "name": "Bow",
+      "attack_bonus": 2,
+      "damage": {
+        "roll": "1d6",
+        "type": "piercing"
+      },
+      "range": "ranged",
+      "action_type": "action",
+      "resolution": {
+        "kind": "attack",
+        "roll": "2d6 + 2",
+        "against": "ac"
+      }
+    },
+    {
+      "id": "weapon.improvised",
+      "name": "Improvised Weapon",
+      "attack_bonus": 0,
+      "damage": {
+        "roll": "1d6",
+        "type": "bludgeoning"
+      },
+      "range": "varies",
+      "action_type": "action",
+      "resolution": {
+        "kind": "attack",
+        "roll": "2d6 + 0",
+        "against": "ac"
+      }
+    },
+    {
+      "id": "weapon.stone-fist",
+      "name": "Stone Fist",
+      "attack_bonus": 2,
+      "damage": {
+        "roll": "2d6",
+        "type": "bludgeoning"
+      },
+      "range": "melee",
+      "action_type": "action",
+      "resolution": {
+        "kind": "attack",
+        "roll": "2d6 + 2",
+        "against": "ac"
+      }
+    },
+    {
+      "id": "weapon.bursting-fist",
+      "name": "Bursting Fist",
+      "attack_bonus": 3,
+      "damage": {
+        "roll": "3d6",
+        "type": [
+          "piercing",
+          "bludgeoning"
+        ]
+      },
+      "range": "melee",
+      "action_type": "action",
+      "resolution": {
+        "kind": "attack",
+        "roll": "2d6 + 3",
+        "against": "ac"
+      }
+    },
+    {
+      "id": "weapon.anti-magic-sword",
+      "name": "Anti-Magic Sword",
+      "attack_bonus": 2,
+      "damage": {
+        "roll": "4d6",
+        "type": "slashing"
+      },
+      "effect": "On a hit, negates magical attacks and effects on the target.",
+      "action_type": "action",
+      "enchantment": {
+        "name": "Anti-magic enchantment",
+        "attack_bonus": 2,
+        "effect": "On a hit, negates magical attacks and effects on the target."
+      },
+      "resolution": {
+        "kind": "attack",
+        "roll": "2d6 + 4",
+        "against": "ac"
+      }
+    },
+    {
+      "id": "weapon.kick-of-fury",
+      "name": "Kick of Fury",
+      "attack_bonus": 4,
+      "damage": {
+        "roll": "3d6",
+        "type": "bludgeoning"
+      },
+      "range": "melee",
+      "action_type": "action",
+      "resolution": {
+        "kind": "attack",
+        "roll": "2d6 + 4",
+        "against": "ac"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "item.blast-charge",
+      "name": "Blast Charge",
+      "stock": 2,
+      "action_type": "action",
+      "range": "20 ft",
+      "save": {
+        "ability": "constitution",
+        "dc": 9
+      },
+      "area": "10 ft",
+      "damage": {
+        "roll": "4d6",
+        "type": [
+          "fire",
+          "thunder"
+        ],
+        "on_success": "half damage"
+      },
+      "effect": "Conspicuous and dangerous in crowded streets."
+    },
+    {
+      "id": "item.smoke-bomb",
+      "name": "Smoke Bomb",
+      "stock": 2,
+      "action_type": "action",
+      "area": "15 ft radius",
+      "duration": "3 rounds",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "Heavy obscurement; ranged attacks through smoke are -2."
+    },
+    {
+      "id": "item.flash-charge",
+      "name": "Flash Charge",
+      "stock": 1,
+      "action_type": "action",
+      "area": "10 ft",
+      "save": {
+        "ability": "constitution",
+        "dc": 9
+      },
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "On a failed save, blinded until the end of the target's next turn."
+    },
+    {
+      "id": "item.health-potion",
+      "name": "Health Potion",
+      "action_type": "action",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "Restore the rolled HP.",
+      "healing": {
+        "roll": "2d6",
+        "maximum": "max_hp"
+      }
+    },
+    {
+      "id": "item.mana-potion",
+      "name": "Mana Potion",
+      "action_type": "action",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "Causes the user's spells to be doubly effective for the relevant effect."
+    },
+    {
+      "id": "item.clan-cloak",
+      "name": "Shared Clan Cloak",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "Invisibility for up to 15 minutes at a time; resistance to divine, lightning, piercing, and slashing damage."
+    },
+    {
+      "id": "item.leaders-mask",
+      "name": "Leader's Mask",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "See in total darkness up to 100 meters and gain resistance to psychic damage; enables Fear and Hold Monster without cooldown."
+    },
+    {
+      "id": "item.old-mans-bracelet",
+      "name": "Old Man's Wooden Bracelet",
+      "damage": {
+        "roll": "2d6",
+        "type": "lightning"
+      },
+      "effect": "Casts Lightning Beam with a 0.5 second cooldown."
+    },
+    {
+      "id": "item.wolfs-bracelet",
+      "name": "Wolf's Wooden Bracelet",
+      "damage": {
+        "roll": "2d6",
+        "type": "fire"
+      },
+      "effect": "Casts Fire Beam and Fire Slash with a 3 second cooldown."
+    },
+    {
+      "id": "item.wolfs-ring",
+      "name": "Wolf's Ring",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "Immunity to fire and poison."
+    }
+  ],
+  "bonus_model": {
+    "weapon": "attack_bonus is the default bonus for any wielder.",
+    "enchantment": "enchantment.attack_bonus adds to the default bonus on the weapon itself.",
+    "character": "equipment_attack_adjustment belongs to the equipped character action, not the weapon catalog."
+  }
+}

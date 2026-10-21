@@ -1,0 +1,119 @@
+{
+  "id": "traps.catalog",
+  "type": "trap-catalog",
+  "version": "0.1.0",
+  "title": "D6 Trap Catalog",
+  "resolution": "A creature notices or disables a trap with an INT check against its DC. A triggered trap uses its listed save and damage.",
+  "traps": [
+    {
+      "id": "trap.needle-lock",
+      "name": "Poison Needle Lock",
+      "trigger": "Opening a trapped lock without disarming it",
+      "notice": {
+        "ability": "intelligence",
+        "dc": 8
+      },
+      "disable": {
+        "ability": "intelligence",
+        "dc": 9
+      },
+      "save": {
+        "ability": "constitution",
+        "dc": 8
+      },
+      "damage": {
+        "roll": "1d6",
+        "type": "poison"
+      },
+      "effect": "On a failed save, the target is poisoned until the end of its next turn."
+    },
+    {
+      "id": "trap.falling-stones",
+      "name": "Falling Stones",
+      "trigger": "Crossing a cracked archway",
+      "notice": {
+        "ability": "intelligence",
+        "dc": 10
+      },
+      "disable": {
+        "ability": "dexterity",
+        "dc": 10
+      },
+      "save": {
+        "ability": "dexterity",
+        "dc": 10
+      },
+      "damage": {
+        "roll": "2d6",
+        "type": "bludgeoning"
+      },
+      "effect": "On a successful save, take half damage; the route becomes blocked."
+    },
+    {
+      "id": "trap.fire-rune",
+      "name": "Fire Rune",
+      "trigger": "Touching or crossing the marked threshold",
+      "notice": {
+        "ability": "intelligence",
+        "dc": 10
+      },
+      "disable": {
+        "ability": "intelligence",
+        "dc": 12
+      },
+      "save": {
+        "ability": "dexterity",
+        "dc": 10
+      },
+      "damage": {
+        "roll": "3d6",
+        "type": "fire"
+      },
+      "effect": "The rune flashes and burns creatures in a 10 ft area; half damage on a successful save."
+    },
+    {
+      "id": "trap.net-snare",
+      "name": "Weighted Net Snare",
+      "trigger": "Stepping on a concealed pressure plate",
+      "notice": {
+        "ability": "intelligence",
+        "dc": 8
+      },
+      "disable": {
+        "ability": "dexterity",
+        "dc": 8
+      },
+      "save": {
+        "ability": "dexterity",
+        "dc": 9
+      },
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "The target is restrained until it uses an action and succeeds on a CON or DEX DC 9 check."
+    },
+    {
+      "id": "trap.alarm-seal",
+      "name": "Archive Alarm Seal",
+      "trigger": "Opening the scroll case incorrectly",
+      "notice": {
+        "ability": "intelligence",
+        "dc": 10
+      },
+      "disable": {
+        "ability": "intelligence",
+        "dc": 10
+      },
+      "save": {
+        "ability": "none",
+        "dc": 0
+      },
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "Raises an alarm and awakens one additional archive guardian."
+    }
+  ]
+}

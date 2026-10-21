@@ -5,13 +5,59 @@
   "title": "Player Character Model",
   "summary": "The stable player-sheet fields used by Quadrath base content.",
   "fields": [
-    {"id": "hp", "kind": "resource", "value_type": "integer", "required": true, "description": "Current hit points."},
-    {"id": "ac", "kind": "defense", "value_type": "integer", "required": true, "description": "Armor class; attacks must meet or exceed it."},
-    {"id": "intelligence", "kind": "modifier", "value_type": "integer", "required": true, "description": "Reasoning, memory, study, and technical understanding."},
-    {"id": "constitution", "kind": "modifier", "value_type": "integer", "required": true, "description": "Endurance, resilience, and physical grit."},
-    {"id": "dexterity", "kind": "modifier", "value_type": "integer", "required": true, "description": "Agility, balance, reflexes, and initiative."},
-    {"id": "persuasion", "kind": "modifier", "value_type": "integer", "required": true, "description": "Convincing, negotiating, and leading through words."},
-    {"id": "charisma", "kind": "modifier", "value_type": "integer", "required": true, "description": "Presence, confidence, and force of personality."}
+    {
+      "id": "hp",
+      "kind": "resource",
+      "value_type": "integer",
+      "required": true,
+      "description": "Current hit points."
+    },
+    {
+      "id": "ac",
+      "kind": "defense",
+      "value_type": "integer",
+      "required": true,
+      "description": "Armor class; attacks must meet or exceed it."
+    },
+    {
+      "id": "intelligence",
+      "kind": "modifier",
+      "value_type": "integer",
+      "required": true,
+      "description": "Reasoning, memory, study, and technical understanding."
+    },
+    {
+      "id": "constitution",
+      "kind": "modifier",
+      "value_type": "integer",
+      "required": true,
+      "description": "Endurance, resilience, and physical grit."
+    },
+    {
+      "id": "dexterity",
+      "kind": "modifier",
+      "value_type": "integer",
+      "required": true,
+      "description": "Agility, balance, reflexes, and initiative."
+    },
+    {
+      "id": "persuasion",
+      "kind": "modifier",
+      "value_type": "integer",
+      "required": true,
+      "description": "Convincing, negotiating, and leading through words."
+    },
+    {
+      "id": "charisma",
+      "kind": "modifier",
+      "value_type": "integer",
+      "required": true,
+      "description": "Presence, confidence, and force of personality."
+    }
   ],
-  "notes": ["Modifiers are the recorded values; base content does not require hidden ability scores.", "Character-specific bonuses may be represented as effects or traits rather than changing the sheet fields.", "The canonical key is intelligence."]
+  "notes": [
+    "Modifiers are the recorded values; base content does not require hidden ability scores.",
+    "Character-specific bonuses may be represented as effects or traits rather than changing the sheet fields.",
+    "The canonical key is intelligence."
+  ]
 }

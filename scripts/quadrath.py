@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -36,6 +37,18 @@ def validate_document(data, path: Path):
         raise ValueError(f"{path.relative_to(ROOT)}: missing {', '.join(missing)}")
     if not isinstance(data["id"], str) or not data["id"]:
         raise ValueError(f"{path.relative_to(ROOT)}: id must be a non-empty string")
+    def validate_action(action, location):
+        if isinstance(action, dict) and 'spell_ref' in action:
+            return
+        if not isinstance(action, dict) or "damage" not in action:
+            raise ValueError(f"{path.relative_to(ROOT)}: {location} must declare damage")
+        damage = action["damage"]
+        if not isinstance(damage, dict) or not {"roll", "type"}.issubset(damage):
+            raise ValueError(f"{path.relative_to(ROOT)}: {location} damage must declare roll and type")
+        if not re.fullmatch(r'(?:0|[1-9][0-9]*d6)(?: \+ (?:INT|intelligence|[0-9]+))?', damage['roll']):
+            raise ValueError(f'{location}: invalid D6 damage roll')
+        if damage['type'] in ('varies', 'healing', 'mana'):
+            raise ValueError(f'{location}: invalid damage type')
     if data["type"] == "character":
         sheet = data.get("sheet", {})
         if set(sheet) != {"hp", "ac", "modifiers"}:
@@ -44,6 +57,26 @@ def validate_document(data, path: Path):
             raise ValueError(f"{path.relative_to(ROOT)}: character modifiers do not match the fixed player sheet")
         if any(not isinstance(value, int) for value in [sheet["hp"], sheet["ac"], *sheet["modifiers"].values()]):
             raise ValueError(f"{path.relative_to(ROOT)}: sheet values must be integers")
+        for action in data.get("actions", []):
+            validate_action(action, f"character {data['id']} action")
+    if data["type"] == "spell-catalog":
+        for spell in data.get("spells", []):
+            validate_action(spell, f"spell {spell.get('id', '?')}")
+    if data["type"] == "equipment-catalog":
+        for weapon in data.get('weapons', []):
+            if type(weapon.get('attack_bonus')) is not int:
+                raise ValueError('weapon attack_bonus must be an integer default')
+            if type(weapon.get('enchantment', {}).get('attack_bonus', 0)) is not int:
+                raise ValueError('enchantment attack_bonus must be an integer')
+        for item in data.get("weapons", []) + data.get("items", []):
+            validate_action(item, f"equipment {item.get('id', '?')}")
+    if data["type"] == "npc-catalog":
+        for npc in data.get("npcs", []):
+            for action in npc.get("actions", []) + npc.get("abilities", []):
+                validate_action(action, f"NPC {npc.get('id', '?')} action")
+    if data["type"] == "trap-catalog":
+        for trap in data.get("traps", []):
+            validate_action(trap, f"trap {trap.get('id', '?')}")
 
 
 def validate(_args):
@@ -58,7 +91,33 @@ def validate(_args):
             raise ValueError(f"manifest type mismatch for {path.relative_to(ROOT)}")
     if len(seen) != len(manifest["documents"]):
         raise ValueError("manifest contains duplicate document entries")
-    print(f"valid: {len(seen)} documents")
+    entries=list(documents())
+    ids=set()
+    refs=[]
+    def inspect(value):
+        if isinstance(value, dict):
+            if isinstance(value.get('id'),str): ids.add(value['id'])
+            for key,item in value.items():
+                if key.endswith('_ref'): refs.append(item)
+                if key=='roll' and isinstance(item,str) and not re.fullmatch(r'(?:0|[1-9][0-9]*d6)(?: \+ (?:INT|intelligence|constitution|dexterity|persuasion|charisma|[0-9]+))?',item):
+                    raise ValueError(f'invalid dice expression: {item}')
+                inspect(item)
+        elif isinstance(value,list):
+            for item in value:inspect(item)
+    for _,_,data in entries:inspect(data)
+    for ref in refs:
+        if ref not in ids and not (CONTENT/ref).is_file():raise ValueError(f'broken reference: {ref}')
+    weapons={w['id']:w for _,_,data in entries for w in data.get('weapons', [])}
+    for _,_,data in entries:
+        for character in data.get('npcs', [data]):
+            for action in character.get('actions', []):
+                if 'weapon_ref' not in action: continue
+                weapon=weapons[action['weapon_ref']]
+                adjustment=action.get('equipment_attack_adjustment', 0)
+                if type(adjustment) is not int:raise ValueError('equipment adjustment must be an integer')
+                total=weapon['attack_bonus']+weapon.get('enchantment', {}).get('attack_bonus',0)+adjustment
+                if action.get('attack_bonus')!=total:raise ValueError('equipped weapon bonus does not match resolved action bonus')
+    print(f"valid: {len(seen)} documents; dice and references checked")
 
 
 def inline(value):
@@ -81,21 +140,22 @@ def render_value(lines, key, value, level=2):
             lines.append(f"{'#' * (level + 1)} {label}")
             for child_key, child_value in item.items():
                 if child_key not in {"title", "name", "id"}:
-                    lines.append(f"- **{child_key.replace('_', ' ').title()}:** {inline(child_value)}")
+                    lines.append(f"- **{child_key.replace('_', ' ').title()}:** {inline(child_value)}".rstrip())
     else:
-        lines.append(f"- **{key.replace('_', ' ').title()}:** {inline(value)}")
+        lines.append(f"- **{key.replace('_', ' ').title()}:** {inline(value)}".rstrip())
 
 
 def render(_args):
     validate(_args)
+    from handbook import build_handbook
+    output = ROOT / 'generated' / 'quadrath.md'
+    output.write_text(build_handbook([data for _,_,data in documents()]),encoding='utf-8')
+    print(f'rendered: {output.relative_to(ROOT)}')
+    return
     manifest = read_json(MANIFEST_PATH)
     lines = [f"# {manifest['title']}", "", manifest["description"], "", f"Version: `{manifest['version']}`", ""]
     for entry, _path, data in documents():
         lines.extend([f"## {data['title']}", "", f"_Document id: `{data['id']}` · type: `{entry['type']}`_", ""])
-        if data.get("type") == "source-document":
-            source_markdown = "\n".join(line.rstrip() for line in data["source_markdown"].splitlines()).rstrip()
-            lines.extend([source_markdown, ""])
-            continue
         for key, value in data.items():
             if key not in {"id", "type", "version", "title", "summary"}:
                 render_value(lines, key, value)

@@ -1,0 +1,55 @@
+{
+  "id": "lore.planes",
+  "type": "lore",
+  "version": "0.1.0",
+  "title": "Planes and Kingdoms Beyond Quadrath",
+  "places": [
+    {
+      "id": "dragon-kingdom",
+      "name": "Dragon Kingdom",
+      "description": "Home to the dragons and Dragon Lords."
+    },
+    {
+      "id": "light-square",
+      "name": "Light Square",
+      "description": "A plane approximately the size of the Quadrathian Plane and Dark Square. It is home to the TrueLights, effectively immortal beings who source TrueLight energies and protect the Mortal Plane. They possess legendary light armor and weapons and can cast many spells without incantation. Quadrathian clerics draw on TrueLight and may communicate with them."
+    },
+    {
+      "id": "dark-square",
+      "name": "Dark Square",
+      "description": "A plane approximately the size of Light Square and the Quadrathian Plane. It is not below Quadrath; it is a greater extension containing it. When Light Square cast its shadow across the Dark Square, the shadowed portion became Quadrath. TrueDark reaches far beyond the known Mortal Plane."
+    },
+    {
+      "id": "bondry-mountains",
+      "name": "Bondry Mountains",
+      "description": "Mountains surrounding the four kingdoms, home to many varieties of Giants and some rogue dragons outside the Dragon Kingdom."
+    }
+  ],
+  "reference_sections": [
+    {
+      "title": "Kingdoms beyond Quadrath",
+      "sections": [
+        {
+          "heading": "Kingdoms beyond Quadrath",
+          "text": ""
+        },
+        {
+          "heading": "Dragon Kingdom",
+          "text": "Home to the dragons and Dragon Lords."
+        },
+        {
+          "heading": "Light Square",
+          "text": "The Light Square is a plane approximately the same size as the Quadrathian Plane (Mortal Plane) and the Dark Square. It is home to the TrueLights, powerful beings who are the source of TrueLight magical energies in the Quadrathian universe. They are considered effectively immortal and on-par with, or beyond, the legendary creatures of Quadrath. TrueLights maintain the balance of TrueLight energies and protect the Mortal Plane from threats beyond it.\n\nThey possess rare legendary armor and weapons of light enchantment for defense and offense. They can also cast many spells without incantation, something no mortal can do with the exception of some legendary wizards and sorcerers. Clerics of Quadrath draw upon TrueLight energies and may communicate with the TrueLights from the Mortal Plane."
+        },
+        {
+          "heading": "Dark Square",
+          "text": "The Dark Square is a plane approximately the same size as the Light Square and the Quadrathian Plane. It is not below the Quadrathian Plane; rather, it is a greater extension that contains it. When the Light Square cast its shadow across the Dark Square, the shadowed portion became Quadrath—the Mortal Plane. The Dark Square still extends beyond Quadrath, where the TrueDark reaches far beyond the lands known to its inhabitants."
+        },
+        {
+          "heading": "The Bondry Mountains",
+          "text": "The four kingdoms are surrounded by the **Bondry Mountains** which are home to many varieties of Giants and some rogue dragons (who are not part of the Dragon Kingdom)"
+        }
+      ]
+    }
+  ]
+}

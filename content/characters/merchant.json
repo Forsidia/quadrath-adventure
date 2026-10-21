@@ -8,8 +8,104 @@
   "description": "A practical trader who knows routes, prices, and how to keep a negotiation moving.",
   "level": 1,
   "tier": "novice",
-  "sheet": {"hp": 8, "ac": 10, "modifiers": {"intelligence": 2, "constitution": 0, "dexterity": 1, "persuasion": 2, "charisma": 1}},
-  "traits": ["Market sense", "Route memory", "Measured bargaining"],
-  "equipment": ["Ledger", "Traveling scale", "Trade goods", "Practical clothing"],
-  "hooks": ["A shipment has vanished between kingdoms.", "A rival merchant is selling goods no one remembers importing."]
+  "sheet": {
+    "hp": 26,
+    "ac": 8,
+    "modifiers": {
+      "intelligence": 3,
+      "constitution": 1,
+      "dexterity": 1,
+      "persuasion": 2,
+      "charisma": 1
+    }
+  },
+  "actions": [
+    {
+      "id": "attack-dagger",
+      "name": "Dagger",
+      "action_type": "action",
+      "attack_bonus": 1,
+      "damage": {
+        "roll": "1d6",
+        "type": "piercing"
+      },
+      "resolution": {
+        "kind": "attack",
+        "roll": "2d6 + 1",
+        "against": "ac"
+      },
+      "weapon_ref": "weapon.dagger",
+      "equipment_attack_adjustment": 0
+    },
+    {
+      "id": "attack-crossbow",
+      "name": "Crossbow",
+      "action_type": "action",
+      "attack_bonus": 1,
+      "damage": {
+        "roll": "1d6",
+        "type": "piercing"
+      },
+      "resolution": {
+        "kind": "attack",
+        "roll": "2d6 + 1",
+        "against": "ac"
+      },
+      "weapon_ref": "weapon.crossbow",
+      "equipment_attack_adjustment": 0
+    }
+  ],
+  "traits": [
+    "Market sense",
+    "Route memory",
+    "Measured bargaining"
+  ],
+  "equipment": [
+    "Ledger",
+    "Traveling scale",
+    "Trade goods",
+    "Practical clothing",
+    "Dagger",
+    "Crossbow"
+  ],
+  "hooks": [
+    "A shipment has vanished between kingdoms.",
+    "A rival merchant is selling goods no one remembers importing."
+  ],
+  "abilities": [
+    {
+      "name": "Experienced Trader",
+      "check_modifier": {"ability": "intelligence", "contexts": ["commerce", "appraisal"], "bonus": 2},
+      "action_type": "passive",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "+2 to INT checks involving appraisal or commerce."
+    },
+    {
+      "name": "Silver Tongue",
+      "action_type": "short-rest",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "Reroll a failed negotiation check."
+    },
+    {
+      "name": "Emergency Dodge",
+      "action_type": "short-rest",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "+2 AC against one attack."
+    }
+  ],
+  "backstory": "A travelling trader accustomed to bargaining from a position of strength, the merchant hired Garran and Veyra to protect the wagon. In the played visit to Okla Deli, refusal to pay a 2 GP gate fee escalated into a deadly confrontation. The merchant rejected surrender and was killed by the Guard Sergeant; both escorts were jailed.",
+  "continuity": {
+    "session_ref": "sessions.okla-deli",
+    "status_after_session_1": "dead",
+    "sheet_usage": "Pre-session playable sheet; death belongs to the recorded campaign, not every new game."
+  }
 }

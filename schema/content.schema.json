@@ -6,7 +6,7 @@
   "required": ["id", "type", "version", "title"],
   "properties": {
     "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$"},
-    "type": {"type": "string", "enum": ["rules", "character", "magic", "lore", "source-document"]},
+    "type": {"type": "string", "enum": ["rules", "character", "magic", "lore", "story", "faction", "adventure", "session-record", "spell-catalog", "equipment-catalog", "npc-catalog", "trap-catalog"]},
     "version": {"type": "string"},
     "title": {"type": "string", "minLength": 1}
   },

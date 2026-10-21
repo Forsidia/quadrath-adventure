@@ -1,0 +1,110 @@
+{
+  "id": "sessions.okla-deli",
+  "type": "session-record",
+  "version": "0.1.0",
+  "title": "Okla Deli TTRPG Sessions",
+  "sessions": [
+    {
+      "id": "session-1",
+      "title": "Merchant's Visit",
+      "status": "completed",
+      "scenes": [
+        {
+          "title": "Arrival at the town gate",
+          "events": [
+            "The merchant and two elite guards arrive.",
+            "Two town guards demand 2 GP entry fee.",
+            "The merchant refuses and fails an intimidation check.",
+            "The guards draw spears; one is seriously injured and the other lets the party pass."
+          ]
+        },
+        {
+          "title": "Town hub and library",
+          "events": [
+            "The library is closed.",
+            "The merchant sees the town mage's volunteer notice but ignores it and goes to market."
+          ]
+        },
+        {
+          "title": "Market confrontation",
+          "events": [
+            "Three guards demand a 10 GP fine and threaten arrest.",
+            "The merchant refuses; ten guards and the Guard Sergeant join the combat."
+          ]
+        },
+        {
+          "title": "Battle and arrest",
+          "events": [
+            "Five guards die.",
+            "The sergeant, below half HP, offers surrender and 100 GP bail.",
+            "The merchant refuses and is killed by the sergeant.",
+            "The two elite guards surrender as reinforcements and archers arrive."
+          ]
+        },
+        {
+          "title": "Aftermath",
+          "events": [
+            "Residents say the merchant died for a meagre 2 GP because of ego.",
+            "The sergeant and injured guards receive treatment.",
+            "The Guard Captain praises the sergeant and hints at a reward from the mayor."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "session-2",
+      "title": "Visit to Jungle",
+      "status": "ongoing",
+      "scenes": []
+    },
+    {
+      "id": "session-3",
+      "title": "Teacher's Quest",
+      "status": "ongoing",
+      "scenes": []
+    }
+  ],
+  "reference_sections": [
+    {
+      "title": "Okla Deli TTRPG Sessions",
+      "sections": [
+        {
+          "heading": "Okla Deli TTRPG Sessions",
+          "text": ""
+        },
+        {
+          "heading": "Session 1: Merchant’s Visit",
+          "text": ""
+        },
+        {
+          "heading": "Arrival at the town gate",
+          "text": "The merchant and two elite guards arrive near the entrance to town.\n\nTwo town guards are stationed at the gate. One asks the merchant the reason for the visit and becomes somewhat alert after seeing the two elite guards. He asks the merchant to pay 2 GP to enter.\n\nThe merchant refuses, arguing that there should be no entry fee.\n\nThe merchant then attempts to intimidate the guards but fails the check. The guards draw their spears.\n\nAfter the combat, one town guard is seriously injured. The other is frightened and allows the party to pass through."
+        },
+        {
+          "heading": "The town hub and library",
+          "text": "The party reaches the town hub and decides to travel toward the town library, but the library is closed.\n\nThe merchant sees a note on the noticeboard stating that the town mage is looking for a volunteer to accompany him on a quest. The merchant ignores the note and continues with the guards toward the market to trade some items."
+        },
+        {
+          "heading": "The market confrontation",
+          "text": "A group of three guards blocks the party’s way and asks whether they caused trouble near the entry gate. The merchant tries to avoid the confrontation, but the guards continue blocking the way and demand 10 GP as a fine for the nuisance. Otherwise, they threaten arrest.\n\nThe merchant refuses outright and also refuses to submit to arrest. Angered and annoyed, the guard team calls for more guards. There are now ten town guards present, and the Guard Sergeant joins the combat."
+        },
+        {
+          "heading": "The battle and arrest",
+          "text": "After a brutal battle, five guards are dead. The sergeant is slightly below half HP but still standing. He gives the merchant the option to surrender and be arrested, with bail set at 100 GP.\n\nThe merchant continues to refuse. The sergeant is then able to target the merchant directly and kill him with a sword attack.\n\nThe two elite guards are taken to the town jail. One is nearly incapacitated; the other still has good HP but is unwilling to continue fighting, especially as more reinforcements arrive and the archers begin taking position. They are made to surrender."
+        },
+        {
+          "heading": "Aftermath",
+          "text": "Bystanders and town residents tell pitying stories about how the merchant died for a meagre 2 GP because of his ego.\n\nThe sergeant and the injured town guards are taken to the town medic and begin treatment.\n\nLater, the Guard Captain arrives, praises the sergeant, and says that he may soon be rewarded by the mayor.\n\n---"
+        },
+        {
+          "heading": "Session 2: Visit to Jungle (ongoing)",
+          "text": "---"
+        },
+        {
+          "heading": "Session 3: Teacher's Quest (ongoing)",
+          "text": "---"
+        }
+      ]
+    }
+  ]
+}
