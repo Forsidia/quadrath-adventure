@@ -1,0 +1,59 @@
+{
+  "id": "source.character-levels",
+  "type": "source-document",
+  "version": "0.1.0",
+  "title": "Character Levels",
+  "source_path": "Character Levels.md",
+  "blocks": [
+    {
+      "kind": "heading",
+      "level": 1,
+      "text": "Character Levels"
+    },
+    {
+      "kind": "list",
+      "ordered": false,
+      "items": [
+        "1 to 5: Novice"
+      ]
+    },
+    {
+      "kind": "code",
+      "text": "Starting adventurers finding their footing in the world, learning the basics of their craft."
+    },
+    {
+      "kind": "list",
+      "ordered": false,
+      "items": [
+        "5 to 10: Adept"
+      ]
+    },
+    {
+      "kind": "code",
+      "text": "Skilled practitioners who have honed their abilities and begun to make a name for themselves."
+    },
+    {
+      "kind": "list",
+      "ordered": false,
+      "items": [
+        "10 to 15: Master"
+      ]
+    },
+    {
+      "kind": "code",
+      "text": "Renowned heroes whose prowess is widely recognized, capable of feats that inspire awe."
+    },
+    {
+      "kind": "list",
+      "ordered": false,
+      "items": [
+        "15 to 20: Legendary"
+      ]
+    },
+    {
+      "kind": "code",
+      "text": "Living legends whose deeds shape the fate of Quadrath, wielding power that rivals the gods."
+    }
+  ],
+  "source_markdown": "# Character Levels\n\n- 1 to 5: Novice  \n    Starting adventurers finding their footing in the world, learning the basics of their craft.\n    \n- 5 to 10: Adept  \n    Skilled practitioners who have honed their abilities and begun to make a name for themselves.\n    \n- 10 to 15: Master  \n    Renowned heroes whose prowess is widely recognized, capable of feats that inspire awe.\n    \n- 15 to 20: Legendary  \n    Living legends whose deeds shape the fate of Quadrath, wielding power that rivals the gods."
+}

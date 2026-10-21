@@ -8,6 +8,7 @@ The open, machine-readable foundation for **Quadrath**, a tabletop roleplaying g
 - `content/rules/` — core rules and the player-character model.
 - `content/characters/` — ready-to-use sample characters.
 - `content/magic/` and `content/lore/` — open setting and magic references.
+- `content/source/` — lossless structured imports of the complete source collection, including sessions, factions, stories, and the DM guide.
 - `schema/` — JSON Schema for content validation.
 - `scripts/quadrath.py` — dependency-free CLI for validation and Markdown generation.
 - `generated/quadrath.md` — generated reading copy; edit the JSON, then regenerate this file.
@@ -23,6 +24,14 @@ python3 scripts/quadrath.py add-character content/characters/my-character.json
 ```
 
 `add-character` validates a character and adds it to the manifest. It does not overwrite an existing id. New content can be added by creating a JSON file in the appropriate content directory and registering it in `content/manifest.json`.
+
+To import or refresh a complete Markdown source collection:
+
+```sh
+python3 scripts/import_source.py /path/to/source-notes
+python3 scripts/quadrath.py validate
+python3 scripts/quadrath.py render
+```
 
 The data model deliberately keeps rules and presentation separate. Software can consume the JSON directly, while the renderer produces a human-readable Markdown reference for publishing or review.
 

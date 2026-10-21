@@ -9,12 +9,93 @@
   "schema_version": "0.1.0",
   "description": "The open rules, character model, starter characters, magic reference, and setting foundation for Quadrath.",
   "documents": [
-    {"path": "rules/core.json", "type": "rules"},
-    {"path": "rules/character.json", "type": "rules"},
-    {"path": "characters/merchant.json", "type": "character"},
-    {"path": "characters/teacher.json", "type": "character"},
-    {"path": "characters/farmer.json", "type": "character"},
-    {"path": "magic/magic-system.json", "type": "magic"},
-    {"path": "lore/four-kingdoms.json", "type": "lore"}
-  ]
+    {
+      "path": "rules/core.json",
+      "type": "rules"
+    },
+    {
+      "path": "rules/character.json",
+      "type": "rules"
+    },
+    {
+      "path": "characters/merchant.json",
+      "type": "character"
+    },
+    {
+      "path": "characters/teacher.json",
+      "type": "character"
+    },
+    {
+      "path": "characters/farmer.json",
+      "type": "character"
+    },
+    {
+      "path": "magic/magic-system.json",
+      "type": "magic"
+    },
+    {
+      "path": "lore/four-kingdoms.json",
+      "type": "lore"
+    },
+    {
+      "path": "source/01-world-kingdoms-east-kingdom.json",
+      "type": "source-document"
+    },
+    {
+      "path": "source/01-world-kingdoms-kingdoms-of-quadrath.json",
+      "type": "source-document"
+    },
+    {
+      "path": "source/01-world-kingdoms-north-kingdom.json",
+      "type": "source-document"
+    },
+    {
+      "path": "source/01-world-kingdoms-south-kingdom.json",
+      "type": "source-document"
+    },
+    {
+      "path": "source/01-world-kingdoms-west-kingdom.json",
+      "type": "source-document"
+    },
+    {
+      "path": "source/01-world-planes-kingdoms-beyond-quadrath.json",
+      "type": "source-document"
+    },
+    {
+      "path": "source/02-magic-magic-system.json",
+      "type": "source-document"
+    },
+    {
+      "path": "source/03-history-war-of-the-dragon-s-wrath.json",
+      "type": "source-document"
+    },
+    {
+      "path": "source/04-factions-travellers-of-the-dark.json",
+      "type": "source-document"
+    },
+    {
+      "path": "source/05-stories-the-journey-to-the-sword-of-gleam.json",
+      "type": "source-document"
+    },
+    {
+      "path": "source/06-ttrpg-sessions-okla-deli-ttrpg-sessions.json",
+      "type": "source-document"
+    },
+    {
+      "path": "source/06-ttrpg-sessions-quadrath-d6-ttrpg-dm-guide.json",
+      "type": "source-document"
+    },
+    {
+      "path": "source/character-levels.json",
+      "type": "source-document"
+    },
+    {
+      "path": "source/start-here.json",
+      "type": "source-document"
+    }
+  ],
+  "source_documents": {
+    "count": 14,
+    "imported_from": "Quadrath Markdown source collection"
+  }
 }

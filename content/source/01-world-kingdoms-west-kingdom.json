@@ -1,0 +1,36 @@
+{
+  "id": "source.01-world-kingdoms-west-kingdom",
+  "type": "source-document",
+  "version": "0.1.0",
+  "title": "West Kingdom",
+  "source_path": "01 - World/Kingdoms/West Kingdom.md",
+  "blocks": [
+    {
+      "kind": "heading",
+      "level": 1,
+      "text": "West Kingdom"
+    },
+    {
+      "kind": "list",
+      "ordered": false,
+      "items": [
+        "Ruler: King Elyndor Swiftarrow, the Legendary Ranger"
+      ]
+    },
+    {
+      "kind": "list",
+      "ordered": false,
+      "items": [
+        "Description: The West Kingdom stretches across vast plains, rolling hills, and ancient woodlands teeming with life. King Elyndor, a lithe and weathered figure with a bow that never misses its mark, is a master of the wilds. His legendary ranger skills let him track prey across continents and commune with the beasts of the land. The people of the West are explorers, hunters, and druids who live in harmony with nature, though they fiercely defend their borders with guerrilla tactics. Villages are built into treetops or carved into cliffs, and archery contests and beast-taming rituals are central to their culture. Elyndor’s bond with a massive silver wolf companion is the stuff of tavern tales."
+      ]
+    },
+    {
+      "kind": "list",
+      "ordered": false,
+      "items": [
+        "The west kingdom also has a port called Port Westward which is sometimes visited by undead skeletons swimming over from the nearby Earn Island which has fallen to a mysterious TrueDark infestation causing various sorts of undead creatures to occupy it."
+      ]
+    }
+  ],
+  "source_markdown": "# West Kingdom\n\n- Ruler: King Elyndor Swiftarrow, the Legendary Ranger\n\n- Description: The West Kingdom stretches across vast plains, rolling hills, and ancient woodlands teeming with life. King Elyndor, a lithe and weathered figure with a bow that never misses its mark, is a master of the wilds. His legendary ranger skills let him track prey across continents and commune with the beasts of the land. The people of the West are explorers, hunters, and druids who live in harmony with nature, though they fiercely defend their borders with guerrilla tactics. Villages are built into treetops or carved into cliffs, and archery contests and beast-taming rituals are central to their culture. Elyndor’s bond with a massive silver wolf companion is the stuff of tavern tales.\n\n- The west kingdom also has a port called Port Westward which is sometimes visited by undead skeletons swimming over from the nearby Earn Island which has fallen to a mysterious TrueDark infestation causing various sorts of undead creatures to occupy it."
+}

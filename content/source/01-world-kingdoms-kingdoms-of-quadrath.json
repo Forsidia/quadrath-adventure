@@ -1,0 +1,29 @@
+{
+  "id": "source.01-world-kingdoms-kingdoms-of-quadrath",
+  "type": "source-document",
+  "version": "0.1.0",
+  "title": "The Four Kingdoms of Quadrath",
+  "source_path": "01 - World/Kingdoms/Kingdoms of Quadrath.md",
+  "blocks": [
+    {
+      "kind": "heading",
+      "level": 1,
+      "text": "The Four Kingdoms of Quadrath"
+    },
+    {
+      "kind": "paragraph",
+      "text": "The kings/queens here need not be named exactly as below during gameplay because the character names are not that important because most are random encounters. But the classes do remain same for the king/queen of each kingdom (and also for important characters) for lore consistency at a high level."
+    },
+    {
+      "kind": "list",
+      "ordered": false,
+      "items": [
+        "[[North Kingdom]]",
+        "[[South Kingdom]]",
+        "[[West Kingdom]]",
+        "[[East Kingdom]]"
+      ]
+    }
+  ],
+  "source_markdown": "# The Four Kingdoms of Quadrath\n\nThe kings/queens here need not be named exactly as below during gameplay because the character names are not that important because most are random encounters. But the classes do remain same for the king/queen of each kingdom (and also for important characters) for lore consistency at a high level.\n\n- [[North Kingdom]]\n- [[South Kingdom]]\n- [[West Kingdom]]\n- [[East Kingdom]]"
+}

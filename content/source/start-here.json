@@ -1,0 +1,45 @@
+{
+  "id": "source.start-here",
+  "type": "source-document",
+  "version": "0.1.0",
+  "title": "Quadrath",
+  "source_path": "Start Here.md",
+  "blocks": [
+    {
+      "kind": "heading",
+      "level": 1,
+      "text": "Quadrath"
+    },
+    {
+      "kind": "paragraph",
+      "text": "The *land of four sides*: North Kingdom, South Kingdom, West Kingdom and East Kingdom."
+    },
+    {
+      "kind": "paragraph",
+      "text": "Quadrath is based on DnD 5e characters mostly and have all DnD classes and most races but ***fully geared towards Live Action RPG (LARPG) style of play***."
+    },
+    {
+      "kind": "heading",
+      "level": 2,
+      "text": "Vault map"
+    },
+    {
+      "kind": "list",
+      "ordered": false,
+      "items": [
+        "[[Character Levels]]",
+        "[[02 - Magic/Magic System|Magic System]]",
+        "[[01 - World/Kingdoms/Kingdoms of Quadrath|The Four Kingdoms of Quadrath]]",
+        "[[01 - World/Kingdoms/North Kingdom|North Kingdom]]",
+        "[[01 - World/Kingdoms/South Kingdom|South Kingdom]]",
+        "[[01 - World/Kingdoms/West Kingdom|West Kingdom]]",
+        "[[01 - World/Kingdoms/East Kingdom|East Kingdom]]",
+        "[[03 - History/War of the Dragon's Wrath|The War of the Dragon’s Wrath]]",
+        "[[01 - World/Planes/Kingdoms beyond Quadrath|Kingdoms beyond Quadrath]]",
+        "[[04 - Factions/Travellers of the Dark|Travellers of the Dark]]",
+        "[[The Journey to the Sword of Gleam|The Journey to the Sword of Gleam]]"
+      ]
+    }
+  ],
+  "source_markdown": "# Quadrath\n\nThe *land of four sides*: North Kingdom, South Kingdom, West Kingdom and East Kingdom.\n\nQuadrath is based on DnD 5e characters mostly and have all DnD classes and most races but ***fully geared towards Live Action RPG (LARPG) style of play***.\n\n## Vault map\n\n- [[Character Levels]]\n- [[02 - Magic/Magic System|Magic System]]\n- [[01 - World/Kingdoms/Kingdoms of Quadrath|The Four Kingdoms of Quadrath]]\n- [[01 - World/Kingdoms/North Kingdom|North Kingdom]]\n- [[01 - World/Kingdoms/South Kingdom|South Kingdom]]\n- [[01 - World/Kingdoms/West Kingdom|West Kingdom]]\n- [[01 - World/Kingdoms/East Kingdom|East Kingdom]]\n- [[03 - History/War of the Dragon's Wrath|The War of the Dragon’s Wrath]]\n- [[01 - World/Planes/Kingdoms beyond Quadrath|Kingdoms beyond Quadrath]]\n- [[04 - Factions/Travellers of the Dark|Travellers of the Dark]]\n- [[The Journey to the Sword of Gleam|The Journey to the Sword of Gleam]]"
+}

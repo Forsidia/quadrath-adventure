@@ -92,6 +92,10 @@ def render(_args):
     lines = [f"# {manifest['title']}", "", manifest["description"], "", f"Version: `{manifest['version']}`", ""]
     for entry, _path, data in documents():
         lines.extend([f"## {data['title']}", "", f"_Document id: `{data['id']}` · type: `{entry['type']}`_", ""])
+        if data.get("type") == "source-document":
+            source_markdown = "\n".join(line.rstrip() for line in data["source_markdown"].splitlines()).rstrip()
+            lines.extend([source_markdown, ""])
+            continue
         for key, value in data.items():
             if key not in {"id", "type", "version", "title", "summary"}:
                 render_value(lines, key, value)

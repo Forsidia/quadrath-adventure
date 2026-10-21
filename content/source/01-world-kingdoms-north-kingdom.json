@@ -1,0 +1,29 @@
+{
+  "id": "source.01-world-kingdoms-north-kingdom",
+  "type": "source-document",
+  "version": "0.1.0",
+  "title": "North Kingdom",
+  "source_path": "01 - World/Kingdoms/North Kingdom.md",
+  "blocks": [
+    {
+      "kind": "heading",
+      "level": 1,
+      "text": "North Kingdom"
+    },
+    {
+      "kind": "list",
+      "ordered": false,
+      "items": [
+        "Ruler: King Tharok Ironfang, the Legendary Barbarian"
+      ]
+    },
+    {
+      "kind": "list",
+      "ordered": false,
+      "items": [
+        "Description: The North Kingdom is a rugged, icy expanse of towering mountains, frozen tundras, and dense pine forests. Its people are hardy and fiercely independent, valuing strength, honor, and survival above all. King Tharok Ironfang, a towering figure clad in furs and wielding a greataxe said to have cleaved a glacier in two, rules with a primal charisma. His legendary rage is whispered to summon storms, and his battle cries echo through the peaks. The North is home to barbarian tribes, berserkers, and warriors who test their mettle against the harsh elements and monstrous beasts that roam the wilds. Festivals here involve feats of strength and endurance, often ending in raucous feasts around roaring bonfires."
+      ]
+    }
+  ],
+  "source_markdown": "# North Kingdom\n\n- Ruler: King Tharok Ironfang, the Legendary Barbarian\n\n- Description: The North Kingdom is a rugged, icy expanse of towering mountains, frozen tundras, and dense pine forests. Its people are hardy and fiercely independent, valuing strength, honor, and survival above all. King Tharok Ironfang, a towering figure clad in furs and wielding a greataxe said to have cleaved a glacier in two, rules with a primal charisma. His legendary rage is whispered to summon storms, and his battle cries echo through the peaks. The North is home to barbarian tribes, berserkers, and warriors who test their mettle against the harsh elements and monstrous beasts that roam the wilds. Festivals here involve feats of strength and endurance, often ending in raucous feasts around roaring bonfires."
+}
