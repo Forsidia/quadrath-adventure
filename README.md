@@ -1,6 +1,23 @@
 # Quadrath Adventure
 
-A private React + TypeScript + Vite app for playing in Quadrath and browsing its Compendium. Powered by [Forsidia](https://forsidia.in).
+An open source browser adventure and searchable tabletop RPG Compendium, built with React, TypeScript, and Vite. Explore Quadrath through choice-driven encounters, or keep its rules and world close at hand during a tabletop session.
+
+**[Play Quadrath Adventure](https://quadrath.forsidia.in/) · [Browse the Compendium](https://quadrath.forsidia.in/?view=compendium) · [Open base content](https://github.com/Forsidia/quadrath-base-content)**
+
+Maintained by [Forsidia](https://forsidia.in). The current prototype is free to play, works on mobile and desktop, and needs no account.
+
+## What you can do
+
+- **Explore Okla Deli:** choose a traveller, visit locations, roll 2d6 encounters, and decide how to respond.
+- **Keep your progress:** your traveller, gold, acquired items, and journal are saved locally in your browser.
+- **Search the world:** browse rules, characters, NPCs, spells, weapons, traps, and lore with linked references.
+- **Bring it to the table:** download individual records or the session handbook from the Compendium.
+
+## Project status
+
+Quadrath Adventure is an early prototype under active development. Random encounters are playable; campaign mode is planned. It does not yet implement full combat, multiplayer, account sync, or paid content. Browser saves stay on the device and browser where you play.
+
+The app and its included base content are open. Future expansions may use separate licensing and delivery; none are included here.
 
 ## Run locally
 
@@ -63,7 +80,7 @@ The bundle contains the original documents, an up-to-date session handbook, and 
 | `public/bundles/` | Generated open base database only |
 | `tests/` | Engine, bundle, loading, and highlighting checks |
 
-Additional private and paid bundles will be implemented here later. Do not add them to the public base-content repository or the publicly served `public/` directory. Paid delivery will need authentication; there is no entitlement system in this prototype.
+Only open base content belongs in this repository and its publicly served `public/` directory. Any future paid bundles need separate storage and authenticated delivery; there is no entitlement system in this prototype.
 
 ## Build and deploy
 
@@ -74,10 +91,21 @@ npm run build
 npm run preview
 ```
 
-The build validates the bundled database, type-checks TypeScript, and creates `dist/`. It does not need the base repository. Import this private repository into Vercel with the repository root as the project directory; `vercel.json` configures the Vite build and output. No environment variables are required for the current open-base prototype.
+The build validates the bundled database, type-checks TypeScript, and creates `dist/`. It does not need the base repository. Import this repository into Vercel with the repository root as the project directory; `vercel.json` configures the Vite build and output. No environment variables are required for the current open-base prototype.
 
-Screen selection uses a query parameter; Compendium entries use URL fragments. No SPA path rewrite is required. A private GitHub repository does not make a deployed site private; configure deployment access separately if desired.
+Screen selection uses a query parameter; Compendium entries use URL fragments. No SPA path rewrite is required. The current app is a static site; it does not require a backend or an account service.
+
+## Contributing
+
+Bug reports, play-test feedback, accessibility improvements, and focused pull requests are welcome. Open an issue to discuss a larger change before building it.
+
+For an app bug, include your browser, steps to reproduce, and what you expected to happen. For rules, lore, or data corrections, use [Quadrath Base Content](https://github.com/Forsidia/quadrath-base-content); this app imports its generated database rather than maintaining a second copy.
+
+Before submitting a code change, run `npm test` and `npm run build`. Do not commit personal browser saves, credentials, or non-public content.
 
 ## Licensing
 
-Keep this repository private. The previously MIT-licensed viewer code retains its [MIT notice](LICENSE). Base data remains CC BY 4.0 and includes its attribution in the bundle. See [NOTICE.md](NOTICE.md) for the distinction between code, open base content, and future private modules.
+- **Application code:** [MIT](LICENSE).
+- **Included base content:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), attributed to Forsidia. Attribution and the original content license notice are included in the bundle.
+
+See [NOTICE.md](NOTICE.md) for the distinction between software and content. These licenses do not grant rights to any future separately distributed paid expansions.

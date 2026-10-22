@@ -1,8 +1,6 @@
 # Content and software notices
 
-This application is maintained in a private repository. Repository visibility does not change the license of previously MIT-licensed viewer code.
-
-The viewer originally developed in Quadrath Base Content is used under the MIT License. See `LICENSE` for that notice. Future private modules and paid content must declare their own applicable terms; this notice does not license them.
+The application code in this repository is licensed under the MIT License. See [LICENSE](LICENSE). This includes the viewer originally developed in Quadrath Base Content.
 
 The base content database in `public/bundles/quadrath-base.bundle.json` is by Forsidia, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). It remains open content, including when bundled with this application. The bundle includes attribution and the original content license notice.
 
