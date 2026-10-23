@@ -1,0 +1,1386 @@
+{
+  "id": "spells.catalog",
+  "type": "spell-catalog",
+  "version": "0.1.0",
+  "title": "Quadrath Spell Catalog",
+  "rules": {
+    "attack_roll": "2d6 + caster's agreed spell bonus vs AC",
+    "save": "2d6 + relevant bonus vs spell DC",
+    "damage_types": [
+      "fire",
+      "ice",
+      "lightning",
+      "radiant",
+      "corrosive-shadow",
+      "none"
+    ]
+  },
+  "elements": [
+    {
+      "id": "fire",
+      "description": "Searing flames that burn and destroy."
+    },
+    {
+      "id": "ice",
+      "description": "Freezing cold that slows and shatters."
+    },
+    {
+      "id": "lightning",
+      "description": "Crackling energy that strikes with speed and power."
+    },
+    {
+      "id": "truelight",
+      "description": "Radiant energy with healing properties; especially potent against undead and certain monstrous foes."
+    },
+    {
+      "id": "truedark",
+      "description": "Shadowy, corrosive energy tied to secrecy and decay."
+    }
+  ],
+  "structures": [
+    "touch",
+    "strike",
+    "storm",
+    "beam",
+    "shield"
+  ],
+  "special_types": [
+    "draconic",
+    "apex"
+  ],
+  "spells": [
+    {
+      "id": "spell.fire-strike",
+      "name": "Fire Strike",
+      "kind": "attack",
+      "element": "fire",
+      "structure": "strike",
+      "action_type": "action",
+      "target": "one target",
+      "damage": {
+        "roll": "2d6",
+        "type": "fire"
+      },
+      "effect": "A precise projectile of flame.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "attack",
+        "roll": "2d6 + intelligence",
+        "against": "ac"
+      },
+      "effects": []
+    },
+    {
+      "id": "spell.ice-strike",
+      "name": "Ice Strike",
+      "kind": "attack",
+      "element": "ice",
+      "structure": "strike",
+      "action_type": "action",
+      "target": "one target",
+      "damage": {
+        "roll": "2d6",
+        "type": "ice"
+      },
+      "effect": "The target may be slowed or hindered at the DM's discretion.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "save",
+        "roll": "2d6 + intelligence",
+        "dc": 10,
+        "success": "negate_condition"
+      },
+      "effects": [
+        {
+          "kind": "condition",
+          "condition": "slowed",
+          "duration_rounds": 1,
+          "repeat_save": "end_of_turn"
+        }
+      ]
+    },
+    {
+      "id": "spell.lightning-strike",
+      "name": "Lightning Strike",
+      "kind": "attack",
+      "element": "lightning",
+      "structure": "strike",
+      "action_type": "action",
+      "target": "one target",
+      "damage": {
+        "roll": "2d6",
+        "type": "lightning"
+      },
+      "effect": "A fast, targeted lightning projectile.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "attack",
+        "roll": "2d6 + intelligence",
+        "against": "ac"
+      },
+      "effects": []
+    },
+    {
+      "id": "spell.truelight-strike",
+      "name": "TrueLight Strike",
+      "kind": "attack",
+      "element": "truelight",
+      "structure": "strike",
+      "action_type": "action",
+      "target": "one target",
+      "damage": {
+        "roll": "2d6",
+        "type": "radiant"
+      },
+      "effect": "Especially effective against undead and certain monstrous foes.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "attack",
+        "roll": "2d6 + intelligence",
+        "against": "ac"
+      },
+      "effects": []
+    },
+    {
+      "id": "spell.truedark-strike",
+      "name": "TrueDark Strike",
+      "kind": "attack",
+      "element": "truedark",
+      "structure": "strike",
+      "action_type": "action",
+      "target": "one target",
+      "damage": {
+        "roll": "2d6",
+        "type": "corrosive-shadow"
+      },
+      "effect": "A projectile of corrosive shadow.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "attack",
+        "roll": "2d6 + intelligence",
+        "against": "ac"
+      },
+      "effects": []
+    },
+    {
+      "id": "spell.fire-storm",
+      "name": "Fire Storm",
+      "kind": "attack",
+      "element": "fire",
+      "structure": "storm",
+      "action_type": "action",
+      "target": "area",
+      "damage": {
+        "roll": "3d6",
+        "type": "fire"
+      },
+      "effect": "A fiery area attack.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "sphere",
+        "radius_ft": 10,
+        "max_targets": 6
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "save",
+        "roll": "2d6 + dexterity",
+        "dc": 10,
+        "success": "half_damage"
+      },
+      "effects": []
+    },
+    {
+      "id": "spell.ice-storm",
+      "name": "Ice Storm",
+      "kind": "attack",
+      "element": "ice",
+      "structure": "storm",
+      "action_type": "action",
+      "target": "area",
+      "damage": {
+        "roll": "3d6",
+        "type": "ice"
+      },
+      "effect": "Creatures may be slowed or hindered.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "sphere",
+        "radius_ft": 10,
+        "max_targets": 6
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "save",
+        "roll": "2d6 + intelligence",
+        "dc": 10,
+        "success": "negate_condition"
+      },
+      "effects": [
+        {
+          "kind": "condition",
+          "condition": "slowed",
+          "duration_rounds": 1,
+          "repeat_save": "end_of_turn"
+        }
+      ]
+    },
+    {
+      "id": "spell.lightning-storm",
+      "name": "Lightning Storm",
+      "kind": "attack",
+      "element": "lightning",
+      "structure": "storm",
+      "action_type": "action",
+      "target": "area",
+      "damage": {
+        "roll": "3d6",
+        "type": "lightning"
+      },
+      "effect": "An area of crackling lightning.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "sphere",
+        "radius_ft": 10,
+        "max_targets": 6
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "save",
+        "roll": "2d6 + dexterity",
+        "dc": 10,
+        "success": "half_damage"
+      },
+      "effects": []
+    },
+    {
+      "id": "spell.fire-beam",
+      "name": "Fire Beam",
+      "kind": "attack",
+      "element": "fire",
+      "structure": "beam",
+      "action_type": "action",
+      "target": "one target",
+      "damage": {
+        "roll": "2d6",
+        "type": "fire"
+      },
+      "effect": "A sustained attack requiring focus.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "attack",
+        "roll": "2d6 + intelligence",
+        "against": "ac"
+      },
+      "effects": []
+    },
+    {
+      "id": "spell.ice-beam",
+      "name": "Ice Beam",
+      "kind": "attack",
+      "element": "ice",
+      "structure": "beam",
+      "action_type": "action",
+      "target": "one target",
+      "damage": {
+        "roll": "2d6",
+        "type": "ice"
+      },
+      "effect": "A sustained attack requiring focus.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "attack",
+        "roll": "2d6 + intelligence",
+        "against": "ac"
+      },
+      "effects": []
+    },
+    {
+      "id": "spell.lightning-beam",
+      "name": "Lightning Beam",
+      "kind": "attack",
+      "element": "lightning",
+      "structure": "beam",
+      "action_type": "action",
+      "target": "one target",
+      "damage": {
+        "roll": "2d6",
+        "type": "lightning"
+      },
+      "effect": "A sustained attack requiring focus.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "attack",
+        "roll": "2d6 + intelligence",
+        "against": "ac"
+      },
+      "effects": []
+    },
+    {
+      "id": "spell.truelight-beam",
+      "name": "TrueLight Beam",
+      "kind": "attack",
+      "element": "truelight",
+      "structure": "beam",
+      "action_type": "action",
+      "target": "one target",
+      "damage": {
+        "roll": "2d6",
+        "type": "radiant"
+      },
+      "effect": "A sustained radiant attack.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "attack",
+        "roll": "2d6 + intelligence",
+        "against": "ac"
+      },
+      "effects": []
+    },
+    {
+      "id": "spell.dark-beam",
+      "name": "Dark Beam",
+      "kind": "attack",
+      "element": "truedark",
+      "structure": "beam",
+      "action_type": "action",
+      "target": "one target",
+      "damage": {
+        "roll": "2d6",
+        "type": "corrosive-shadow"
+      },
+      "effect": "A sustained corrosive shadow attack.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "attack",
+        "roll": "2d6 + intelligence",
+        "against": "ac"
+      },
+      "effects": []
+    },
+    {
+      "id": "spell.shield",
+      "name": "Shield",
+      "kind": "defense",
+      "structure": "shield",
+      "action_type": "action",
+      "target": "self or ally",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "Forms a barrier that deflects or absorbs attacks.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "automatic"
+      },
+      "effects": [
+        {
+          "kind": "ac_bonus",
+          "value": 2,
+          "duration_rounds": 3
+        }
+      ]
+    },
+    {
+      "id": "spell.heal",
+      "name": "Heal",
+      "kind": "restoration",
+      "structure": "touch",
+      "action_type": "action",
+      "target": "one target",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "The target regains HP.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "automatic"
+      },
+      "effects": [],
+      "healing": {
+        "roll": "2d6 + INT",
+        "target": "selected",
+        "maximum": "max_hp"
+      }
+    },
+    {
+      "id": "spell.mass-heal",
+      "name": "Mass Heal",
+      "kind": "restoration",
+      "structure": "storm",
+      "action_type": "action",
+      "target": "chosen creatures within 20 ft",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "All chosen creatures regain HP.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "sphere",
+        "radius_ft": 10,
+        "max_targets": 6
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "automatic"
+      },
+      "effects": [],
+      "healing": {
+        "roll": "4d6 + INT",
+        "target": "selected",
+        "maximum": "max_hp"
+      }
+    },
+    {
+      "id": "spell.turn-undead",
+      "name": "Turn Undead",
+      "kind": "pure-special",
+      "action_type": "action",
+      "target": "undead",
+      "damage": {
+        "roll": "0",
+        "type": "radiant",
+        "notes": "No fixed damage; use the effect."
+      },
+      "effect": "Repels or destroys undead with TrueLight, scaling with caster level.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "save",
+        "roll": "2d6 + intelligence",
+        "dc": 10,
+        "success": "negate_condition"
+      },
+      "effects": [
+        {
+          "kind": "condition",
+          "condition": "turned",
+          "duration_rounds": 1,
+          "repeat_save": "end_of_turn"
+        }
+      ]
+    },
+    {
+      "id": "spell.dispel-magic",
+      "name": "Dispel Magic",
+      "kind": "pure-special",
+      "action_type": "action",
+      "target": "spell or enchantment",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "Nullifies an active spell, enchantment, magical barrier, or curse.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "check",
+        "roll": "2d6 + intelligence",
+        "dc": 10
+      },
+      "effects": [
+        {
+          "kind": "remove_magic",
+          "max_effects": 1
+        }
+      ]
+    },
+    {
+      "id": "spell.mass-halt",
+      "name": "Mass Halt",
+      "kind": "pure-special",
+      "action_type": "action",
+      "target": "creatures below caster's level",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "Halts movement for 1 hour; duration can scale with caster skill.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "hour"
+      },
+      "resolution": {
+        "kind": "save",
+        "roll": "2d6 + intelligence",
+        "dc": 10,
+        "success": "negate_condition"
+      },
+      "effects": [
+        {
+          "kind": "condition",
+          "condition": "immobilized",
+          "duration_rounds": 600,
+          "repeat_save": "end_of_turn",
+          "target_filter": "level < caster_level"
+        }
+      ]
+    },
+    {
+      "id": "spell.mana-drain",
+      "name": "Mana Drain",
+      "kind": "pure-special",
+      "action_type": "action",
+      "target": "one creature",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "Siphons magical energy and bolsters the caster's reserves.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "automatic"
+      },
+      "effects": [],
+      "resource_effect": {
+        "resource": "mana",
+        "operation": "transfer",
+        "roll": "1d6",
+        "from": "target",
+        "to": "caster"
+      }
+    },
+    {
+      "id": "spell.greater-mana-drain",
+      "name": "Greater Mana Drain",
+      "kind": "pure-special",
+      "action_type": "action",
+      "target": "one creature",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "A stronger Mana Drain.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "automatic"
+      },
+      "effects": [],
+      "resource_effect": {
+        "resource": "mana",
+        "operation": "transfer",
+        "roll": "2d6",
+        "from": "target",
+        "to": "caster"
+      }
+    },
+    {
+      "id": "spell.health-drain",
+      "name": "Health Drain",
+      "kind": "pure-special",
+      "action_type": "action",
+      "target": "one creature",
+      "damage": {
+        "roll": "2d6",
+        "type": "necrotic",
+        "notes": "Heal the caster for damage dealt."
+      },
+      "effect": "Leeches vitality and heals the caster as it wounds the target.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "attack",
+        "roll": "2d6 + intelligence",
+        "against": "ac"
+      },
+      "effects": [],
+      "healing": {
+        "amount": "damage_dealt",
+        "target": "caster"
+      }
+    },
+    {
+      "id": "spell.greater-health-drain",
+      "name": "Greater Health Drain",
+      "kind": "pure-special",
+      "action_type": "action",
+      "target": "one creature",
+      "damage": {
+        "roll": "3d6",
+        "type": "necrotic",
+        "notes": "Heal the caster for damage dealt."
+      },
+      "effect": "A stronger Health Drain.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "attack",
+        "roll": "2d6 + intelligence",
+        "against": "ac"
+      },
+      "effects": [],
+      "healing": {
+        "amount": "damage_dealt",
+        "target": "caster"
+      }
+    },
+    {
+      "id": "spell.banish-creature",
+      "name": "Banish Creature",
+      "kind": "pure-special",
+      "action_type": "action",
+      "target": "extraplanar creature",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "Sends an extraplanar being home if it fails a contest based on its power.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "save",
+        "roll": "2d6 + intelligence",
+        "dc": 10,
+        "success": "negate"
+      },
+      "effects": [
+        {
+          "kind": "banish",
+          "destination": "home_plane"
+        }
+      ]
+    },
+    {
+      "id": "spell.summon",
+      "name": "Summon",
+      "kind": "pure-special",
+      "action_type": "action",
+      "target": "space within range",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "Calls an entity appropriate to the caster's alignment and preparation.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "automatic"
+      },
+      "effects": [
+        {
+          "kind": "summon",
+          "npc_ref": "npc.summoned-guardian",
+          "count": 1,
+          "duration_rounds": 10
+        }
+      ]
+    },
+    {
+      "id": "spell.greater-summon",
+      "name": "Greater Summon",
+      "kind": "pure-special",
+      "action_type": "action",
+      "target": "space within range",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "Calls a more powerful entity, potentially a dragon, celestial guardian, or fiendish beast.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "automatic"
+      },
+      "effects": [
+        {
+          "kind": "summon",
+          "npc_ref": "npc.summoned-guardian",
+          "count": 2,
+          "duration_rounds": 10
+        }
+      ]
+    },
+    {
+      "id": "spell.dominate-creature",
+      "name": "Dominate Creature",
+      "kind": "pure-special",
+      "action_type": "action",
+      "target": "one creature",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "Forces obedience unless the target resists according to its power.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "save",
+        "roll": "2d6 + intelligence",
+        "dc": 10,
+        "success": "negate_condition"
+      },
+      "effects": [
+        {
+          "kind": "condition",
+          "condition": "controlled",
+          "duration_rounds": 1,
+          "repeat_save": "end_of_turn"
+        }
+      ]
+    },
+    {
+      "id": "spell.resurrection",
+      "name": "Resurrection",
+      "kind": "pure-special",
+      "action_type": "action",
+      "target": "one dead ally",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "Restores life using immense focus and rare components; limited to higher-level casters.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "automatic"
+      },
+      "effects": [
+        {
+          "kind": "revive",
+          "hp": 1,
+          "requires": [
+            "rare_components"
+          ],
+          "minimum_level": 11
+        }
+      ],
+      "healing": {
+        "roll": "0",
+        "target": "selected",
+        "maximum": "max_hp"
+      }
+    },
+    {
+      "id": "spell.arcane-gate",
+      "name": "Arcane Gate",
+      "kind": "pure-special",
+      "action_type": "action",
+      "target": "two points within sight",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "Opens a portal for instant travel or tactical repositioning.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "automatic"
+      },
+      "effects": [
+        {
+          "kind": "portal",
+          "endpoints": 2,
+          "max_distance_ft": 60,
+          "duration_rounds": 10
+        }
+      ]
+    },
+    {
+      "id": "spell.hold-monster",
+      "name": "Hold Monster",
+      "kind": "pure-special",
+      "action_type": "action",
+      "target": "one or more creatures",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "Paralyzes a creature unless it breaks free through will or strength.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "save",
+        "roll": "2d6 + intelligence",
+        "dc": 10,
+        "success": "negate_condition"
+      },
+      "effects": [
+        {
+          "kind": "condition",
+          "condition": "paralyzed",
+          "duration_rounds": 1,
+          "repeat_save": "end_of_turn"
+        }
+      ]
+    },
+    {
+      "id": "spell.true-sight",
+      "name": "True Sight",
+      "kind": "pure-special",
+      "action_type": "action",
+      "target": "self or ally",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "Reveals illusions, invisibility, and shape-shifting for a limited time.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "automatic"
+      },
+      "effects": [
+        {
+          "kind": "sense",
+          "sense": "true_sight",
+          "range_ft": 60,
+          "duration_rounds": 100
+        }
+      ]
+    },
+    {
+      "id": "spell.mass-suggestion",
+      "name": "Mass Suggestion",
+      "kind": "pure-special",
+      "action_type": "action",
+      "target": "multiple creatures",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "Influences multiple minds with a compelling command.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "save",
+        "roll": "2d6 + intelligence",
+        "dc": 10,
+        "success": "negate_condition"
+      },
+      "effects": [
+        {
+          "kind": "condition",
+          "condition": "suggested",
+          "duration_rounds": 1,
+          "repeat_save": "end_of_turn"
+        }
+      ]
+    },
+    {
+      "id": "spell.planar-binding",
+      "name": "Planar Binding",
+      "kind": "pure-special",
+      "action_type": "action",
+      "target": "summoned or extraplanar creature",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "Forces a creature into service for a set duration through a contest of wills.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "save",
+        "roll": "2d6 + intelligence",
+        "dc": 10,
+        "success": "negate_condition"
+      },
+      "effects": [
+        {
+          "kind": "condition",
+          "condition": "bound",
+          "duration_rounds": 1,
+          "repeat_save": "end_of_turn"
+        }
+      ]
+    },
+    {
+      "id": "spell.fire-slash",
+      "name": "Fire Slash",
+      "kind": "pure-special",
+      "action_type": "action",
+      "damage": {
+        "roll": "2d6",
+        "type": "fire"
+      },
+      "effect": "A sweeping fire attack.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "attack",
+        "roll": "2d6 + intelligence",
+        "against": "ac"
+      },
+      "effects": []
+    },
+    {
+      "id": "spell.fear",
+      "name": "Fear",
+      "kind": "pure-special",
+      "action_type": "action",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "Frightens a target.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "save",
+        "roll": "2d6 + intelligence",
+        "dc": 10,
+        "success": "negate_condition"
+      },
+      "effects": [
+        {
+          "kind": "condition",
+          "condition": "frightened",
+          "duration_rounds": 1,
+          "repeat_save": "end_of_turn"
+        }
+      ]
+    },
+    {
+      "id": "spell.psychic-heal",
+      "name": "Psychic Heal",
+      "kind": "pure-special",
+      "action_type": "action",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "Restores memories; requires a sacrifice and recipients within one meter.",
+      "mechanics_status": "draft: unspecified ranges, durations and saves assigned for base play",
+      "range": {
+        "value": 60,
+        "unit": "ft"
+      },
+      "targeting": {
+        "kind": "creature",
+        "radius_ft": 0,
+        "max_targets": 1
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "resolution": {
+        "kind": "automatic"
+      },
+      "effects": [
+        {
+          "kind": "restore_memory",
+          "radius_meters": 1,
+          "requires": [
+            "sacrifice"
+          ]
+        }
+      ]
+    }
+  ]
+}

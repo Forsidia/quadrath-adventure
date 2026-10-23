@@ -1,0 +1,112 @@
+{
+  "id": "rules.core",
+  "type": "rules",
+  "version": "0.1.0",
+  "title": "Core Rules",
+  "summary": "The compact 2d6 resolution layer for Quadrath.",
+  "resolution": {
+    "roll_template": "2d6 + relevant bonus",
+    "success": "Meet or exceed the difficulty or target AC.",
+    "difficulty_guidance": {
+      "easy": 6,
+      "standard": 8,
+      "challenging": 10,
+      "hard": 12,
+      "exceptional": 14
+    },
+    "contested": "Both sides roll 2d6 plus the most fitting bonus; ties favor the defender.",
+    "critical": "A natural 12 on 2d6 always hits and rolls twice the listed damage dice.",
+    "fumble": "A natural 2 always misses; there is no mandatory extra penalty."
+  },
+  "character_progression": {
+    "level_range": [
+      1,
+      20
+    ],
+    "tiers": [
+      {
+        "id": "novice",
+        "levels": [
+          1,
+          5
+        ],
+        "description": "Starting adventurers learning the basics."
+      },
+      {
+        "id": "adept",
+        "levels": [
+          6,
+          10
+        ],
+        "description": "Skilled practitioners beginning to make a name for themselves."
+      },
+      {
+        "id": "master",
+        "levels": [
+          11,
+          15
+        ],
+        "description": "Renowned heroes capable of remarkable feats."
+      },
+      {
+        "id": "legendary",
+        "levels": [
+          16,
+          20
+        ],
+        "description": "Living legends whose deeds shape Quadrath."
+      }
+    ]
+  },
+  "combat": {
+    "initiative": "Roll 2d6 plus the most fitting bonus; highest acts first.",
+    "turn": "Move up to Speed, take one action, and take at most one reaction before the next turn.",
+    "attack": "Roll 2d6 plus attack bonus. Meet or exceed AC to hit.",
+    "damage": "Roll the action's listed damage dice and subtract the result from HP.",
+    "cover": {
+      "partial": "+1 AC",
+      "substantial": "+2 AC"
+    },
+    "disengage": "Use an action to move without provoking opportunity attacks.",
+    "dodge": "Use an action to give attackers -2 on attack rolls until your next turn.",
+    "hp": "At 0 HP, a creature is dead. At 10% HP, it is incapacitated with no direct recovery during combat unless a spell or potion says otherwise."
+  },
+  "saving_throws": {
+    "constitution": "Poison, fire exposure, explosions, and physical endurance.",
+    "intelligence": "Illusions, magical puzzles, mental effects, or spotting traps."
+  },
+  "rest": {
+    "short": "About one hour in safety; restore 1d6 HP and recharge short-rest abilities.",
+    "long": "Restore all HP and daily abilities."
+  },
+  "extension_points": [
+    "classes, roles, and talents",
+    "expanded conditions",
+    "advanced recovery and death rules",
+    "additional game-master guidance"
+  ],
+  "reference_sections": [
+    {
+      "title": "Character Levels",
+      "sections": [
+        {
+          "heading": "Character Levels",
+          "text": "- 1 to 5: Novice  \n    Starting adventurers finding their footing in the world, learning the basics of their craft.\n    \n- 5 to 10: Adept  \n    Skilled practitioners who have honed their abilities and begun to make a name for themselves.\n    \n- 10 to 15: Master  \n    Renowned heroes whose prowess is widely recognized, capable of feats that inspire awe.\n    \n- 15 to 20: Legendary  \n    Living legends whose deeds shape the fate of Quadrath, wielding power that rivals the gods."
+        }
+      ]
+    },
+    {
+      "title": "Start Here",
+      "sections": [
+        {
+          "heading": "Quadrath",
+          "text": "The *land of four sides*: North Kingdom, South Kingdom, West Kingdom and East Kingdom.\n\nQuadrath is based on DnD 5e characters mostly and have all DnD classes and most races but ***fully geared towards Live Action RPG (LARPG) style of play***."
+        },
+        {
+          "heading": "Content index",
+          "text": "- Character Levels\n- Magic System\n- The Four Kingdoms of Quadrath\n- North Kingdom\n- South Kingdom\n- West Kingdom\n- East Kingdom\n- The War of the Dragon’s Wrath\n- Kingdoms beyond Quadrath\n- Travellers of the Dark\n- The Journey to the Sword of Gleam"
+        }
+      ]
+    }
+  ]
+}

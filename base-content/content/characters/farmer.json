@@ -1,0 +1,67 @@
+{
+  "id": "character.sample.farmer",
+  "type": "character",
+  "version": "0.1.0",
+  "title": "The Farmer",
+  "role": "farmer",
+  "status": "sample-character",
+  "description": "A grounded survivor who understands weather, land, tools, and the cost of a bad season.",
+  "level": 1,
+  "tier": "novice",
+  "sheet": {
+    "hp": 10,
+    "ac": 11,
+    "modifiers": {
+      "intelligence": 0,
+      "constitution": 2,
+      "dexterity": 1,
+      "persuasion": 0,
+      "charisma": 1
+    }
+  },
+  "actions": [
+    {
+      "id": "farmer-tool",
+      "name": "Hand Tool",
+      "action_type": "action",
+      "attack_bonus": 1,
+      "damage": {
+        "roll": "1d6",
+        "type": "bludgeoning"
+      },
+      "resolution": {
+        "kind": "attack",
+        "roll": "2d6 + 1",
+        "against": "ac"
+      }
+    },
+    {
+      "id": "farmer-repair",
+      "name": "Practical Repair",
+      "action_type": "action",
+      "roll": "2d6 + constitution",
+      "damage": {
+        "roll": "0",
+        "type": "none"
+      },
+      "effect": "Repair a simple object or make a useful field improvisation."
+    }
+  ],
+  "traits": [
+    "Weather sense",
+    "Field endurance",
+    "Practical repair"
+  ],
+  "equipment": [
+    "Hand tool",
+    "Seed pouch",
+    "Weathered cloak",
+    "Rations"
+  ],
+  "hooks": [
+    "The crops are growing in a perfect ring around an old stone.",
+    "Something is taking livestock without leaving tracks."
+  ],
+  "backstory": "A farmer from the surrounding countryside brings produce to market and knows the cart tracks better than the main road. Familiar with repairs and hard seasons, the farmer is drawn into adventure when ordinary work reveals trouble that town officials overlook.",
+  "backstory_status": "draft; no completed session events recorded"
+}

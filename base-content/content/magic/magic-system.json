@@ -1,0 +1,94 @@
+{
+  "id": "magic.system",
+  "type": "magic",
+  "version": "0.1.0",
+  "title": "Magic System Reference",
+  "summary": "Lore vocabulary for Quadrath's elemental and spell structures. Concrete spells and their damage are in magic/spells/catalog.json.",
+  "elements": [
+    {
+      "id": "fire",
+      "description": "Searing flames that burn and destroy."
+    },
+    {
+      "id": "ice",
+      "description": "Freezing cold that slows and shatters."
+    },
+    {
+      "id": "lightning",
+      "description": "Crackling energy that strikes with speed and power."
+    },
+    {
+      "id": "truelight",
+      "description": "Radiant energy with healing properties and special potency against undead and certain monstrous foes."
+    },
+    {
+      "id": "truedark",
+      "description": "Shadowy, corrosive energy tied to secrecy and decay."
+    }
+  ],
+  "structures": [
+    {
+      "id": "touch",
+      "description": "Magic channeled through physical contact."
+    },
+    {
+      "id": "strike",
+      "description": "One or more precise projectile attacks."
+    },
+    {
+      "id": "storm",
+      "description": "An area effect tempest of the chosen element."
+    },
+    {
+      "id": "beam",
+      "description": "A sustained stream of energy requiring focus."
+    },
+    {
+      "id": "shield",
+      "description": "A barrier that deflects or absorbs attacks."
+    }
+  ],
+  "special_types": [
+    {
+      "id": "draconic",
+      "description": "Dragon-soul energy that amplifies a spell; usually requires a pact or ritual tied to the Dragon Kingdom."
+    },
+    {
+      "id": "apex",
+      "description": "Legendary magic that can alter battlefields or defy natural laws."
+    }
+  ],
+  "catalog_ref": "magic/spells/catalog.json",
+  "design_note": "Draconic magic traces back to the War of the Dragon's Wrath. Apex magic is reserved for Legendary casters. Pure-special magic includes healing, control, travel, summoning, and planar effects; each concrete spell entry declares its damage roll and damage type, including a zero-damage type for utility effects.",
+  "reference_sections": [
+    {
+      "title": "Magic System",
+      "sections": [
+        {
+          "heading": "Magic System",
+          "text": "The power and spectacle of magic in Quadrath scale with the caster’s skill level. Novices (Levels 1–5) might conjure faint sparks, while Legendary casters (Levels 15–20) reshape battlefields. Spells are categorized by elemental, structural, special, and pure-special types. This is a general lore reference; D6 damage and attack handling belong in the DM guide."
+        },
+        {
+          "heading": "Elemental Types",
+          "text": "Each normal spell draws from one of these primal forces:\n\n| Element | Description |\n|---|---|\n| Fire | Searing flames that burn and destroy. |\n| Ice | Freezing cold that slows and shatters. |\n| Lightning | Crackling energy that strikes with speed and power. |\n| TrueLight | Radiant light with healing properties; deals extra damage to undead and certain monstrous foes, such as fiends and aberrations. |\n| TrueDark | Shadowy, corrosive energy tied to secrecy and decay. |"
+        },
+        {
+          "heading": "Structural Types",
+          "text": "The form a spell takes defines its delivery:\n\n| Structure | Description |\n|---|---|\n| Touch | Requires physical contact, channeling magic through the caster’s hands. |\n| Strike | Launches one or more arrow-like projectiles for precise, targeted attacks. |\n| Storm | Unleashes an area-of-effect tempest of the chosen element. |\n| Beam | Projects a continuous stream of energy, requiring focus to sustain. |\n| Shield | Forms a protective barrier, deflecting or absorbing attacks. |"
+        },
+        {
+          "heading": "Special Types (Hybrid-Special Spells)",
+          "text": "These enhance normal spells, blending with elemental and structural types:\n\n| Special type | Description |\n|---|---|\n| Draconic | Infuses a spell with dragon soul energy, amplifying its potency and adding a draconic flair. Requires a pact or ritual tied to the Dragon Kingdom. |\n| Apex | Reserved for Legendary casters (Levels 15–20), these spells push magic to its pinnacle, with effects so grand they alter the battlefield or defy natural laws. |\n\nFor example, a Fire Beam may roar like a dragon’s breath when enhanced with Draconic magic, while an Apex Fire Storm might summon a meteor shower."
+        },
+        {
+          "heading": "Pure-Special Spells",
+          "text": "These stand-alone spells lack elemental or structural types and focus on unique, powerful effects. Many draw from D&D 5e roots, tailored for Quadrath’s LARP flair:\n\n| Spell | Effect |\n|---|---|\n| Turn Undead | Repels or destroys undead with a burst of TrueLight, scaling with the caster’s level. |\n| Dispel Magic | Nullifies active spells or enchantments, breaking magical barriers or curses. |\n| Mass halt | Halts all movement for creatures below the caster’s level for 1 hour. Duration varies with caster skill; Legendary casters can halt people for days. |\n| Mana Drain / Greater Mana Drain | Siphons magical energy from a target, weakening its casting ability while bolstering the caster’s reserves. |\n| Health Drain / Greater Health Drain | Leeches vitality from a foe and heals the caster as it wounds the target. |\n| Banish Creature | Sends extraplanar beings, such as fiends or elementals, back to their home plane, with a chance to resist based on the target’s power. |\n| Summon / Greater Summon | Calls forth powerful entities—dragons, celestial guardians, or fiendish beasts—depending on the caster’s alignment and preparation. |\n| Dominate Creature | Bends a creature’s mind to the caster’s will, forcing obedience. Duration and resistance depend on the caster’s skill. |\n| Resurrection | Restores life to a fallen ally, requiring immense focus and rare components. It is limited to higher-level casters due to its divine cost. |\n| Arcane Gate | Opens a portal between two points within sight, allowing instant travel or tactical repositioning. |\n| Hold Monster | Paralyzes a creature with magical bonds unless it breaks free through sheer will or strength. It can scale to multiple targets with caster level. |\n| True Sight | Lets the caster or an ally see through illusions, invisibility, and shape-shifting for a limited time. |\n| Mass Suggestion | Influences multiple minds with a compelling command. Legendary casters can sway entire armies. |\n| Planar Binding | Forces a summoned or extraplanar creature into servitude for a set duration, requiring a contest of wills. It is favored by South Kingdom warlocks. |"
+        },
+        {
+          "heading": "Lore Integration",
+          "text": "This magic system reflects Quadrath’s history and culture:\n\n| Tradition | Lore integration |\n|---|---|\n| Draconic spells | Trace back to the War of the Dragon’s Wrath, when Dragon Lords taught select mortals their secrets as part of the truce. The Central Guild guards these rituals jealously. |\n| Apex spells | Emerged from Grandmaster Elytheris’s efforts to counter dragon assaults, with Zoryn refining them into the modern era. Only Legendary heroes like the four kings wield them. |\n| Pure-special spells | Resurrection and True Sight are tied to the East and South’s clerical traditions, while Planar Binding and Dominate Creature echo the South’s darker pacts. The North favors raw elemental magic and shuns complex specials. |"
+        }
+      ]
+    }
+  ]
+}

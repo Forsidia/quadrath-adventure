@@ -1,0 +1,753 @@
+{
+  "id": "npcs.supporting-cast",
+  "type": "npc-catalog",
+  "version": "0.1.0",
+  "title": "Supporting Cast and Encounter Templates",
+  "npcs": [
+    {
+      "id": "npc.garran",
+      "name": "Garran, Elite Guard",
+      "hp": 58,
+      "ac": 10,
+      "bonuses": {
+        "intelligence": 1,
+        "constitution": 3,
+        "dexterity": 0,
+        "persuasion": 0,
+        "charisma": 0
+      },
+      "actions": [
+        {
+          "id": "attack-sword",
+          "name": "Sword",
+          "action_type": "action",
+          "attack_bonus": 3,
+          "damage": {
+            "roll": "2d6",
+            "type": "slashing"
+          },
+          "repeat": 2,
+          "resolution": {
+            "kind": "attack",
+            "roll": "2d6 + 3",
+            "against": "ac"
+          },
+          "weapon_ref": "weapon.sword",
+          "equipment_attack_adjustment": 1
+        },
+        {
+          "id": "attack-crossbow",
+          "name": "Crossbow",
+          "action_type": "action",
+          "attack_bonus": 2,
+          "damage": {
+            "roll": "1d6",
+            "type": "piercing"
+          },
+          "resolution": {
+            "kind": "attack",
+            "roll": "2d6 + 2",
+            "against": "ac"
+          },
+          "weapon_ref": "weapon.crossbow",
+          "equipment_attack_adjustment": 1
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Interpose",
+          "action_type": "reaction",
+          "damage": {
+            "roll": "0",
+            "type": "none"
+          },
+          "effect": "An adjacent guard gives an attack against the merchant -2 to hit."
+        },
+        {
+          "name": "Second Wind",
+          "action_type": "short-rest",
+          "damage": {
+            "roll": "0",
+            "type": "none"
+          },
+          "effect": "Heal the guard.",
+          "healing": {
+            "roll": "2d6",
+            "maximum": "max_hp"
+          }
+        }
+      ],
+      "speed": {
+        "value": 30,
+        "unit": "ft"
+      },
+      "backstory": "A hired escort of the merchant, taken to jail after the merchant’s death. The session does not identify which escort was nearly incapacitated."
+    },
+    {
+      "id": "npc.veyra",
+      "name": "Veyra, Elite Guard",
+      "hp": 52,
+      "ac": 9,
+      "bonuses": {
+        "intelligence": 2,
+        "constitution": 2,
+        "dexterity": 0,
+        "persuasion": 0,
+        "charisma": 0
+      },
+      "actions": [
+        {
+          "id": "attack-blade",
+          "name": "Blade",
+          "action_type": "action",
+          "attack_bonus": 3,
+          "damage": {
+            "roll": "2d6",
+            "type": "slashing"
+          },
+          "repeat": 2,
+          "resolution": {
+            "kind": "attack",
+            "roll": "2d6 + 3",
+            "against": "ac"
+          },
+          "weapon_ref": "weapon.blade",
+          "equipment_attack_adjustment": 0
+        },
+        {
+          "id": "attack-crossbow",
+          "name": "Crossbow",
+          "action_type": "action",
+          "attack_bonus": 3,
+          "damage": {
+            "roll": "1d6",
+            "type": "piercing"
+          },
+          "resolution": {
+            "kind": "attack",
+            "roll": "2d6 + 3",
+            "against": "ac"
+          },
+          "weapon_ref": "weapon.crossbow",
+          "equipment_attack_adjustment": 2
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Interpose",
+          "action_type": "reaction",
+          "damage": {
+            "roll": "0",
+            "type": "none"
+          },
+          "effect": "An adjacent guard gives an attack against the merchant -2 to hit."
+        },
+        {
+          "name": "Second Wind",
+          "action_type": "short-rest",
+          "damage": {
+            "roll": "0",
+            "type": "none"
+          },
+          "effect": "Heal the guard.",
+          "healing": {
+            "roll": "2d6",
+            "maximum": "max_hp"
+          }
+        }
+      ],
+      "speed": {
+        "value": 30,
+        "unit": "ft"
+      },
+      "backstory": "A hired escort of the merchant, taken to jail after the merchant’s death. The session does not identify which escort was nearly incapacitated."
+    },
+    {
+      "id": "npc.civilian",
+      "name": "Civilian",
+      "hp": 5,
+      "ac": 6,
+      "bonuses": {
+        "intelligence": 0,
+        "constitution": 0,
+        "dexterity": 0,
+        "persuasion": 0,
+        "charisma": 0
+      },
+      "actions": [
+        {
+          "id": "attack-improvised",
+          "name": "Improvised Weapon",
+          "action_type": "action",
+          "attack_bonus": 0,
+          "damage": {
+            "roll": "1d6",
+            "type": "bludgeoning"
+          },
+          "resolution": {
+            "kind": "attack",
+            "roll": "2d6 + 0",
+            "against": "ac"
+          },
+          "weapon_ref": "weapon.improvised",
+          "equipment_attack_adjustment": 0
+        }
+      ],
+      "speed": {
+        "value": 30,
+        "unit": "ft"
+      },
+      "backstory": "A reusable encounter character. Place this figure where the adventure needs them; no individual involvement in the merchant’s recorded visit is established."
+    },
+    {
+      "id": "npc.bandit",
+      "name": "Bandit",
+      "hp": 12,
+      "ac": 7,
+      "bonuses": {
+        "intelligence": 0,
+        "constitution": 1,
+        "dexterity": 0,
+        "persuasion": 0,
+        "charisma": 0
+      },
+      "actions": [
+        {
+          "id": "attack-scimitar",
+          "name": "Scimitar",
+          "action_type": "action",
+          "attack_bonus": 1,
+          "damage": {
+            "roll": "1d6",
+            "type": "slashing"
+          },
+          "resolution": {
+            "kind": "attack",
+            "roll": "2d6 + 1",
+            "against": "ac"
+          },
+          "weapon_ref": "weapon.scimitar",
+          "equipment_attack_adjustment": 0
+        }
+      ],
+      "speed": {
+        "value": 30,
+        "unit": "ft"
+      },
+      "backstory": "A reusable encounter character. Place this figure where the adventure needs them; no individual involvement in the merchant’s recorded visit is established."
+    },
+    {
+      "id": "npc.town-archer",
+      "name": "Town Archer",
+      "hp": 13,
+      "ac": 7,
+      "bonuses": {
+        "intelligence": 1,
+        "constitution": 0,
+        "dexterity": 0,
+        "persuasion": 0,
+        "charisma": 0
+      },
+      "actions": [
+        {
+          "id": "attack-bow",
+          "name": "Bow",
+          "action_type": "action",
+          "attack_bonus": 2,
+          "damage": {
+            "roll": "1d6",
+            "type": "piercing"
+          },
+          "resolution": {
+            "kind": "attack",
+            "roll": "2d6 + 2",
+            "against": "ac"
+          },
+          "weapon_ref": "weapon.bow",
+          "equipment_attack_adjustment": 0
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Aimed Shot",
+          "action_type": "passive",
+          "damage": {
+            "roll": "0",
+            "type": "none"
+          },
+          "effect": "+1 to hit if stationary."
+        }
+      ],
+      "speed": {
+        "value": 30,
+        "unit": "ft"
+      },
+      "backstory": "A reusable encounter character. Place this figure where the adventure needs them; no individual involvement in the merchant’s recorded visit is established."
+    },
+    {
+      "id": "npc.bandit-leader",
+      "name": "Bandit Leader",
+      "hp": 36,
+      "ac": 8,
+      "bonuses": {
+        "intelligence": 1,
+        "constitution": 2,
+        "dexterity": 0,
+        "persuasion": 0,
+        "charisma": 0
+      },
+      "actions": [
+        {
+          "id": "attack-sword",
+          "name": "Sword",
+          "action_type": "action",
+          "attack_bonus": 2,
+          "damage": {
+            "roll": "2d6",
+            "type": "slashing"
+          },
+          "repeat": 2,
+          "resolution": {
+            "kind": "attack",
+            "roll": "2d6 + 2",
+            "against": "ac"
+          },
+          "weapon_ref": "weapon.sword",
+          "equipment_attack_adjustment": 0
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Reposition Ally",
+          "action_type": "once-per-fight",
+          "damage": {
+            "roll": "0",
+            "type": "none"
+          },
+          "effect": "One ally repositions without triggering an opportunity attack."
+        }
+      ],
+      "speed": {
+        "value": 30,
+        "unit": "ft"
+      },
+      "backstory": "A reusable encounter character. Place this figure where the adventure needs them; no individual involvement in the merchant’s recorded visit is established."
+    },
+    {
+      "id": "npc.archive-guardian",
+      "name": "Archive Guardian",
+      "hp": 24,
+      "ac": 9,
+      "bonuses": {
+        "intelligence": 0,
+        "constitution": 2,
+        "dexterity": 0,
+        "persuasion": 0,
+        "charisma": 0
+      },
+      "actions": [
+        {
+          "id": "attack-stone-fist",
+          "name": "Stone Fist",
+          "action_type": "action",
+          "attack_bonus": 2,
+          "damage": {
+            "roll": "2d6",
+            "type": "bludgeoning"
+          },
+          "resolution": {
+            "kind": "attack",
+            "roll": "2d6 + 2",
+            "against": "ac"
+          },
+          "weapon_ref": "weapon.stone-fist",
+          "equipment_attack_adjustment": 0
+        }
+      ],
+      "speed": {
+        "value": 30,
+        "unit": "ft"
+      },
+      "backstory": "A reusable encounter character. Place this figure where the adventure needs them; no individual involvement in the merchant’s recorded visit is established."
+    },
+    {
+      "id": "npc.halven",
+      "name": "Halven, Sergeant",
+      "personality": "Strict and practical; wants order.",
+      "hp": 32,
+      "ac": 9,
+      "bonuses": {
+        "intelligence": 1,
+        "constitution": 2,
+        "dexterity": 0,
+        "persuasion": 0,
+        "charisma": 0
+      },
+      "actions": [
+        {
+          "id": "attack-sword",
+          "name": "Sword",
+          "action_type": "action",
+          "attack_bonus": 2,
+          "damage": {
+            "roll": "2d6",
+            "type": "slashing"
+          },
+          "repeat": 2,
+          "resolution": {
+            "kind": "attack",
+            "roll": "2d6 + 2",
+            "against": "ac"
+          },
+          "weapon_ref": "weapon.sword",
+          "equipment_attack_adjustment": 0
+        }
+      ],
+      "mechanics_status": "draft template assignment",
+      "speed": {
+        "value": 30,
+        "unit": "ft"
+      },
+      "backstory": "A reusable encounter character. Place this figure where the adventure needs them; no individual involvement in the merchant’s recorded visit is established."
+    },
+    {
+      "id": "npc.mara",
+      "name": "Mara, Innkeeper",
+      "personality": "Friendly and observant; wants a thriving tavern.",
+      "hp": 5,
+      "ac": 6,
+      "bonuses": {
+        "intelligence": 0,
+        "constitution": 0,
+        "dexterity": 0,
+        "persuasion": 0,
+        "charisma": 0
+      },
+      "actions": [
+        {
+          "id": "attack-improvised",
+          "name": "Improvised Weapon",
+          "action_type": "action",
+          "attack_bonus": 0,
+          "damage": {
+            "roll": "1d6",
+            "type": "bludgeoning"
+          },
+          "resolution": {
+            "kind": "attack",
+            "roll": "2d6 + 0",
+            "against": "ac"
+          },
+          "weapon_ref": "weapon.improvised",
+          "equipment_attack_adjustment": 0
+        }
+      ],
+      "mechanics_status": "draft template assignment",
+      "speed": {
+        "value": 30,
+        "unit": "ft"
+      },
+      "backstory": "A reusable encounter character. Place this figure where the adventure needs them; no individual involvement in the merchant’s recorded visit is established."
+    },
+    {
+      "id": "npc.torren",
+      "name": "Torren, Blacksmith",
+      "personality": "Blunt and proud; wants his iron back.",
+      "hp": 5,
+      "ac": 6,
+      "bonuses": {
+        "intelligence": 0,
+        "constitution": 0,
+        "dexterity": 0,
+        "persuasion": 0,
+        "charisma": 0
+      },
+      "actions": [
+        {
+          "id": "attack-improvised",
+          "name": "Improvised Weapon",
+          "action_type": "action",
+          "attack_bonus": 0,
+          "damage": {
+            "roll": "1d6",
+            "type": "bludgeoning"
+          },
+          "resolution": {
+            "kind": "attack",
+            "roll": "2d6 + 0",
+            "against": "ac"
+          },
+          "weapon_ref": "weapon.improvised",
+          "equipment_attack_adjustment": 0
+        }
+      ],
+      "mechanics_status": "draft template assignment",
+      "speed": {
+        "value": 30,
+        "unit": "ft"
+      },
+      "backstory": "A reusable encounter character. Place this figure where the adventure needs them; no individual involvement in the merchant’s recorded visit is established."
+    },
+    {
+      "id": "npc.selvik",
+      "name": "Selvik, Trader",
+      "personality": "Charming and competitive; seeks commercial advantage.",
+      "hp": 5,
+      "ac": 6,
+      "bonuses": {
+        "intelligence": 0,
+        "constitution": 0,
+        "dexterity": 0,
+        "persuasion": 0,
+        "charisma": 0
+      },
+      "actions": [
+        {
+          "id": "attack-improvised",
+          "name": "Improvised Weapon",
+          "action_type": "action",
+          "attack_bonus": 0,
+          "damage": {
+            "roll": "1d6",
+            "type": "bludgeoning"
+          },
+          "resolution": {
+            "kind": "attack",
+            "roll": "2d6 + 0",
+            "against": "ac"
+          },
+          "weapon_ref": "weapon.improvised",
+          "equipment_attack_adjustment": 0
+        }
+      ],
+      "mechanics_status": "draft template assignment",
+      "speed": {
+        "value": 30,
+        "unit": "ft"
+      },
+      "backstory": "A reusable encounter character. Place this figure where the adventure needs them; no individual involvement in the merchant’s recorded visit is established."
+    },
+    {
+      "id": "npc.ilwen",
+      "name": "Ilwen, Collector",
+      "personality": "Reserved and studious; wants rare documents.",
+      "hp": 5,
+      "ac": 6,
+      "bonuses": {
+        "intelligence": 0,
+        "constitution": 0,
+        "dexterity": 0,
+        "persuasion": 0,
+        "charisma": 0
+      },
+      "actions": [
+        {
+          "id": "attack-improvised",
+          "name": "Improvised Weapon",
+          "action_type": "action",
+          "attack_bonus": 0,
+          "damage": {
+            "roll": "1d6",
+            "type": "bludgeoning"
+          },
+          "resolution": {
+            "kind": "attack",
+            "roll": "2d6 + 0",
+            "against": "ac"
+          },
+          "weapon_ref": "weapon.improvised",
+          "equipment_attack_adjustment": 0
+        }
+      ],
+      "mechanics_status": "draft template assignment",
+      "speed": {
+        "value": 30,
+        "unit": "ft"
+      },
+      "backstory": "A reusable encounter character. Place this figure where the adventure needs them; no individual involvement in the merchant’s recorded visit is established."
+    },
+    {
+      "id": "npc.goblin-burglar",
+      "name": "Goblin Burglar",
+      "hp": 10,
+      "ac": 7,
+      "bonuses": {
+        "intelligence": 0,
+        "constitution": 1,
+        "dexterity": 0,
+        "persuasion": 0,
+        "charisma": 0
+      },
+      "mechanics_status": "draft",
+      "actions": [
+        {
+          "name": "Strike",
+          "action_type": "action",
+          "attack_bonus": 1,
+          "damage": {
+            "roll": "1d6",
+            "type": "piercing"
+          },
+          "resolution": {
+            "kind": "attack",
+            "roll": "2d6 + 1",
+            "against": "ac"
+          }
+        }
+      ],
+      "speed": {
+        "value": 30,
+        "unit": "ft"
+      },
+      "backstory": "A reusable encounter character. Place this figure where the adventure needs them; no individual involvement in the merchant’s recorded visit is established."
+    },
+    {
+      "id": "npc.lizard-warden",
+      "name": "Lizard Warden",
+      "hp": 22,
+      "ac": 9,
+      "bonuses": {
+        "intelligence": 0,
+        "constitution": 1,
+        "dexterity": 0,
+        "persuasion": 0,
+        "charisma": 0
+      },
+      "mechanics_status": "draft",
+      "actions": [
+        {
+          "name": "Strike",
+          "action_type": "action",
+          "attack_bonus": 2,
+          "damage": {
+            "roll": "1d6",
+            "type": "piercing"
+          },
+          "resolution": {
+            "kind": "attack",
+            "roll": "2d6 + 2",
+            "against": "ac"
+          }
+        }
+      ],
+      "speed": {
+        "value": 30,
+        "unit": "ft"
+      },
+      "backstory": "A reusable encounter character. Place this figure where the adventure needs them; no individual involvement in the merchant’s recorded visit is established."
+    },
+    {
+      "id": "npc.summoned-guardian",
+      "name": "Summoned Guardian",
+      "hp": 24,
+      "ac": 9,
+      "bonuses": {
+        "intelligence": 0,
+        "constitution": 1,
+        "dexterity": 0,
+        "persuasion": 0,
+        "charisma": 0
+      },
+      "mechanics_status": "draft",
+      "actions": [
+        {
+          "name": "Strike",
+          "action_type": "action",
+          "attack_bonus": 2,
+          "damage": {
+            "roll": "2d6",
+            "type": "piercing"
+          },
+          "resolution": {
+            "kind": "attack",
+            "roll": "2d6 + 2",
+            "against": "ac"
+          }
+        }
+      ],
+      "speed": {
+        "value": 30,
+        "unit": "ft"
+      },
+      "backstory": "A reusable encounter character. Place this figure where the adventure needs them; no individual involvement in the merchant’s recorded visit is established."
+    },
+    {
+      "id": "npc.traveller-old-man",
+      "name": "Old Man",
+      "hp": 24,
+      "ac": 7,
+      "speed": {
+        "value": 30,
+        "unit": "ft"
+      },
+      "bonuses": {
+        "intelligence": 1,
+        "constitution": 1,
+        "dexterity": 1,
+        "persuasion": 0,
+        "charisma": 1
+      },
+      "mechanics_status": "draft: no original complete stat block",
+      "actions": [
+        {
+          "name": "Spellcasting",
+          "action_type": "action",
+          "spell_ref": "spell.lightning-beam"
+        }
+      ],
+      "backstory": "A reusable encounter character. Place this figure where the adventure needs them; no individual involvement in the merchant’s recorded visit is established."
+    },
+    {
+      "id": "npc.traveller-wolf",
+      "name": "Wolf",
+      "hp": 52,
+      "ac": 9,
+      "speed": {
+        "value": 30,
+        "unit": "ft"
+      },
+      "bonuses": {
+        "intelligence": 2,
+        "constitution": 2,
+        "dexterity": 2,
+        "persuasion": 0,
+        "charisma": 2
+      },
+      "mechanics_status": "draft: no original complete stat block",
+      "actions": [
+        {
+          "name": "Spellcasting",
+          "action_type": "action",
+          "spell_ref": "spell.fire-beam"
+        }
+      ],
+      "backstory": "A reusable encounter character. Place this figure where the adventure needs them; no individual involvement in the merchant’s recorded visit is established."
+    },
+    {
+      "id": "npc.traveller-leader",
+      "name": "Leader",
+      "hp": 60,
+      "ac": 10,
+      "speed": {
+        "value": 30,
+        "unit": "ft"
+      },
+      "bonuses": {
+        "intelligence": 4,
+        "constitution": 4,
+        "dexterity": 4,
+        "persuasion": 0,
+        "charisma": 4
+      },
+      "mechanics_status": "draft: no original complete stat block",
+      "actions": [
+        {
+          "name": "Spellcasting",
+          "action_type": "action",
+          "spell_ref": "spell.hold-monster"
+        }
+      ],
+      "backstory": "A reusable encounter character. Place this figure where the adventure needs them; no individual involvement in the merchant’s recorded visit is established."
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "lore.four-kingdoms",
+  "type": "lore",
+  "version": "0.1.0",
+  "title": "The Four Kingdoms of Quadrath",
+  "summary": "Quadrath is the land of four sides: North Kingdom, South Kingdom, West Kingdom, and East Kingdom.",
+  "play_note": "Ruler names need not be exact during play because many are random encounters; the ruler classes remain useful for high-level lore consistency.",
+  "kingdoms": [
+    {
+      "id": "north",
+      "name": "North Kingdom",
+      "ruler": "King Tharok Ironfang",
+      "ruler_role": "Legendary Barbarian",
+      "description": "A rugged, icy expanse of mountains, frozen tundras, and pine forests. Its people value strength, honor, and survival. Tharok wields a greataxe said to have cleaved a glacier; the North is home to barbarians, berserkers, and warriors who test themselves against harsh elements and monstrous beasts. Festivals feature feats of strength and bonfires."
+    },
+    {
+      "id": "south",
+      "name": "South Kingdom",
+      "ruler": "King Valthar the Shadowpact",
+      "ruler_role": "Legendary Warlock",
+      "archmage": "High Cleric Lyssera",
+      "description": "Scorched deserts, oases, and ruins whispering of forgotten pacts. Valthar bends shadows and summons fiends while Lyssera's healing miracles and radiant spells balance his darkness. Mystics, sorcerers, and seekers of forbidden knowledge trade in arcane relics among temples and arcane towers."
+    },
+    {
+      "id": "west",
+      "name": "West Kingdom",
+      "ruler": "King Elyndor Swiftarrow",
+      "ruler_role": "Legendary Ranger",
+      "description": "Vast plains, rolling hills, and ancient woodlands. Explorers, hunters, and druids live with nature and defend their borders through guerrilla tactics. Port Westward is sometimes visited by undead skeletons swimming from Earn Island, where a mysterious TrueDark infestation has created many undead creatures."
+    },
+    {
+      "id": "east",
+      "name": "East Kingdom",
+      "ruler": "King Auren Lightsworn",
+      "ruler_role": "Legendary Paladin",
+      "archmage": "High Cleric Meridia",
+      "description": "Golden fields, gleaming cities, and cathedrals devoted to justice and honor. Auren is a paragon whose divine smites have felled demons and tyrants; Meridia's prayers mend the broken and banish evil. Knights, paladins, and clerics uphold chivalric codes through tournaments, pilgrimages, and sacred libraries."
+    }
+  ],
+  "reference_sections": [
+    {
+      "title": "East Kingdom",
+      "sections": [
+        {
+          "heading": "East Kingdom",
+          "text": "- Ruler: King Auren Lightsworn, the Legendary Paladin\n\n- Archmage: High Cleric Meridia, the Legendary Cleric\n\n- Description: The East Kingdom is a realm of golden fields, gleaming cities, and towering cathedrals dedicated to justice and honor. King Auren Lightsworn, clad in resplendent armor that shines like the sun, is a paragon of virtue and a legendary paladin whose divine smites have felled demons and tyrants alike. Beside him stands High Cleric Meridia, a serene and wise figure whose prayers can mend the broken and banish evil. The East is a bastion of order, populated by knights, paladins, and clerics who uphold chivalric codes. Grand tournaments and holy pilgrimages define its culture, while its libraries hold tomes of sacred lore. The kingdom’s borders are fortified against threats, both mundane and supernatural."
+        }
+      ]
+    },
+    {
+      "title": "Kingdoms of Quadrath",
+      "sections": [
+        {
+          "heading": "The Four Kingdoms of Quadrath",
+          "text": "The kings/queens here need not be named exactly as below during gameplay because the character names are not that important because most are random encounters. But the classes do remain same for the king/queen of each kingdom (and also for important characters) for lore consistency at a high level.\n\n- North Kingdom\n- South Kingdom\n- West Kingdom\n- East Kingdom"
+        }
+      ]
+    },
+    {
+      "title": "North Kingdom",
+      "sections": [
+        {
+          "heading": "North Kingdom",
+          "text": "- Ruler: King Tharok Ironfang, the Legendary Barbarian\n\n- Description: The North Kingdom is a rugged, icy expanse of towering mountains, frozen tundras, and dense pine forests. Its people are hardy and fiercely independent, valuing strength, honor, and survival above all. King Tharok Ironfang, a towering figure clad in furs and wielding a greataxe said to have cleaved a glacier in two, rules with a primal charisma. His legendary rage is whispered to summon storms, and his battle cries echo through the peaks. The North is home to barbarian tribes, berserkers, and warriors who test their mettle against the harsh elements and monstrous beasts that roam the wilds. Festivals here involve feats of strength and endurance, often ending in raucous feasts around roaring bonfires."
+        }
+      ]
+    },
+    {
+      "title": "South Kingdom",
+      "sections": [
+        {
+          "heading": "South Kingdom",
+          "text": "- Ruler: King Valthar the Shadowpact, the Legendary Warlock\n\n- Archmage: High Cleric Lyssera, the Legendary Cleric\n\n- Description: The South Kingdom is a land of scorched deserts, shimmering oases, and ancient ruins whispering of forgotten pacts. King Valthar, a gaunt figure with eyes that glow like embers, rules through cunning and the dark power of his otherworldly patron. His legendary warlock abilities allow him to bend shadows and summon fiendish allies, striking fear into his enemies. At his side is High Cleric Lyssera, a beacon of divine light whose healing miracles and radiant spells counterbalance Valthar’s darkness. The South is a land of mystics, sorcerers, and those who seek forbidden knowledge, with sprawling markets trading in arcane relics and exotic goods. Temples and arcane towers dot the landscape, drawing adventurers seeking power or redemption."
+        }
+      ]
+    },
+    {
+      "title": "West Kingdom",
+      "sections": [
+        {
+          "heading": "West Kingdom",
+          "text": "- Ruler: King Elyndor Swiftarrow, the Legendary Ranger\n\n- Description: The West Kingdom stretches across vast plains, rolling hills, and ancient woodlands teeming with life. King Elyndor, a lithe and weathered figure with a bow that never misses its mark, is a master of the wilds. His legendary ranger skills let him track prey across continents and commune with the beasts of the land. The people of the West are explorers, hunters, and druids who live in harmony with nature, though they fiercely defend their borders with guerrilla tactics. Villages are built into treetops or carved into cliffs, and archery contests and beast-taming rituals are central to their culture. Elyndor’s bond with a massive silver wolf companion is the stuff of tavern tales.\n\n- The west kingdom also has a port called Port Westward which is sometimes visited by undead skeletons swimming over from the nearby Earn Island which has fallen to a mysterious TrueDark infestation causing various sorts of undead creatures to occupy it."
+        }
+      ]
+    }
+  ]
+}

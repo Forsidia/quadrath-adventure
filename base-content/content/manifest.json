@@ -1,0 +1,96 @@
+{
+  "id": "quadrath-base",
+  "title": "Quadrath Base Content",
+  "publisher": "Forsidia",
+  "version": "0.1.0",
+  "status": "draft-public-foundation",
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "schema_version": "0.1.0",
+  "description": "The open rules, character model, spells, equipment, NPCs, traps, adventures, sessions, factions, and setting foundation for Quadrath.",
+  "documents": [
+    {
+      "path": "rules/core.json",
+      "type": "rules"
+    },
+    {
+      "path": "rules/character.json",
+      "type": "rules"
+    },
+    {
+      "path": "characters/merchant.json",
+      "type": "character"
+    },
+    {
+      "path": "characters/teacher.json",
+      "type": "character"
+    },
+    {
+      "path": "characters/farmer.json",
+      "type": "character"
+    },
+    {
+      "path": "magic/magic-system.json",
+      "type": "magic"
+    },
+    {
+      "path": "lore/four-kingdoms.json",
+      "type": "lore"
+    },
+    {
+      "path": "magic/spells/catalog.json",
+      "type": "spell-catalog"
+    },
+    {
+      "path": "equipment/catalog.json",
+      "type": "equipment-catalog"
+    },
+    {
+      "path": "npcs/okla-deli.json",
+      "type": "npc-catalog"
+    },
+    {
+      "path": "traps/catalog.json",
+      "type": "trap-catalog"
+    },
+    {
+      "path": "adventures/okla-deli.json",
+      "type": "adventure"
+    },
+    {
+      "path": "sessions/okla-deli.json",
+      "type": "session-record"
+    },
+    {
+      "path": "factions/travellers-of-the-dark.json",
+      "type": "faction"
+    },
+    {
+      "path": "lore/planes.json",
+      "type": "lore"
+    },
+    {
+      "path": "lore/war-of-the-dragons-wrath.json",
+      "type": "lore"
+    },
+    {
+      "path": "lore/journey-to-the-sword-of-gleam.json",
+      "type": "story"
+    },
+    {
+      "path": "npcs/supporting-cast.json",
+      "type": "npc-catalog"
+    }
+  ],
+  "content_model": {
+    "actions_have": [
+      "action_type",
+      "roll",
+      "damage_or_result"
+    ],
+    "damage_has": [
+      "roll",
+      "type"
+    ]
+  }
+}

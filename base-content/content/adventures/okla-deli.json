@@ -1,0 +1,336 @@
+{
+  "id": "adventure.okla-deli",
+  "type": "adventure",
+  "version": "0.1.0",
+  "title": "Okla Deli Sandbox and the Forgotten Scroll",
+  "style": "Open sandbox; players may trade, explore, negotiate, investigate, fight, steal, hire help, or leave.",
+  "opening_scene": "The road widens as Okla Deli comes into view. Wagons creak between market stalls. A blacksmith's hammer rings out beyond the crowded square. Two town guards look over the merchant's cargo and exchange wary glances at the well-equipped escorts. Town Hall stands beyond the market, but nobody directs the merchant toward it.",
+  "locations": [
+    {
+      "id": "market-square",
+      "name": "Market Square",
+      "activity": "Bargaining, a counterfeit-goods accusation, a pickpocket, or an unusual bulk buyer."
+    },
+    {
+      "id": "town-hall",
+      "name": "Town Hall",
+      "activity": "Administrative business and a noticeboard. The only location that reveals Edric's volunteer request."
+    },
+    {
+      "id": "copper-lantern",
+      "name": "Copper Lantern Tavern",
+      "activity": "Gossip, gambling, a mercenary duel, a suspicious traveler, or cellar noise."
+    },
+    {
+      "id": "iron-hearth",
+      "name": "Iron Hearth Smithy",
+      "activity": "Armor repairs, weapon prices, or a missing iron shipment."
+    },
+    {
+      "id": "town-library",
+      "name": "Town Library",
+      "activity": "Maps, local history, rare books, and research."
+    },
+    {
+      "id": "city-gate",
+      "name": "Town Gate",
+      "activity": "Entry tolls, guard inspections, and the opening location of the merchant session."
+    }
+  ],
+  "main_quest": {
+    "id": "quest.forgotten-scroll",
+    "title": "The Forgotten Scroll",
+    "discovery": "At Town Hall, Edric seeks a volunteer escort for an expedition to retrieve an ancient scroll from an abandoned underground archive half a day outside town.",
+    "reward": {
+      "base": "100 GP plus up to 25 GP expenses",
+      "negotiated": "140 GP after a challenging INT negotiation check, DC 10"
+    },
+    "scenes": [
+      {
+        "id": "meeting",
+        "direction": "Let the merchant question Edric, negotiate, inspect maps, and decide whether to accompany him."
+      },
+      {
+        "id": "road",
+        "direction": "The journey takes half a day. Optionally roll a travel encounter."
+      },
+      {
+        "id": "entrance",
+        "direction": "A collapsed doorway blocks the way. INT DC 8 finds a hidden side passage."
+      },
+      {
+        "id": "guardian-room",
+        "direction": "Two archive guardians are present. INT DC 10 finds a safe authorization phrase and avoids combat."
+      },
+      {
+        "id": "scroll-case",
+        "direction": "INT DC 10 opens the case safely. Failure triggers an alarm and awakens one additional guardian; retry after dealing with the alarm."
+      },
+      {
+        "id": "return",
+        "direction": "Edric places the scroll in the library, pays the reward, and offers access to selected records."
+      }
+    ],
+    "mystery": "Several passages in the scroll remain untranslated. Their significance can be established later; do not force a connection to the Travellers of the Dark."
+  },
+  "random_encounters": [
+    {
+      "roll": 2,
+      "event": "Suspicious travelers observe the merchant's wagon; a planned theft may be underway."
+    },
+    {
+      "roll": 3,
+      "event": "A rare-item seller offers an uncertain old ring for 40 GP."
+    },
+    {
+      "roll": 4,
+      "event": "Guard inspection: questions about weapons and explosive cargo."
+    },
+    {
+      "roll": 5,
+      "event": "Disputed cargo: two traders demand a neutral judgment."
+    },
+    {
+      "roll": 6,
+      "event": "A street performer draws a crowd while someone manipulates wagers."
+    },
+    {
+      "roll": 7,
+      "event": "Quiet business; ordinary trade proceeds."
+    },
+    {
+      "roll": 8,
+      "event": "A wagon accident blocks the road and cargo spills."
+    },
+    {
+      "roll": 9,
+      "event": "A tavern argument escalates unless someone intervenes."
+    },
+    {
+      "roll": 10,
+      "event": "A mercenary challenges an escort to a nonlethal duel for 20 GP."
+    },
+    {
+      "roll": 11,
+      "event": "A missing child was last seen near the outskirts."
+    },
+    {
+      "roll": 12,
+      "event": "A pickpocket attempts to steal 2d6 GP; INT DC 9 notices."
+    }
+  ],
+  "side_quests": [
+    {
+      "id": "missing-iron",
+      "hook": "Missing iron shipment",
+      "reward": "45 GP",
+      "twist": "The driver sold it to settle a debt."
+    },
+    {
+      "id": "counterfeit-coins",
+      "hook": "Counterfeit coins",
+      "reward": "30 GP",
+      "twist": "A rival framed the accused trader."
+    },
+    {
+      "id": "roadside-bandits",
+      "hook": "Roadside bandits",
+      "reward": "60 GP",
+      "twist": "Desperate deserters might negotiate."
+    },
+    {
+      "id": "locked-cellar",
+      "hook": "Locked tavern cellar",
+      "reward": "25 GP and lodging",
+      "twist": "A tunnel may conceal smugglers or old storage."
+    },
+    {
+      "id": "duelist",
+      "hook": "Duelist",
+      "reward": "20–50 GP wager",
+      "twist": "Use the bandit leader stat block; duel is nonlethal."
+    },
+    {
+      "id": "collectors-map",
+      "hook": "Collector's map",
+      "reward": "35 GP",
+      "twist": "The seller is reluctant and wants a favor."
+    }
+  ],
+  "trade": {
+    "goods": [
+      {
+        "name": "Common cloth bundle",
+        "buy": 8,
+        "resale": "10–12 GP"
+      },
+      {
+        "name": "Spice crate",
+        "buy": 15,
+        "resale": "18–24 GP"
+      },
+      {
+        "name": "Iron tools",
+        "buy": 6,
+        "resale": "8–10 GP"
+      },
+      {
+        "name": "Fine wine crate",
+        "buy": 20,
+        "resale": "24–30 GP"
+      },
+      {
+        "name": "Ornamental dagger",
+        "buy": 12,
+        "resale": "15–20 GP"
+      },
+      {
+        "name": "Rare manuscript",
+        "buy": 35,
+        "resale": "40–70 GP"
+      }
+    ],
+    "checks": [
+      "INT DC 8 improves the price by 10%.",
+      "INT DC 12 improves the price by 20%.",
+      "Failing by 4 or more worsens the price by 10%, or the buyer leaves.",
+      "The Merchant's Experienced Trader bonus applies.",
+      "Buyers have limited cash; large stockpiles may require multiple days or new markets."
+    ]
+  },
+  "escalation": "Local patrols attempt an arrest. A sergeant organizes reinforcements. Archers use cover. The mage intervenes if necessary. Officials may seek external help. Guards may retreat or negotiate rather than fight to the death.",
+  "dm_principles": [
+    "NPCs pursue their goals when ignored.",
+    "Keep a calendar of shop hours, departures, and guard shifts.",
+    "The player is not automatically a hero.",
+    "Let trading, influence, debts, relationships, and consequences matter as much as combat.",
+    "A quiet departure, lucrative contract, unexpected feud, or scroll expedition are all valid outcomes."
+  ],
+  "reference_sections": [
+    {
+      "title": "Quadrath D6 TTRPG DM Guide",
+      "sections": [
+        {
+          "heading": "Quadrath D6 TTRPG DM Guide",
+          "text": ""
+        },
+        {
+          "heading": "General DM handbook",
+          "text": "**A reusable guide for running Quadrath with the compact D6 rules**  \n**Style:** fast, flexible, low-complexity play with fixed HP and AC and bonus-based abilities\n\nThe rules, NPCs, equipment, and DM procedures in this guide are intended for general Quadrath play. The Okla Deli material later in the guide is an optional example sandbox and can be replaced with any town, faction, or adventure."
+        },
+        {
+          "heading": "How to use this guide",
+          "text": "Use the core rules, weapon reference, and NPC stat blocks for any Quadrath adventure. Treat locations, quests, and NPC motivations as prompts rather than a fixed plot. Players may trade, explore, negotiate, investigate, fight, steal, hire help, or leave; follow their choices and let the world react.\n\nPlayers may begin with a higher-level or more capable character if the group agrees with the DM. Increase relevant bonuses as needed for that agreed starting point. Quadrath has no required level progression during play; the goal is to keep sessions short, readable, and easy to run."
+        },
+        {
+          "heading": "At a glance",
+          "text": "| Situation | Rule |\n|---|---|\n| Attack | `2d6 + Attack bonus` vs. Armor Class (AC). Equal to or higher than AC hits. |\n| Damage | Roll the listed d6 damage and subtract it from HP. Damage types use familiar 5e terminology. |\n| Check or save | `2d6 + relevant bonus` vs. the target difficulty. |\n| Critical | A natural 12 on 2d6 always hits; roll twice the listed damage dice. |\n| Fumble | A natural 2 always misses. There is no mandatory extra penalty. |\n| Turn | Move up to Speed, take one action, and take at most one reaction before the next turn. |"
+        },
+        {
+          "heading": "1. D6 system: quick rules",
+          "text": ""
+        },
+        {
+          "heading": "Bonuses, abilities, and checks",
+          "text": "This handbook uses bonuses rather than full ability scores. A stat block's `CON +1` or `INT +3` is already the bonus to add to a roll; there is no underlying ability value to calculate.\n\nThe core bonuses used in this adventure are:\n\n- **CON:** toughness, physical effort, stamina, and resistance to physical effects.\n- **INT:** observation, reasoning, tactics, negotiation, magical understanding, and technical tasks.\n\nOther major 5e-style abilities—such as STR, DEX, WIS, and CHA—may be represented descriptively or assigned a situational bonus when the DM and player agree. They do not need full scores. Perception is normally handled as an INT check in this handbook unless the DM decides another bonus fits the situation.\n\nRoleplay can grant a situational `+1` or `-1`."
+        },
+        {
+          "heading": "Difficulties",
+          "text": "| Difficulty | DC |\n|---|---:|\n| Easy | 6 |\n| Standard | 8 |\n| Challenging | 10 |\n| Hard | 12 |\n| Exceptional | 14 |\n\nA `2d6` result ranges from 2 to 12 before bonuses. For opposed checks, both sides roll `2d6 + the most fitting bonus`; ties favor the defender."
+        },
+        {
+          "heading": "Armor and cover",
+          "text": "AC uses a compact 2d6 scale and is not the same scale as D&D 5e AC. A shield is included where specified.\n\n- Partial cover: `+1 AC`\n- Substantial cover: `+2 AC`\n- An adjacent ally can block a passage, but cannot prevent all ranged attacks."
+        },
+        {
+          "heading": "Saving throws",
+          "text": "Roll `2d6 + CON` for poison, fire exposure, explosions, and physical endurance. Roll `2d6 + INT` for illusions, magical puzzles, mental effects, or spotting a trap. Each effect specifies its DC and what happens on a success."
+        },
+        {
+          "heading": "Combat pacing",
+          "text": "Rounds are about six seconds.\n\n- **Disengage:** Use an action to move without provoking opportunity attacks.\n- **Dodge:** Use an action to give attackers `-2` on attack rolls until your next turn. \n- **At 0 HP:** The creature is dead. At 10% HP creature is incapacitated with no direct recovery during combat unless via a spell or potion."
+        },
+        {
+          "heading": "Rest",
+          "text": "A short rest takes about one hour and requires a safe situation. It restores `1d6 HP` to each resting character and recharges short-rest abilities. A long rest restores all HP and daily abilities. Use fewer rests during a tense expedition."
+        },
+        {
+          "heading": "2. Common weapons",
+          "text": "Weapon damage and attack bonuses are listed here so NPC and player stat blocks only need to name the weapon they use. Attack bonuses are shown by wielder where the guide already defines them; for a new wielder, assign an appropriate bonus.\n\n| Weapon | Attack bonus | Damage | Damage type | Notes |\n|---|---|---:|---|---|\n| Dagger | Merchant `+1` | `1d6` | Piercing | — |\n| Crossbow | Merchant `+1`; Garran `+2`; Veyra `+3` | `1d6` | Piercing | Ranged weapon. |\n| Sword | Garran `+3`; Guard sergeant `+2`; Bandit leader `+2` | `2d6` | Slashing | — |\n| Blade | Veyra `+3` | `2d6` | Slashing | — |\n| Scimitar | Bandit `+1` | `1d6` | Slashing | — |\n| Spear | Town guard `+1` | `1d6` | Piercing | — |\n| Bow | Town archer `+2` | `1d6` | Piercing | Ranged weapon. |\n| Improvised weapon | Civilian `+0` | `1d6` | Bludgeoning | Use whatever object is available. |\n| Stone fist | Archive guardian `+2` | `2d6` | Bludgeoning | Natural or constructed attack. |\n| Bursting Fist | Guard Captain `+3` | `3d6` | Piercing and bludgeoning | Guard Captain attack. |\n| Anti-Magic Sword | Guard Captain `+4` | `4d6` | Slashing | On a hit, negates magical attacks and effects on the target. |\n| Kick of Fury | Guard Captain `+4` | `3d6` | Bludgeoning | Guard Captain attack. |"
+        },
+        {
+          "heading": "3. Magic spells",
+          "text": "Use the full Quadrath Magic System for spell lore, special spells, scaling, and non-combat effects. This section separates combat spell forms from defensive spells for D6 play. These names combine the existing elemental and structural types; they do not add new lore spells."
+        },
+        {
+          "heading": "Attack spells",
+          "text": "| Attack spell form | Effect                                                                                              |\n| ----------------- | --------------------------------------------------------------------------------------------------- |\n| Fire Strike       | Deals `2d6` fire damage to one target.                                                                    |\n| Ice Strike        | Deals `2d6` ice damage to one target and may slow or hinder it.                                           |\n| Lightning Strike  | Deals `2d6` lightning damage to one target.                                                               |\n| TrueLight Strike  | Deals `2d6` radiant damage to one target; especially effective against undead and certain monstrous foes. |\n| TrueDark Strike   | Deals `2d6` corrosive shadow damage to one target.                                                        |\n| Fire Storm        | Deals `3d6` fire damage in an area.                                                                       |\n| Ice Storm         | Deals `3d6` ice damage in an area and may slow or hinder creatures.                                       |\n| Lightning Storm   | Deals `3d6` lightning damage in an area.                                                                  |\n| Fire Beam         | Deals `2d6` fire damage as a sustained attack requiring focus.                                            |\n| Ice Beam          | Deals `2d6` ice damage as a sustained attack requiring focus.                                             |\n| Lightning Beam    | Deals `2d6` lightning damage as a sustained attack requiring focus.                                       |\n| TrueLight Beam    | Deals `2d6` radiant damage as a sustained attack requiring focus.                                         |\n| Dark Beam         | Deals `2d6` corrosive shadow damage as a sustained attack requiring focus.                                |"
+        },
+        {
+          "heading": "Defense spells",
+          "text": "| Defense spell | Effect |\n|---|---|\n| Shield | Forms a protective barrier that deflects or absorbs attacks. |\n| Heal | One target regains `2d6 + INT bonus` HP. |\n| Mass Heal | All chosen creatures within a 20-ft radius regain `4d6 + INT bonus` HP. |\n\nResolve attack bonuses with the caster's agreed D6 spell bonus and the normal combat rules. The Magic System file remains the authority for spell lore and full effect."
+        },
+        {
+          "heading": "4. Explosives and equipment",
+          "text": "| Item         | Stock | Effect                                                                                                                                                                    |\n| ------------ | ----: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| Blast charge |     2 | One action to place or throw within 20 ft. Creatures within 10 ft make a CON DC 9 save. On a failure, take `4d6` fire and thunder damage; on a success, take half damage. |\n| Smoke bomb   |     2 | Creates a 15-ft radius of heavy obscurement for 3 rounds. Ranged attacks through smoke are at `-2`; unseen targets may be impossible to select.                           |\n| Flash charge |     1 | Creatures within 10 ft make a CON DC 9 save or become blinded until the end of their next turn.                                                                           |\n\nExplosives are conspicuous, limited fantasy items. In crowded streets they risk collateral damage, property destruction, and a serious guard response. A blast charge is intentionally powerful but is not guaranteed to defeat a fully healthy elite guard."
+        },
+        {
+          "heading": "5. Optional example sandbox: Okla Deli",
+          "text": ""
+        },
+        {
+          "heading": "Opening scene",
+          "text": "> The road widens as Okla Deli comes into view. Wagons creak between market stalls. A blacksmith's hammer rings out beyond the crowded square. Two town guards look over the merchant's cargo and exchange wary glances at the well-equipped escorts. Town Hall stands beyond the market, but nobody directs the merchant toward it.\n\nAsk: **What do you do?**\n\nThe merchant may trade, explore, seek lodging, gamble, negotiate, hire help, steal, investigate, or leave. Do not introduce the scroll quest unless the party visits Town Hall."
+        },
+        {
+          "heading": "Locations and quick hooks",
+          "text": "| Location | What is happening |\n|---|---|\n| Market Square | Bargaining, a counterfeit-goods accusation, a pickpocket, or an unusual bulk buyer. |\n| Town Hall | Administrative business and a noticeboard. This is the **only** location that reveals Edric's volunteer request. |\n| Copper Lantern Tavern | Gossip, gambling, a mercenary duel, a suspicious traveler, or cellar noise. |\n| Iron Hearth Smithy | Armor repairs, weapon prices, or a missing iron shipment. |\n| Town Library | Maps, local history, rare books, and research. |"
+        },
+        {
+          "heading": "The Forgotten Scroll: optional main quest",
+          "text": ""
+        },
+        {
+          "heading": "Discovery gate",
+          "text": "At Town Hall, the party can find a notice seeking a volunteer escort for a scholarly expedition. Edric wants an ancient scroll retrieved from an abandoned underground archive about half a day outside Okla Deli so it can be preserved in the library.\n\nEdric offers **100 GP plus up to 25 GP in expenses**. A challenging INT negotiation check, DC 10, raises the payment to **140 GP**.\n\n| Scene | DM direction |\n|---|---|\n| Meeting | Let the merchant question Edric, negotiate, inspect maps, and decide whether to accompany him. |\n| Road | The journey takes half a day. Optionally roll a travel encounter. |\n| Entrance | A collapsed doorway blocks the way. INT DC 8 finds a hidden side passage. |\n| Guardian room | Two archive guardians are present. An INT DC 10 inscription check discovers a safe authorization phrase and avoids combat. |\n| Scroll case | INT DC 10 opens the case safely. Failure triggers an alarm and awakens one additional guardian. A retry is possible after dealing with the alarm. |\n| Return | Edric places the scroll in the library, pays the reward, and offers access to selected records. |\n\n**Optional mystery:** Several passages in the scroll remain untranslated. Their significance can be established later. Do not force a connection to the Travellers of the Dark."
+        },
+        {
+          "heading": "Random encounters",
+          "text": "Roll `2d6` when entering a busy district, traveling, waiting, or whenever the sandbox needs motion. Middle results are more common; extreme results are rare.\n\n| Roll | Encounter or prompt |\n|---:|---|\n| 2 | Suspicious travelers observe the merchant's wagon; a planned theft may be underway. |\n| 3 | A rare-item seller offers an uncertain old ring for 40 GP. |\n| 4 | Guard inspection: questions about weapons and explosive cargo. |\n| 5 | Disputed cargo: two traders demand a neutral judgment. |\n| 6 | A street performer draws a crowd while someone manipulates wagers. |\n| 7 | Quiet business: no incident; ordinary trade proceeds. |\n| 8 | A wagon accident blocks the road and cargo spills. |\n| 9 | A tavern argument escalates unless someone intervenes. |\n| 10 | A mercenary challenges an escort to a nonlethal duel for 20 GP. |\n| 11 | A missing child was last seen near the outskirts. |\n| 12 | A pickpocket attempts to steal `2d6 GP`; INT DC 9 notices the attempt. |"
+        },
+        {
+          "heading": "Side quests",
+          "text": "| Hook | Twist and reward |\n|---|---|\n| Missing iron shipment | The blacksmith offers 45 GP; the driver sold it to settle a debt. |\n| Counterfeit coins | Reward: 30 GP. A rival framed the accused trader. |\n| Roadside bandits | Reward: 60 GP. The desperate deserters might negotiate. |\n| Locked tavern cellar | Reward: 25 GP and lodging. A tunnel may conceal smugglers or old storage. |\n| Duelist | A 20–50 GP wager. Use the bandit leader stat block; the duel is nonlethal. |\n| Collector's map | Reward: 35 GP. The seller is reluctant and wants a favor. |"
+        },
+        {
+          "heading": "Trading and law",
+          "text": ""
+        },
+        {
+          "heading": "Goods and resale",
+          "text": "| Goods | Buy | Typical resale |\n|---|---:|---:|\n| Common cloth bundle | 8 GP | 10–12 GP |\n| Spice crate | 15 GP | 18–24 GP |\n| Iron tools | 6 GP | 8–10 GP |\n| Fine wine crate | 20 GP | 24–30 GP |\n| Ornamental dagger | 12 GP | 15–20 GP |\n| Rare manuscript | 35 GP | 40–70 GP |"
+        },
+        {
+          "heading": "Trade checks",
+          "text": "- INT DC 8 improves the price by 10%.\n- INT DC 12 improves the price by 20%.\n- Failing by 4 or more worsens the price by 10%, or the buyer leaves.\n- The merchant's Experienced Trader bonus applies.\n- Buyers have limited cash. Large stockpiles may require multiple days or new markets."
+        },
+        {
+          "heading": "Escalation",
+          "text": "Local patrols attempt an arrest. A sergeant organizes reinforcements. Archers use cover. The mage intervenes if necessary. Officials may seek external help. Guards may retreat or negotiate rather than fight to the death."
+        },
+        {
+          "heading": "6. NPCs, stat blocks, and improvisation",
+          "text": ""
+        },
+        {
+          "heading": "Combat stat blocks",
+          "text": "All entries under **Bonuses** are bonuses to add directly to the relevant roll. HP and AC remain fixed values. These are reusable Quadrath NPC reference entries, not level-based character sheets.\n\n| Character | HP | AC | Bonuses | Weapons |\n|---|---:|---:|---|---|\n| Merchant | 26 | 8 | CON `+1`; INT `+3` | Dagger; Crossbow |\n| Garran, elite guard | 58 | 10 | CON `+3`; INT `+1` | Sword; Crossbow |\n| Veyra, elite guard | 52 | 9 | CON `+2`; INT `+2` | Blade; Crossbow |\n| Civilian | 5 | 6 | CON `+0`; INT `+0` | Improvised weapon |\n| Bandit | 12 | 7 | CON `+1`; INT `+0` | Scimitar |\n| Town guard | 16 | 8 | CON `+1`; INT `+0` | Spear |\n| Town archer | 13 | 7 | CON `+0`; INT `+1` | Bow |\n| Guard sergeant | 32 | 9 | CON `+2`; INT `+1` | Sword |\n| Bandit leader | 36 | 8 | CON `+2`; INT `+1` | Sword |\n| Town mage Edric | 38 | 7 (`9` warded) | CON `+1`; INT `+4` | Magic System spells |\n| Archive guardian | 24 | 9 | CON `+2`; INT `+0` | Stone fist |\n| Guard Captain, half-elf barbarian | 60 | 12 | CON `+3`; INT `+2` | Bursting Fist; Anti-Magic Sword; Kick of Fury |"
+        },
+        {
+          "heading": "Party and foe abilities",
+          "text": "- **Merchant — Experienced Trader:** `+2` to INT checks involving appraisal or commerce.\n- **Merchant — Silver Tongue** *(once per short rest):* Reroll a failed negotiation check.\n- **Merchant — Command Escort:** The merchant can communicate a tactical order freely; the guard still acts on the guard's own turn.\n- **Merchant — Emergency Dodge** *(once per short rest):* Gain `+2 AC` against one attack.\n- **Elite guards — Two attacks:** An elite guard makes two attacks with their main weapon when taking the Attack action.\n- **Elite guards — Interpose** *(reaction):* An adjacent guard gives an attack against the merchant `-2` to hit.\n- **Elite guards — Second Wind** *(once per short rest):* Heal `2d6 HP`.\n- **Town guard — Hold the Line:** `+1 AC` while adjacent to another shield-bearing guard.\n- **Town archer — Aimed Shot:** `+1 to hit` if stationary.\n- **Guard sergeant:** Makes two sword attacks. Once per fight, grants nearby guards `+1 to hit` for one round.\n- **Bandit leader:** Makes two sword attacks. Once per fight, lets one ally reposition without triggering an opportunity attack.\n- **Town mage — Ward:** One action increases AC to 9 for 3 rounds.\n- **Town mage — Magic System spells:** Use the established Quadrath Magic System for the mage's elemental, structural, and pure-special spells. Do not add a separate attack profile or damage value here.\n- **Guard Captain — Enchanted Armor:** The armor grants resistance to piercing and slashing damage.\n- **Guard Captain — Anti-Magic Sword:** On a hit, the attack deals `4d6` slashing damage and negates magical attacks and effects on the target.\n\nThe Guard Captain's AC and non-attack bonuses are left DM-set because they were not specified. Assign only the direct bonuses needed for the scene.\n\nThe two elite guards are deliberately formidable. A single guard can usually defeat several ordinary town guards. Coordinated archers, terrain, magic, injuries, and attrition remain dangerous. Do not use one-to-one 5e challenge-rating assumptions with this homebrew system.\n\n| NPC                | Personality and desire                                           |\n| ------------------ | ---------------------------------------------------------------- |\n| Edric, town mage   | Patient, curious, and absent-minded; wants the scroll preserved. |\n| Halven, sergeant   | Strict and practical; wants order.                               |\n| Mara, innkeeper    | Friendly and observant; wants a thriving tavern.                 |\n| Torren, blacksmith | Blunt and proud; wants his iron back.                            |\n| Selvik, trader     | Charming and competitive; seeks commercial advantage.            |\n| Ilwen, collector   | Reserved and studious; wants rare documents.                     |\n\nNPCs pursue their goals when ignored. Keep a calendar of shop hours, departures, and guard shifts. The player is not automatically a hero. Let trading, influence, debts, relationships, and consequences matter as much as combat. End wherever the merchant's decisions naturally lead.\n\n\n> **DM reminder:** A quiet departure, a lucrative contract, an unexpected feud, or the scroll expedition are all valid outcomes. Follow the player's choices, not a predetermined ending."
+        }
+      ]
+    }
+  ]
+}

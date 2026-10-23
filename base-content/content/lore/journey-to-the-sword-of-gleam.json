@@ -1,0 +1,95 @@
+{
+  "id": "story.journey-to-the-sword-of-gleam",
+  "type": "story",
+  "version": "0.1.0",
+  "title": "The Journey to the Sword of Gleam",
+  "quest": "The Leader, Wolf, and Old Man travelled from the western woodlands toward the Dark Square beyond the Bondry Mountains to find a trail to the enchanted divine Sword of Gleam, supposedly left by old King Alof.",
+  "eldritch_storm": "A Legendary Sorcerer created a storm to capture the trio after they tried to steal an artifact near a West Kingdom city. The city's guild escalated the matter to the Sorcerer's Guild because TrueDark connections were suspected. The Leader's mana shielded the trio, but a counter-spell disturbed the storm and caused memory loss.",
+  "olka_deli": {
+    "status": "stranded",
+    "events": "The three were separated around Olka Deli and did not remember each other. The Leader was calm, the Wolf alert, and the Old Man confused."
+  },
+  "equipment": [
+    {
+      "owner": "Old Man",
+      "items": [
+        "Wooden bracelet: Lightning Beam, 0.5 second cooldown",
+        "Backpack: torn map, 3 health potions, 4 mana potions; mana potions double spell effectiveness"
+      ]
+    },
+    {
+      "owner": "Wolf",
+      "items": [
+        "Wooden bracelet: Fire Beam and Fire Slash, 3 second cooldown",
+        "Ring: immunity to fire and poison"
+      ]
+    },
+    {
+      "owner": "Leader",
+      "items": [
+        "No weapons or ornaments",
+        "Mask: 100-meter total-darkness sight, psychic resistance, Fear and Hold Monster without cooldown; Master spells have a 50% failure chance during memory loss"
+      ]
+    }
+  ],
+  "shared_cloak": "Invisibility for up to 15 minutes and resistance to divine, lightning, piercing, and slashing damage.",
+  "memory": "Seeing one another identifies a fellow cult member. Conversation restores who they are but not their destination. A special library scroll casts Psychic Heal; it requires a sacrifice and the members must be within one meter of the casting point.",
+  "hostiles": [
+    "Town guards led by the Guard Captain",
+    "Goblin burglars",
+    "Lizard wardens accompanying a delegation and carrying spears and swords",
+    "Hidden city archers"
+  ],
+  "location": "The city hall contains the library where the ancient scroll is kept.",
+  "reference_sections": [
+    {
+      "title": "The Journey to the Sword of Gleam",
+      "sections": [
+        {
+          "heading": "The Journey to the Sword of Gleam",
+          "text": ""
+        },
+        {
+          "heading": "The Quest",
+          "text": "Originating somewhere in the western woodlands of the West Kingdom, three members of the Travellers of the Dark—the Leader, the Wolf and the Old Man—were trying to go into the Dark Square, beyond the Bondry Mountains, to find a trail that would lead them to an artifact called the **Sword of Gleam**, an enchanted divine sword supposedly left behind by the old King Alof."
+        },
+        {
+          "heading": "The Eldritch Storm",
+          "text": "During the journey, the cult members encountered the eldritch storm and sustained psychic damage. The Leader possibly took less damage, but how much less is not known.\n\nThe storm was created by a Legendary Sorcerer protecting the nearby city in the West Kingdom, where a couple of members of the cult were trying to steal another artifact. The city's main guild was notified, which in turn escalated the matter to the Sorcerer's Guild, as TrueDark connections were suspected.\n\nThe aim of the storm was to capture and mentally incapacitate the trio temporarily to ensure their capture. However, the immense mana of the Leader shielded them from taking higher damage, though they still faced memory loss. A likely high-tier spell cast by the Leader as a counter-attack disturbed the storm, and the guild team was unable to find them after the storm cleared."
+        },
+        {
+          "heading": "Stranded after the storm",
+          "text": "After the encounter, they seemed to have forgotten where they were going.\n\nAll three of them were in separate but nearby locations, stranded in the small town of Olka Deli. They did not remember each other. The challenge was now to join forces again, resume their quest, possibly gain strength in some way, and recover their memories.\n\nThe Leader seemed calm, the Wolf was alert, and the Old Man was highly confused."
+        },
+        {
+          "heading": "The Trio in Olka Deli",
+          "text": ""
+        },
+        {
+          "heading": "The Old Man",
+          "text": "**Inventory and equipment**\n\n- **Wooden bracelet:** Enchanted. It can cast Lightning Beam with a very short cooldown of 0.5 seconds. The Old Man has forgotten that the bracelet has this ability.\n- **Backpack:** Contains a torn map, 3 health potions and 4 mana potions.\n  - **Mana potions:** Used for the mana boost ability, causing all spells to be doubly effective.\n\nThe Old Man retains knowledge of all spells associated with his class."
+        },
+        {
+          "heading": "The Wolf",
+          "text": "**Inventory and equipment**\n\n- **Wooden bracelet:** Enchanted. It can cast Fire Beam and Fire Slash, with a cooldown of 3 seconds.\n- **Ring:** Grants immunity to fire and poison.\n\nThe Wolf retains knowledge of all spells associated with his class."
+        },
+        {
+          "heading": "The Leader",
+          "text": "**Inventory and equipment**\n\n- **Weapons and ornaments:** None.\n- **Mask:** Enchanted. It allows the Leader to see in total darkness up to 100 meters and grants resistance to psychic damage.\n\nThrough the mask, he can use Fear and Hold Monster without cooldown. Due to his temporary partial memory loss, his Master-level spells have a 50% chance of not working until his memory is returned."
+        },
+        {
+          "heading": "Shared Clan Cloak",
+          "text": "All three members wear the magical cloak of the clan.\n\n**Cloak abilities**\n\n- Grants invisibility for up to 15 minutes at a time if needed.\n- Grants resistance to divine, lightning, piercing and slashing damage."
+        },
+        {
+          "heading": "Recognition and Memory",
+          "text": "If the members see one another, they are able to recognize that the other person is a member of the same cult. If they talk for a while without distraction, they remember who they are, but not where they were going.\n\nTo completely recover their memories, they need to find a special scroll in the nearby library. The scroll allows them to cast the ancient spell Psychic Heal. The spell requires a sacrifice, and the members must be within one meter of the casting point for it to fully heal them."
+        },
+        {
+          "heading": "Hostiles in Olka Deli",
+          "text": "Hostiles are nearby. Town guards, led by the Guard Captain, already suspect the trio because of their black cloaks and have begun moving towards them.\n\nMonsters lurk in the shadows and alleys, including goblin burglars and a few lizard wardens. The lizard wardens are in the town to accompany a delegation that has come to meet the mayor. They patrol near the town hall and can get into quarrels with the city guards if provoked, as they are short-tempered. Each lizard warden carries a spear and a sword.\n\nCity archers are also present, mostly hidden while covering important areas.\n\nThe city hall contains the library where the ancient scroll is kept."
+        }
+      ]
+    }
+  ]
+}
