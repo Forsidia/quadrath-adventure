@@ -8,20 +8,22 @@ import './campaign.css';
 const SAVE_KEY = 'quadrath-adventure.campaign.v1';
 const kindLabel = { scratch: 'From scratch', pc: 'Player character', npc: 'NPC' };
 
+function restore(): { roster: CharacterDraft[]; draft: CharacterDraft } {
+  try { const saved = JSON.parse(localStorage.getItem(SAVE_KEY) || 'null'); return { roster: readRoster(saved?.roster), draft: isCharacterShape(saved?.draft) ? saved.draft : blankCharacter() }; }
+  catch { return { roster: [], draft: blankCharacter() }; /* A blank character is offered if local storage is unavailable. */ }
+}
+
 function NumberInput({ label, value, onChange, min, max }: { label: string; value: number; onChange: (n: number) => void; min?: number; max?: number }) {
   return <label className="maker-field field-number"><span>{label}</span><input type="number" inputMode="numeric" step={1} min={min} max={max} value={Number.isNaN(value) ? '' : value} onChange={e => onChange(e.target.valueAsNumber)} /></label>;
 }
 
 export function Campaign({ bundleUrl }: { bundleUrl: string }) {
   const [pack, setPack] = useState<ContentPack | null>(null), [loadError, setLoadError] = useState('');
-  const [roster, setRoster] = useState<CharacterDraft[]>([]), [draft, setDraft] = useState<CharacterDraft>(blankCharacter);
+  // Read the save while creating state, so remounting (tab switches, StrictMode) never writes a blank form over it.
+  const [initial] = useState(restore), [roster, setRoster] = useState(initial.roster), [draft, setDraft] = useState(initial.draft);
   const [picker, setPicker] = useState(false), [query, setQuery] = useState(''), [kind, setKind] = useState<'' | 'pc' | 'npc'>('');
   const [errors, setErrors] = useState<string[]>([]), [notice, setNotice] = useState(''), [confirmDelete, setConfirmDelete] = useState('');
   useEffect(() => { const controller = new AbortController(); loadPack(bundleUrl, controller.signal).then(setPack).catch(e => { if (!controller.signal.aborted) setLoadError(String(e)); }); return () => controller.abort(); }, [bundleUrl]);
-  useEffect(() => {
-    try { const saved = JSON.parse(localStorage.getItem(SAVE_KEY) || 'null'); setRoster(readRoster(saved?.roster)); if (isCharacterShape(saved?.draft)) setDraft(saved.draft); }
-    catch { /* A blank character is offered if local storage is unavailable. */ }
-  }, []);
   useEffect(() => { try { localStorage.setItem(SAVE_KEY, JSON.stringify({ roster, draft })); } catch { /* The maker works without persistence. */ } }, [roster, draft]);
   const all = useMemo(() => pack ? templates(pack) : [], [pack]);
   const matches = all.filter(t => (!kind || t.kind === kind) && (t.name + ' ' + t.collection).toLowerCase().includes(query.trim().toLowerCase()));

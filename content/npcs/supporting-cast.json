@@ -373,6 +373,7 @@
     {
       "id": "npc.halven",
       "name": "Halven, Sergeant",
+      "level": 8,
       "personality": "Strict and practical; wants order.",
       "hp": 32,
       "ac": 9,

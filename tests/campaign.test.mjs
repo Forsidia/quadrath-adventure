@@ -23,7 +23,7 @@ test('a player character autofills the whole sheet',()=>{
 test('an NPC autofills the sheet from its stat block and bonuses',()=>{
   const data=npc('npc.guard-captain');
   const c=fromTemplate({kind:'npc',id:data.id,name:data.name,collection:'',hp:0,ac:0,data});
-  assert.equal(c.source.kind,'npc');assert.equal(c.hp,60);assert.equal(c.ac,12);
+  assert.equal(c.source.kind,'npc');assert.equal(c.hp,60);assert.equal(c.ac,12);assert.equal(c.level,12);assert.equal(tierFor(c.level),'master');
   assert.deepEqual(c.modifiers,data.bonuses);
   assert.equal(c.actions.length,data.actions.length);assert.ok(c.actions.some(a=>a.damage_type==='piercing / bludgeoning'));
   assert.deepEqual(validateCharacter(c),[]);

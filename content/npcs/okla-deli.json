@@ -56,6 +56,7 @@
     {
       "id": "npc.guard-sergeant",
       "name": "Halven, Guard Sergeant",
+      "level": 8,
       "hp": 32,
       "ac": 9,
       "bonuses": {
@@ -158,6 +159,7 @@
     {
       "id": "npc.guard-captain",
       "name": "Guard Captain, Half-Elf Barbarian",
+      "level": 12,
       "hp": 60,
       "ac": 12,
       "bonuses": {

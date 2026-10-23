@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "license": "CC-BY-4.0",
   "attribution": "Quadrath content by Forsidia, licensed under CC BY 4.0.",
-  "content_sha256": "7af42c9d5257caf693086d22866074ccadcfad27862d05421fd564528fa00aea",
+  "content_sha256": "1d5295090e7af5a76fd8fe94c15bdd0ded09b30bd2a91288a8d9a0658f7f15aa",
   "manifest": {
     "id": "quadrath",
     "title": "Quadrath",
@@ -2519,6 +2519,7 @@
           {
             "id": "npc.guard-sergeant",
             "name": "Halven, Guard Sergeant",
+            "level": 8,
             "hp": 32,
             "ac": 9,
             "bonuses": {
@@ -2621,6 +2622,7 @@
           {
             "id": "npc.guard-captain",
             "name": "Guard Captain, Half-Elf Barbarian",
+            "level": 12,
             "hp": 60,
             "ac": 12,
             "bonuses": {
@@ -4079,6 +4081,7 @@
           {
             "id": "npc.halven",
             "name": "Halven, Sergeant",
+            "level": 8,
             "personality": "Strict and practical; wants order.",
             "hp": 32,
             "ac": 9,
