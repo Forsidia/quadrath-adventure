@@ -7,7 +7,7 @@ import {validateBundle} from '../scripts/bundle-format.mjs';
 const source=await readFile(new URL('../src/game/engine.ts',import.meta.url),'utf8');
 const compiled=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext}}).outputText;
 const {newGame,drawEncounter,resolveChoice,choices}=await import('data:text/javascript;base64,'+Buffer.from(compiled).toString('base64'));
-const bundle=validateBundle(JSON.parse(await readFile(new URL('../public/bundles/quadrath-base.bundle.json',import.meta.url),'utf8')));
+const bundle=validateBundle(JSON.parse(await readFile(new URL('../public/bundles/quadrath.bundle.json',import.meta.url),'utf8')));
 const character=bundle.documents.find(e=>e.data.id==='character.sample.merchant').data;
 const table=bundle.documents.find(e=>e.data.id==='adventure.okla-deli').data.random_encounters;
 
@@ -35,7 +35,7 @@ test('pickpocket loss uses 2d6 and cannot make the purse negative',()=>{
  assert.equal(result.state.coins,0);
  assert.match(result.result,/lose 2 GP/);
 });
-test('an unknown ring is acquired without inventing base item powers',()=>{
+test('an unknown ring is acquired without inventing item powers',()=>{
  const state={...newGame(character),encounter:table.find(e=>e.roll===3),resolved:false};
  const result=resolveChoice(state,choices(3)[0],character);
  assert.equal(result.state.coins,60);

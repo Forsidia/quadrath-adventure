@@ -20,7 +20,7 @@ test('loads all records from one bundled database request', async () => {
   let requests=0;
   globalThis.fetch = async () => {
     requests++;
-    return new Response(await readFile(new URL('../public/bundles/quadrath-base.bundle.json', import.meta.url)), { status: 200 });
+    return new Response(await readFile(new URL('../public/bundles/quadrath.bundle.json', import.meta.url)), { status: 200 });
   };
   try {
     const pack = await loadPack('/pack/');
@@ -39,7 +39,7 @@ test('surfaces missing content and rejects unsafe document paths', async () => {
   try {
     globalThis.fetch = async () => new Response('', { status: 404 });
     await assert.rejects(loadPack('/pack'), /HTTP 404/);
-    const bundle=JSON.parse(await readFile(new URL('../public/bundles/quadrath-base.bundle.json',import.meta.url),'utf8'));
+    const bundle=JSON.parse(await readFile(new URL('../public/bundles/quadrath.bundle.json',import.meta.url),'utf8'));
     bundle.documents[0].path='../private.json';
     globalThis.fetch = async () => Response.json(bundle);
     await assert.rejects(loadPack('/pack'), /Invalid content document path/);

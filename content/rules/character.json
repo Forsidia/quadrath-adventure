@@ -3,7 +3,7 @@
   "type": "rules",
   "version": "0.1.0",
   "title": "Player Character Model",
-  "summary": "The stable player-sheet fields used by Quadrath base content.",
+  "summary": "The stable player-sheet fields used by Quadrath.",
   "fields": [
     {
       "id": "hp",
@@ -56,7 +56,7 @@
     }
   ],
   "notes": [
-    "Modifiers are the recorded values; base content does not require hidden ability scores.",
+    "Modifiers are the recorded values; Quadrath does not require hidden ability scores.",
     "Character-specific bonuses may be represented as effects or traits rather than changing the sheet fields.",
     "The canonical key is intelligence."
   ]

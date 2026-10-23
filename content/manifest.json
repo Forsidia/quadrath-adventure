@@ -1,13 +1,13 @@
 {
-  "id": "quadrath-base",
-  "title": "Quadrath Base Content",
+  "id": "quadrath",
+  "title": "Quadrath",
   "publisher": "Forsidia",
   "version": "0.1.0",
-  "status": "draft-public-foundation",
+  "status": "draft",
   "license": "CC-BY-4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "schema_version": "0.1.0",
-  "description": "The open rules, character model, spells, equipment, NPCs, traps, adventures, sessions, factions, and setting foundation for Quadrath.",
+  "description": "The open rules, character model, spells, equipment, NPCs, traps, adventures, sessions, factions, and setting for Quadrath.",
   "documents": [
     {
       "path": "rules/core.json",

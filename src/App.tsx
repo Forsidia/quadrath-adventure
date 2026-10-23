@@ -4,7 +4,7 @@ import { ContentViewer } from './viewer/ContentViewer';
 import { Gameplay } from './game/Gameplay';
 import './game/game.css';
 
-const bundleUrl='/bundles/quadrath-base.bundle.json';
+const bundleUrl='/bundles/quadrath.bundle.json';
 function currentView(){return new URLSearchParams(location.search).get('view')==='compendium'||Boolean(location.hash)?'compendium':'gameplay';}
 export function App(){
   const [view,setView]=useState(currentView);

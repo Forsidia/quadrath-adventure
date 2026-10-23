@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Small, dependency-free content CLI for Quadrath base content."""
+"""Small, dependency-free content CLI for Quadrath."""
 
 from __future__ import annotations
 
@@ -187,7 +187,7 @@ def add_character(args):
 
 
 def main():
-    parser = argparse.ArgumentParser(prog="quadrath", description="Validate and render Quadrath base content")
+    parser = argparse.ArgumentParser(prog="quadrath", description="Validate and render Quadrath content")
     subparsers = parser.add_subparsers(dest="command", required=True)
     subparsers.add_parser("validate", help="validate all manifest documents")
     subparsers.add_parser("render", help="validate and generate generated/quadrath.md")

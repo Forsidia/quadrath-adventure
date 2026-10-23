@@ -33,7 +33,7 @@ def build_bundle():
         'id': manifest['id'],
         'version': manifest['version'],
         'license': manifest['license'],
-        'attribution': 'Quadrath base content by Forsidia, licensed under CC BY 4.0.',
+        'attribution': 'Quadrath content by Forsidia, licensed under CC BY 4.0.',
         'content_sha256': hashlib.sha256(canonical(payload).encode('utf-8')).hexdigest(),
         **payload,
     }
@@ -41,7 +41,7 @@ def build_bundle():
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--output', type=Path, default=quadrath.ROOT / 'generated/quadrath-base.bundle.json')
+    parser.add_argument('--output', type=Path, default=quadrath.ROOT / 'public/bundles/quadrath.bundle.json')
     args = parser.parse_args()
     bundle = build_bundle()
     args.output.parent.mkdir(parents=True, exist_ok=True)
