@@ -9,13 +9,14 @@ Maintained by [Forsidia](https://forsidia.in). The current prototype is free to 
 ## What you can do
 
 - **Explore Okla Deli:** choose a traveller, visit locations, roll 2d6 encounters, and decide how to respond.
+- **Build a party:** create characters from scratch, or load any player character or NPC from the Compendium to fill in the whole sheet.
 - **Keep your progress:** your traveller, gold, acquired items, and journal are saved locally in your browser.
 - **Search the world:** browse rules, characters, NPCs, spells, weapons, traps, and lore with linked references.
 - **Bring it to the table:** download individual records or the session handbook from the Compendium.
 
 ## Project status
 
-Quadrath Adventure is an early prototype under active development. Random encounters are playable; campaign mode is planned. It does not yet implement full combat, multiplayer, or account sync. Browser saves stay on the device and browser where you play.
+Quadrath Adventure is an early prototype under active development. Random encounters are playable. The Campaign page has a character maker; campaign play (sessions, quests, progression) is planned. It does not yet implement full combat, multiplayer, or account sync. Browser saves stay on the device and browser where you play.
 
 Everything here — the app, the rules, and the world — is open source.
 
@@ -32,12 +33,13 @@ Open **http://localhost:5174**. Production preview uses **4174**. Ports are fixe
 
 ## Screens
 
-The bottom menu switches between two mobile-responsive screens:
+The bottom menu switches between three mobile-responsive screens:
 
 - **Gameplay:** a choice-driven, Twine-style visit to Okla Deli. Select a traveller, move between locations, roll the 2d6 encounter table, and choose how to respond. Ability checks, a gold purse, acquired items, and a journal are saved in this browser. Start a new traveller using the confirmation control.
+- **Campaign:** a character maker for building a party. Start from scratch or load from the Compendium: player characters and NPCs both carry full stat blocks, so either one fills in the form (identity, level and tier, HP, AC, modifiers, actions, abilities, traits, equipment, backstory). Edit anything, save characters to a party kept in this browser, or export one as JSON in the Compendium character format.
 - **Compendium:** searchable rules, PCs, NPCs, spells, weapons, traps, and lore. Includes compact stats, enchantment bonuses, linked references, syntax-highlighted JSON, record downloads, and a handbook download.
 
-Random Encounters is active. Campaign is visibly disabled. Encounter prompts and character data come from the content bundle; branch outcomes, starting gold, trading profit, and nonlethal check-based duels are app-level rules. Local saves are not an authoritative game server.
+The Campaign mode button on Gameplay opens the Campaign page. Encounter prompts and character data come from the content bundle; branch outcomes, starting gold, trading profit, and nonlethal check-based duels are app-level rules. Local saves are not an authoritative game server.
 
 ## Game content
 
@@ -88,9 +90,10 @@ The bundle loads as one JSON request and is indexed in memory; record and handbo
 | Path | Responsibility |
 | --- | --- |
 | `content/`, `schema/` | Rules and world data and their formats |
+| `src/campaign/` | Character maker, Compendium character loading, party roster |
 | `src/game/` | Encounter engine, choice flow, local state, gameplay screen |
 | `src/viewer/` | Compendium, record indexing, presentation |
-| `src/App.tsx` | Gameplay/Compendium navigation |
+| `src/App.tsx` | Gameplay/Campaign/Compendium navigation |
 | `scripts/quadrath.py`, `handbook.py`, `bundle.py` | Content validation, handbook rendering, bundle export |
 | `scripts/update-content.mjs` | Regenerate the served bundle |
 | `scripts/bundle-format.mjs` | Bundle validation and integrity checks |

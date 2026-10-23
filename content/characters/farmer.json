@@ -9,8 +9,8 @@
   "level": 1,
   "tier": "novice",
   "sheet": {
-    "hp": 10,
-    "ac": 11,
+    "hp": 20,
+    "ac": 8,
     "modifiers": {
       "intelligence": 0,
       "constitution": 2,

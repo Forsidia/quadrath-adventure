@@ -1,0 +1,85 @@
+/* Campaign shares the gameplay manuscript theme; these rules add the character maker's form controls. */
+.campaign-screen .campaign-layout{grid-template-columns:minmax(0,1fr) 290px;align-items:start}
+.campaign-screen .maker h2{margin-bottom:22px;overflow-wrap:anywhere}
+
+.maker-start{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px}
+.maker-start>button{display:flex;gap:11px;align-items:flex-start;text-align:left;padding:14px 15px;border:1px solid #a8884c55;border-radius:2px;background:#fff8e626;color:#6d4f2b;font:15px/1.4 Georgia,serif;transition:background .15s,border-color .15s}
+.maker-start>button svg{flex-shrink:0;margin-top:2px;color:#9b7a44}
+.maker-start>button small{display:block;font:11px/1.5 system-ui,sans-serif;color:#8e7553;margin-top:3px}
+.maker-start>button:hover{background:#fff8e655;border-color:#9b7a44}
+.maker-start>button.selected{background:#a8884c1f;border-color:#8c6d3b;box-shadow:inset 0 0 0 1px #8c6d3b40}
+.maker-start>button:focus-visible,.template-picker button:focus-visible,.maker-actions button:focus-visible{outline:2px solid #987640;outline-offset:2px}
+
+.template-picker{border:1px solid #a8884c45;background:#f8eed6aa;padding:14px;margin:4px 0 6px}
+.picker-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:10px}
+.picker-search{flex:1 1 220px;display:flex;align-items:center;gap:8px;border:1px solid #a8884c60;background:#fffaee;padding:0 11px;color:#8c6d3b}
+.picker-search input{flex:1;min-width:0;border:0;background:transparent;padding:10px 0;font:14px Georgia,serif;color:#4a3822;outline:none}
+.picker-kinds{display:flex;gap:4px;flex-wrap:wrap}
+.picker-kinds button{font-size:11px;padding:8px 10px;border:1px solid #a8884c45;border-radius:2px;color:#7b6240}
+.picker-kinds button[aria-pressed=true]{background:#8c6d3b;border-color:#8c6d3b;color:#f5ead0}
+.picker-list{list-style:none;margin:0;padding:0;max-height:300px;overflow-y:auto;border-top:1px solid #a8884c30}
+.picker-list button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;text-align:left;padding:10px 6px;border-bottom:1px solid #a8884c25;color:#5a4830}
+.picker-list button:hover{background:#b68b3d17}
+.picker-list strong{display:block;font:15px Georgia,serif;color:#4a3822}
+.picker-list small{display:block;font-size:11px;color:#8e7553;margin-top:2px}
+.picker-stats{flex-shrink:0;font-size:11px;color:#7b6240;font-variant-numeric:tabular-nums}
+.picker-empty,.template-picker [role=status]{font:13px Georgia,serif;color:#8e7553;margin:10px 0 0}
+.maker-notice{border-left:2px solid #af8950;background:#ab863514;padding:10px 14px;font:13px/1.6 Georgia,serif;color:#655030;margin:12px 0 0}
+
+.maker fieldset{border:0;border-top:1px solid #9b7b463b;margin:26px 0 0;padding:18px 0 0;min-width:0}
+.maker legend{float:left;width:100%;padding:0;margin:0 0 12px;font:italic 17px Georgia,serif;color:#8a6d44}
+.field-hint{clear:both;font:12px/1.6 system-ui,sans-serif;color:#8e7553;margin:0 0 12px}
+.field-grid{clear:both;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 14px}
+.identity-grid{grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr)}
+.field-wide{grid-column:1/-1}
+.maker-field{display:flex;flex-direction:column;gap:5px;min-width:0}
+.maker-field>span{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#8c6d3b}
+.maker-field>span small{text-transform:none;letter-spacing:0;color:#a08a66}
+.maker-field input,.maker-field select,.maker-field textarea,.field-output{width:100%;border:1px solid #a8884c60;border-radius:2px;background:#fffaee;padding:9px 10px;font:14px/1.5 Georgia,serif;color:#4a3822}
+.maker-field textarea{resize:vertical}
+.maker-field input::placeholder,.maker-field textarea::placeholder{color:#ae9b7b}
+.maker-field input:focus,.maker-field select:focus,.maker-field textarea:focus{outline:2px solid #98764080;outline-offset:0;border-color:#8c6d3b}
+.field-output{display:block;background:transparent;border-style:dashed;text-transform:capitalize;color:#7b6240}
+.sheet-grid{grid-template-columns:repeat(auto-fill,minmax(110px,1fr))}
+.sheet-grid .maker-field>span{text-transform:capitalize;letter-spacing:.3px;font-size:11px}
+.field-number input{font-variant-numeric:tabular-nums}
+
+.entry-row{clear:both;position:relative;border:1px solid #a8884c35;background:#fff8e61f;padding:14px 46px 14px 14px;margin-bottom:10px}
+.action-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.ability-grid{grid-template-columns:minmax(0,2fr) minmax(0,1fr)}
+.remove-entry{position:absolute;top:8px;right:8px;color:#8c6d3b}
+.remove-entry:hover{background:#9c432914;color:#9c4329}
+.add-entry{font-size:12px;color:#7b512c;padding:6px 0}
+
+.maker-errors{margin-top:24px;border-left:2px solid #9c4329;background:#9c43290f;padding:12px 16px;font-size:13px;color:#7a3a22}
+.maker-errors ul{margin:6px 0 0;padding-left:18px;line-height:1.7}
+.maker-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;padding-top:20px;border-top:1px solid #9b7b463b}
+.maker-actions button{display:inline-flex;align-items:center;gap:8px;min-height:42px;padding:10px 16px;border:1px solid #8c6d3b80;border-radius:2px;color:#6d4f2b;font-size:13px}
+.maker-actions button:hover{background:#b68b3d17}
+.maker-actions .maker-primary{background:#6d4f2b;border-color:#6d4f2b;color:#f5ead0}
+.maker-actions .maker-primary:hover{background:#5a3f20}
+
+.campaign-aside{display:flex;flex-direction:column;gap:16px;margin-top:26px}
+.campaign-screen .campaign-aside .traveller-panel{margin-top:0}
+.campaign-screen .traveller-panel h2{overflow-wrap:anywhere}
+.party-panel .eyebrow{display:flex;align-items:center;gap:6px}
+.party-empty{font:13px/1.7 Georgia,serif;color:#a7a68f;margin:12px 0}
+.party-list{list-style:none;padding:0;margin:12px 0}
+.party-list li{display:flex;align-items:center;gap:6px;border-bottom:1px solid #c2aa7020}
+.party-list li.current .party-member strong{color:#e3c98f}
+.party-member{flex:1;min-width:0;text-align:left;padding:10px 0}
+.party-member strong{display:block;font:16px Georgia,serif;color:#d3bd8a;overflow-wrap:anywhere}
+.party-member small{display:block;font-size:11px;color:#9a9278;margin-top:2px;text-transform:capitalize}
+.party-list .icon-button{color:#9a9278}
+.party-confirm{display:flex;gap:4px}
+.party-confirm button{font-size:11px;padding:6px 8px;border-radius:2px;background:#c2a56c19;color:#d3bb88}
+
+@media(max-width:750px){
+  .campaign-screen .campaign-layout{grid-template-columns:1fr}
+  .campaign-aside{margin-top:0;order:-1}
+  .maker-start,.field-grid,.identity-grid,.ability-grid{grid-template-columns:1fr}
+  .action-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sheet-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .entry-row{padding:12px 44px 12px 12px}
+}
+@media(prefers-reduced-motion:reduce){.maker-start>button{transition:none}}

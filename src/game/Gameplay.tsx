@@ -1,11 +1,11 @@
 import { useEffect, useMemo, useState } from 'react';
-import { ArrowRight, BookOpen, Compass, Dice5, LockKeyhole, RotateCcw } from 'lucide-react';
+import { ArrowRight, BookOpen, Compass, Dice5, RotateCcw, ScrollText } from 'lucide-react';
 import { loadPack, type ContentPack, type Entity } from '../viewer/data';
 import { characters, choices, drawEncounter, encounterTable, locations, newGame, resolveChoice, type GameState } from './engine';
 import './fantasy.css';
 
 const SAVE_KEY='quadrath-adventure.random.v1';
-export function Gameplay({bundleUrl}: {bundleUrl:string}) {
+export function Gameplay({bundleUrl,onCampaign}: {bundleUrl:string; onCampaign:()=>void}) {
   const [pack,setPack]=useState<ContentPack|null>(null),[error,setError]=useState('');
   const [state,setState]=useState<GameState|null>(null),[result,setResult]=useState(''),[dice,setDice]=useState<number[]>([]);
   const [confirmReset,setConfirmReset]=useState(false);
@@ -22,7 +22,7 @@ export function Gameplay({bundleUrl}: {bundleUrl:string}) {
   function act(id:string){try{const action=choices(state!.encounter!.roll).find(a=>a.id===id)!;const resolved=resolveChoice(state!,action,character!);setState(resolved.state);setResult(resolved.result);setDice(resolved.dice);}catch(e){setError(String(e));}}
   return <div className="game-screen"><header className="game-header"><a href="https://forsidia.in/products/quadrath-ttrpg" target="_blank" rel="noreferrer" className="game-logo">Q<span>Quadrath<small>ADVENTURE</small></span></a><span className="game-edition">LOCAL PLAY / EARLY BUILD</span></header>
     <main className="game-main"><div className="eyebrow">A STORY AT YOUR OWN PACE</div><h1>The roads of Okla Deli<span>.</span></h1><p className="game-intro">A bustling town. A turn of the dice. See where a small encounter takes you.</p>
-      <div className="mode-selector" aria-label="Game mode"><button className="selected"><Dice5 size={17}/>Random encounters</button><button disabled title="Campaign mode is coming later"><LockKeyhole size={15}/>Campaign <small>Coming later</small></button></div>
+      <div className="mode-selector" aria-label="Game mode"><button className="selected"><Dice5 size={17}/>Random encounters</button><button onClick={onCampaign}><ScrollText size={15}/>Campaign <small>New</small></button></div>
       {error&&<div className="error" role="alert">{error}<button onClick={()=>setError('')}>Dismiss</button></div>}
       {!pack&&!error&&<p role="status">Opening the town gates…</p>}
       {pack&&!state&&<section className="character-select"><div className="section-heading"><span className="eyebrow">CHOOSE YOUR TRAVELLER</span><span>Starting purse: 100 GP</span></div><div className="character-options">{pcs.map(pc=><button key={String(pc.id)} onClick={()=>{setState(newGame(pc));setResult('');setDice([]);}}><BookOpen size={23}/><h2>{String(pc.title)}</h2><p>{String(pc.description)}</p><span>HP {String((pc.sheet as Entity).hp)} · AC {String((pc.sheet as Entity).ac)}</span><strong>Enter Okla Deli <ArrowRight size={16}/></strong></button>)}</div><p className="game-disclaimer">Start a fresh visit. Recorded session outcomes remain in the Compendium; they do not lock your character’s future.</p></section>}
@@ -32,7 +32,7 @@ export function Gameplay({bundleUrl}: {bundleUrl:string}) {
         {state.resolved&&<div className="travel-choices"><h3>Where will you go?</h3><div role="group" aria-label="Choose your next destination">{locations.map(loc=><button className="passage-link" key={loc} onClick={()=>travel(loc)}><span className="choice-marker" aria-hidden="true">›</span>{loc}</button>)}</div></div>}
       </article><details className="journal"><summary>Your travel journal · {state.history.length} entries</summary><ol>{state.history.map((line,i)=><li key={i}>{line}</li>)}</ol></details></div>
       <aside className="traveller-panel"><span className="eyebrow">YOUR TRAVELLER</span><h2>{String(character.title)}</h2><div className="traveller-stats"><div><small>HP</small><strong>{state.hp}</strong></div><div><small>AC</small><strong>{String((character.sheet as Entity).ac)}</strong></div><div><small>GOLD</small><strong>{state.coins}</strong></div></div><dl>{Object.entries((character.sheet as Entity).modifiers as Entity).map(([name,value])=><div key={name}><dt>{name}</dt><dd>{Number(value)>=0?'+':''}{String(value)}</dd></div>)}</dl>{state.inventory.length>0&&<><h3>Acquired items</h3><ul>{state.inventory.map((item,i)=><li key={i}>{item}</li>)}</ul></>}{confirmReset?<div className="reset-confirm"><p>Replace this local adventure with a new traveller?</p><button onClick={()=>{setState(null);setResult('');setDice([]);setConfirmReset(false);try{localStorage.removeItem(SAVE_KEY);}catch{}}}>Start fresh</button><button onClick={()=>setConfirmReset(false)}>Keep playing</button></div>:<button className="text-button" onClick={()=>setConfirmReset(true)}><RotateCcw size={13}/>New traveller</button>}</aside></div>}
-      <p className="game-disclaimer">Prototype encounter play: the encounter prompts, character sheets, and 2d6 checks come from the Quadrath compendium. Choice outcomes, starting gold, simplified duels, and trading rewards are app rules; full combat and campaign progression come later.</p>
+      <p className="game-disclaimer">Prototype encounter play: the encounter prompts, character sheets, and 2d6 checks come from the Quadrath compendium. Choice outcomes, starting gold, simplified duels, and trading rewards are app rules; full combat comes later. Build a party on the Campaign page.</p>
       <a className="powered-link" href="https://forsidia.in" target="_blank" rel="noreferrer">Powered by Forsidia ↗</a>
     </main></div>;
 }
