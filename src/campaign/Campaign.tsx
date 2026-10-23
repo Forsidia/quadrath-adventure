@@ -67,8 +67,7 @@ export function Campaign({ bundleUrl }: { bundleUrl: string }) {
           {notice && <p className="maker-notice" role="status">{notice}</p>}
 
           <fieldset><legend>Identity</legend><div className="field-grid identity-grid">
-            <label className="maker-field field-wide"><span>Name</span><input value={draft.name} onChange={e => update({ name: e.target.value })} placeholder="e.g. Wren of the West Road" /></label>
-            <label className="maker-field"><span>Role</span><input value={draft.role} onChange={e => update({ role: e.target.value })} placeholder="e.g. merchant, guard, scholar" /></label>
+            <label className="maker-field"><span>Name</span><input value={draft.name} onChange={e => update({ name: e.target.value })} placeholder="e.g. Wren of the West Road" /></label>
             <NumberInput label="Level" value={draft.level} min={1} max={20} onChange={level => update({ level })} />
             <div className="maker-field"><span>Tier</span><output className="field-output">{Number.isInteger(draft.level) ? tierFor(draft.level) : '—'}</output></div>
             <label className="maker-field field-wide"><span>Description</span><textarea rows={2} value={draft.description} onChange={e => update({ description: e.target.value })} placeholder="One or two lines a player would say at the table." /></label>
@@ -114,7 +113,7 @@ export function Campaign({ bundleUrl }: { bundleUrl: string }) {
             <dl>{MODIFIERS.map(m => <div key={m}><dt>{m}</dt><dd>{Number.isNaN(draft.modifiers[m]) ? '—' : `${draft.modifiers[m] >= 0 ? '+' : ''}${draft.modifiers[m]}`}</dd></div>)}</dl></div>
           <div className="traveller-panel party-panel"><span className="eyebrow"><Users size={12} /> YOUR PARTY · {roster.length}</span>
             {!roster.length ? <p className="party-empty">No one has joined yet. Save a character to start your party.</p> : <ul className="party-list">{roster.map(c => <li key={c.id} className={c.id === draft.id ? 'current' : ''}>
-              <button className="party-member" onClick={() => start(c)}><strong>{c.name}</strong><small>{c.role || kindLabel[c.source.kind]} · HP {c.hp} · AC {c.ac}</small></button>
+              <button className="party-member" onClick={() => start(c)}><strong>{c.name}</strong><small>{kindLabel[c.source.kind]} · HP {c.hp} · AC {c.ac}</small></button>
               {confirmDelete === c.id ? <span className="party-confirm"><button onClick={() => remove(c.id)}>Remove</button><button onClick={() => setConfirmDelete('')}>Keep</button></span> : <button className="icon-button" aria-label={`Remove ${c.name} from party`} onClick={() => setConfirmDelete(c.id)}><Trash2 size={14} /></button>}
             </li>)}</ul>}
             <button className="text-button" onClick={() => start(blankCharacter())}><Plus size={13} />New character</button></div>

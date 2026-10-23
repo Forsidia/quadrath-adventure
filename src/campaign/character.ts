@@ -10,7 +10,7 @@ export interface CharacterAction { name: string; action_type: string; attack_bon
 export interface CharacterAbility { name: string; action_type: string; effect: string }
 export interface CharacterDraft {
   id: string; source: { kind: 'scratch' | 'pc' | 'npc'; ref: string; name: string };
-  name: string; role: string; description: string; level: number; hp: number; ac: number; modifiers: Record<Modifier, number>;
+  name: string; description: string; level: number; hp: number; ac: number; modifiers: Record<Modifier, number>;
   actions: CharacterAction[]; abilities: CharacterAbility[]; traits: string[]; equipment: string[]; backstory: string;
 }
 export interface Template { kind: 'pc' | 'npc'; id: string; name: string; collection: string; hp: number; ac: number; data: Entity }
@@ -25,7 +25,7 @@ const objects = (value: Value | undefined) => Array.isArray(value) ? value.filte
 export function blankAction(): CharacterAction { return { name: '', action_type: 'action', attack_bonus: 0, damage_roll: '1d6', damage_type: 'bludgeoning', effect: '' }; }
 export function blankAbility(): CharacterAbility { return { name: '', action_type: 'passive', effect: '' }; }
 export function blankCharacter(): CharacterDraft {
-  return { id: newId(), source: { kind: 'scratch', ref: '', name: '' }, name: '', role: '', description: '', level: 1, hp: 20, ac: 8,
+  return { id: newId(), source: { kind: 'scratch', ref: '', name: '' }, name: '', description: '', level: 1, hp: 20, ac: 8,
     modifiers: { intelligence: 0, constitution: 0, dexterity: 0, persuasion: 0, charisma: 0 }, actions: [blankAction()], abilities: [], traits: [], equipment: [], backstory: '' };
 }
 
@@ -44,7 +44,7 @@ export function fromTemplate(template: Template): CharacterDraft {
   const damageType = (entry: Entity) => { const type = damage(entry).type; return Array.isArray(type) ? strings(type).join(' / ') : text(type) || 'none'; };
   return {
     ...blankCharacter(), source: { kind: template.kind, ref: template.id, name: template.name },
-    name: pc ? text(data.title) : template.name, role: text(data.role) || (pc ? '' : 'NPC'),
+    name: pc ? text(data.title) : template.name,
     description: text(data.description) || text(data.personality), level: int(data.level, 1),
     hp: int(stats.hp, 1), ac: int(stats.ac), modifiers: Object.fromEntries(MODIFIERS.map(m => [m, int(modifiers[m])])) as Record<Modifier, number>,
     actions: objects(data.actions).map(a => ({ name: text(a.name), action_type: text(a.action_type) || 'action', attack_bonus: typeof a.attack_bonus === 'number' ? a.attack_bonus : null,
@@ -76,7 +76,7 @@ export function toCharacterDocument(c: CharacterDraft): Entity {
   const damage = (roll: string, type: string): Entity => { const types = type.split('/').map(t => t.trim()).filter(Boolean); return { roll, type: types.length > 1 ? types : types[0] || 'none' }; };
   const slug = c.name.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'character';
   return {
-    id: 'character.' + slug, type: 'character', version: '0.1.0', title: c.name.trim(), role: c.role.trim(), status: 'player-character', description: c.description.trim(),
+    id: 'character.' + slug, type: 'character', version: '0.1.0', title: c.name.trim(), status: 'player-character', description: c.description.trim(),
     level: c.level, tier: tierFor(c.level), sheet: { hp: c.hp, ac: c.ac, modifiers: { ...c.modifiers } },
     actions: c.actions.map((a, i) => {
       const action: Entity = { id: `${slug}-${i + 1}`, name: a.name.trim(), action_type: a.action_type };
@@ -95,13 +95,14 @@ export function toCharacterDocument(c: CharacterDraft): Entity {
 /** Drop blank list lines and surrounding whitespace before a character is saved. */
 export function tidyCharacter(c: CharacterDraft): CharacterDraft {
   const lines = (list: string[]) => list.map(s => s.trim()).filter(Boolean);
-  return { ...c, name: c.name.trim(), role: c.role.trim(), description: c.description.trim(), backstory: c.backstory.trim(), traits: lines(c.traits), equipment: lines(c.equipment) };
+  const { role: _role, ...rest } = c as CharacterDraft & { role?: string };
+  return { ...rest, name: c.name.trim(), description: c.description.trim(), backstory: c.backstory.trim(), traits: lines(c.traits), equipment: lines(c.equipment) };
 }
 
 export function isCharacterShape(c: unknown): c is CharacterDraft {
   if (!c || typeof c !== 'object') return false;
   const d = c as CharacterDraft;
-  return typeof d.id === 'string' && typeof d.name === 'string' && typeof d.role === 'string' && typeof d.description === 'string' && typeof d.backstory === 'string'
+  return typeof d.id === 'string' && typeof d.name === 'string' && typeof d.description === 'string' && typeof d.backstory === 'string'
     && !!d.source && typeof d.source === 'object' && ['scratch', 'pc', 'npc'].includes(d.source.kind) && !!d.modifiers && typeof d.modifiers === 'object'
     && [d.actions, d.abilities, d.traits, d.equipment].every(Array.isArray);
 }
